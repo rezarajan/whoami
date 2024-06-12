@@ -1,0 +1,291 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Reza - One Page Two Column Resume
+% LaTeX Template
+% Version 1.1 (30/4/2014)
+%
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{FontStyle}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\lastupdated
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\namesection{Reza}{Rajan}{{r3rajan@edu.uwaterloo.ca} | 647.546.9485}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.33\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\sectionsep
+\section{Education} 
+\subsection{Cloud DevOps Engineer}
+\descript{Udacity Nanodegree}
+\location{Grad. 2022 | Online}
+\sectionsep
+
+\subsection{Self-Driving Car Engineer}
+\descript{Udacity Nanodegree}
+\location{Grad. 2021 | Online}
+\sectionsep
+
+\subsection{Data Analyst}
+\descript{Udacity Nanodegree}
+\location{Grad. 2020 | Online}
+\sectionsep
+
+\subsection{University of Waterloo}
+\descript{BASc Mechanical Engineering}
+\location{Grad. 2020 | Waterloo, ON}
+\sectionsep
+
+% \subsection{Dubai International Aca.}
+% Deputy Head of Finance (Aquainitative) \\
+% Student Council (Final Year) \\
+% \location{Grad. May 2013 |  Dubai, UAE}
+% \sectionsep
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     COURSEWORK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Coursework}
+\subsection{Online}
+% Introduction to C++
+CI/CD Pipelines, Container Orchestration, Infrastructure as Code, \\
+Deep Learning, System Integration, A/B Testing\\
+\sectionsep
+
+\subsection{Undergraduate}
+Autonomous Mobile Robotics\\
+Digital Logic \& Control Theory \\
+Kinematics \& Dynamics \\
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     LINKS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Links} 
+\href{https://github.com/rezarajan}{\custombold{GitHub}}| 
+\href{https://www.linkedin.com/in/rezarajan/}{\custombold{LinkedIn}} \\
+% \href{https://medium.com/@rezarajan}{\custombold{Medium}} \\
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Skills}
+\subsection{Programming}
+% \underline{Languages}\\
+Python \textbullet{} C++ \textbullet{} MATLAB \textbullet{} SQL
+
+% \sectionsep
+% \underline{Libraries}\\
+TensorFlow \textbullet{} Keras \textbullet{} Pandas \textbullet{} Numpy \textbullet{} SciPy \textbullet{} Eigen \textbullet{} Git
+\sectionsep
+\subsection{Automation}
+\textbullet{} Ansible\\
+\textbullet{} CircleCI\\
+\textbullet{} AWS CloudFormation\\
+\textbullet{} Docker\\
+\textbullet{} Kubernetes
+\sectionsep
+
+\subsection{Networking \& Cloud}
+\textbullet{} NGINX\\
+\textbullet{} Traefik\\
+\textbullet{} Proxmox
+\sectionsep
+
+\sectionsep
+\medskip
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.66\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PROJECTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{3mm}
+\section{Projects}
+\runsubsection{HomeLab}
+\descript{| Personal}
+Two homelab environments are created by:
+\vspace{3mm}
+\begin{tightemize}
+\item Installing Proxmox on a desktop PC, and Intel NUC
+\item Using Ansible to configure VMs, and Portainer as a container management system
+% \item Virtualizing pfSense as the router, and PiHole as a DNS server
+\end{tightemize}
+\sectionsep
+
+% \runsubsection{High-Availability Cloud Architecture}
+% \descript{| Udacity}
+% AWS is used to deploy a high-availability web-app by:
+% \vspace{3mm}
+% \begin{tightemize}
+% \item Designing the cloud architecture, including a load balancer, two interconnected public and private subnets, and an auto-scaling group of machines
+% \item Using AWS CloudFormation to configure the architecture in code
+% \item Deploying the architecture in two stacks using AWS CLI
+% \end{tightemize}
+% \sectionsep
+
+% \runsubsection{Self-Driving Car Capstone}
+% \descript{| Udacity}
+% A basic self-driving car system is built and tested in a simulator by:
+% \vspace{1mm}
+% \begin{tightemize}
+% \item Generating valid trajectories for a vehicle to follow, obeying speed limits, acceleration and jerk constraints and considering obstacles
+% \item Building and tuning PID and yaw control systems for throttle, braking and steering
+% \item Training and performance evaluation of single-shot detectors in TensorFlow (\custombold{SSD MobileNet and Faster R-CNN}), to detect and classify traffic lights
+% \item Using ROS to integrate all systems to drive the car
+% \end{tightemize}
+% \sectionsep
+
+\runsubsection{A/B Testing}
+\descript{| Udacity}
+An A/B test is performed to analyze website user conversion data by:
+\vspace{1mm}
+\begin{tightemize}
+\item Wrangling and cleaning data using Pandas
+\item Performing exploratory data analysis between the control and treatment groups of users
+\item Hypothesis testing user conversion rates
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Cardano Stake Pool}
+\descript{| Personal}
+A stake pool is created on the Cardano mainnet network by:
+\vspace{1mm}
+\begin{tightemize}
+\item Containerizing program binaries
+\item Provisioning infrastructure on DigitalOcean and Proxmox
+\item Automating deployments using Docker Compose and Kubernetes
+\item Bootstrapping funding using DeFi products such as Liquidity Bonds
+\end{tightemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\sectionsep
+\section{Experience}
+\runsubsection{myKaarma}
+\descript{| Product Data Analyst}
+\location{Feb 2022 – Present | Remote, Canada}
+\vspace{2mm}
+\begin{tightemize}
+\item Founding member of the Data Analytics team; established a single-source-of-truth within the organization
+\item Productized insights projects, which were then sold to customers as optimization tools for services
+\item Worked with reporting and infrastructure teams to create a new data pipeline, with real-time analytics as a focus
+\item Introduced Power BI to Product Managers, empowering other teams to conduct their own analytics research without learning code
+\item Performed product utilization research to identify key areas in which the organization may improve service to customers
+\end{tightemize}
+\sectionsep
+
+\runsubsection{The Growing Company}
+\descript{| Co-Founder \& Embedded Engineer}
+\location{Mar 2019 – 2020 | Waterloo, ON}
+\vspace{2mm}
+\begin{tightemize}
+% \item Co-founded a startup focused on bringing reliable, scalable and efficient agriculture to small island countries. 
+\item Co-founded an agriculture startup focused on reliability and scalability through automation
+% \item Designed circuits and drivers which allow connectivity to environment sensors and actuators over I2C to a Raspberry Pi
+\item Designed the software architecture based on composability, to allow rapid testing of different sensor/actuator configurations
+\item Developed an environment control system in Python, which uses sensor data and actuators to maintain consistent agricultural environments
+\item Displayed proof-of-concept by successfully growing a plant without human supervision
+\end{tightemize}
+\sectionsep
+
+% \runsubsection{UrbanShelter}
+% \descript{| Co-Founder \& Software Engineer}
+% \location{Jan 2018 – Jan 2019 | Waterloo, ON}
+% \begin{tightemize}
+% \item Co-founded a real-estate software startup. 
+% \item Developed the technical architecture for both the front and back-end systems.
+% \item Performed product iteration strategies for design and development.
+% \item Created a design-development pipeline to meet agile development criteria.
+% \end{tightemize}
+% \sectionsep
+
+% \runsubsection{BlueFire Technologies}
+% \descript{| Software Engineer}
+% \location{May 2017 – Sept 2017 | Waterloo, ON}
+% \begin{tightemize}
+% \item Developed both front and back-end systems for a delivery service \item Performed server response time optimization using Simplex method \end{tightemize}
+% \sectionsep
+
+\runsubsection{VOLTEC Engineering}
+\descript{| Trainee Engineer}
+\location{Jan 2016 – April 2016 | Trinidad \& Tobago, W.I.}
+\begin{tightemize}
+\item Re-modeled the company's server architecture to lower maintenance costs.
+\item Created a script to automate the import of 3D sub-surface data to a CAD file as contours, saving drafting teams hours of labour. \end{tightemize}
+\sectionsep
+
+\end{minipage} 
+\end{document}
