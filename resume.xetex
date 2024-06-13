@@ -45,13 +45,11 @@
 \usepackage{pgffor}
 
 % Define a command that takes a list of arguments and formats them with \textbullet separator. This will include a bullet on the last separator. Uncomment this, and comment out the next two functions if this formatting is desired.
- %\newcommand{\formattedlist}[1]{%
-     %\begin{minipage}{\linewidth}
-     %\setlength{\parindent}{0pt}%
-     %\setlength{\parskip}{0pt}%
-     %\foreach \item in {#1}{\item \textbullet{} }
-     %\end{minipage}%
-%} 
+\newcommand{\formattedlist}[1]{%
+    \foreach \item [count=\i] in {#1}{%
+	  {\textbullet}~{\item}
+    }%
+}
 
 % This version creates a counter to check for the last item in the list
 \newcounter{listLength}
@@ -63,15 +61,15 @@
 }
 
 % Using the countlistlength function, ensure that a bullet point is not placed on the last item.
-\newcommand{\formattedlist}[1]{%
-    \foreach \item [count=\i] in {#1}{%
-	\ifnum\i=1
-	  \item
-	\else
-	  {\textbullet}~{\item}
-	\fi
-    }%
-}
+%\newcommand{\formattedlist}[1]{%
+    %\foreach \item [count=\i] in {#1}{%
+	%\ifnum\i=1
+	  %\item
+	%\else
+	  %{\textbullet}~{\item}
+	%\fi
+    %}%
+%}
 
 % Using the countlistlength function, ensure that a linebreak is not placed on the last item. This function offers different formatting than `itemize`.
 \newcommand{\straightlist}[1]{%
@@ -176,19 +174,24 @@ Kinematics \& Dynamics \\
 
 \subsection{Programming}
 % Programming Languages
+\descript{Languages}
 \formattedlist{Python, Go, SQL, C++, Rust}
+\sectionsep
 
-% \sectionsep
 % Language Libraries and Frameworks
-\formattedlist{Airflow, Kafka, PySpark, Pandas, SciPy, Numpy, AWS Lambda}
-\sectionsep
-\subsection{Automation}
-\straightlist{Ansible, Terraform, AWS Cloudformation, Docker, Kubernetes}
+\descript{Data Frameworks, Libs \& Utils}
+\formattedlist{Airflow, Kafka, PySpark, Pandas, SciPy, Numpy}
 \sectionsep
 
-\subsection{Networking \& Cloud}
-\straightlist{NGINX, Traefik, Proxmox}
+% Tooling
+\subsection{Tooling}
+\descript{Provisioning \& Deployment}
+\formattedlist{Ansible, Terraform, Docker, Kubernetes, Nix, Traefik}
 \sectionsep
+
+\descript{AWS}
+\formattedlist{AWS~Cloudformation, AWS~Iceberg, AWS~Athena, AWS~Redshift, AWS~Step~Functions}
+
 
 \sectionsep
 \medskip
