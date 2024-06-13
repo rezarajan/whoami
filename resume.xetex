@@ -41,8 +41,55 @@
 
 \documentclass[]{FontStyle}
 
+% Include packages
+\usepackage{pgffor}
+
+% Define a command that takes a list of arguments and formats them with \textbullet separator. This will include a bullet on the last separator. Uncomment this, and comment out the next two functions if this formatting is desired.
+ %\newcommand{\formattedlist}[1]{%
+     %\begin{minipage}{\linewidth}
+     %\setlength{\parindent}{0pt}%
+     %\setlength{\parskip}{0pt}%
+     %\foreach \item in {#1}{\item \textbullet{} }
+     %\end{minipage}%
+%} 
+
+% This version creates a counter to check for the last item in the list
+\newcounter{listLength}
+\newcommand{\countlistlength}[1]{%
+  \setcounter{listLength}{0}
+  \foreach \item in {#1} {%
+    \stepcounter{listLength}
+  }
+}
+
+% Using the countlistlength function, ensure that a bullet point is not placed on the last item.
+\newcommand{\formattedlist}[1]{%
+    \foreach \item [count=\i] in {#1}{%
+	\ifnum\i=1
+	  \item
+	\else
+	  {\textbullet}~{\item}
+	\fi
+    }%
+}
+
+% Using the countlistlength function, ensure that a linebreak is not placed on the last item. This function offers different formatting than `itemize`.
+\newcommand{\straightlist}[1]{%
+    \begin{minipage}{\linewidth}
+    \countlistlength{#1}
+    \def\listLen{\value{listLength}}
+    \foreach \item [count=\i] in {#1}{%
+    	\textbullet \item
+	\ifnum\i<\listLen
+	    \\%
+	\fi
+    }
+    \end{minipage}%
+}
+
 \begin{document}
 
+    
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %     LAST UPDATED DATE
@@ -57,7 +104,13 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\namesection{Reza}{Rajan}{{r3rajan@edu.uwaterloo.ca} | 647.546.9485}
+% Define variables for links
+\newcommand{\email}{\href{mailto:rezarajan@gmail.com}{rezarajan@gmail.com}}
+\newcommand{\phone}{\href{tel:+14076490447}{1.407.649.0447}}
+\newcommand{\github}{\href{https://github.com/rezarajan}{GitHub}}
+\newcommand{\linkedin}{\href{https://www.linkedin.com/in/rezarajan/}{LinkedIn}}
+
+\namesection{}{Reza Rajan}{\email{} | \phone{} | \github{} | \linkedin{}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -72,31 +125,30 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \sectionsep
 \section{Education} 
+\subsection{Data Engineer}
+\descript{Udacity Nanodegree}
+\location{Grad. 2024 | Courseware}
+\sectionsep
+
 \subsection{Cloud DevOps Engineer}
 \descript{Udacity Nanodegree}
-\location{Grad. 2022 | Online}
+\location{Grad. 2022 | Courseware}
 \sectionsep
 
 \subsection{Self-Driving Car Engineer}
 \descript{Udacity Nanodegree}
-\location{Grad. 2021 | Online}
+\location{Grad. 2021 | Courseware}
 \sectionsep
 
 \subsection{Data Analyst}
 \descript{Udacity Nanodegree}
-\location{Grad. 2020 | Online}
+\location{Grad. 2020 | Courseware}
 \sectionsep
 
 \subsection{University of Waterloo}
 \descript{BASc Mechanical Engineering}
 \location{Grad. 2020 | Waterloo, ON}
 \sectionsep
-
-% \subsection{Dubai International Aca.}
-% Deputy Head of Finance (Aquainitative) \\
-% Student Council (Final Year) \\
-% \location{Grad. May 2013 |  Dubai, UAE}
-% \sectionsep
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -117,40 +169,25 @@ Kinematics \& Dynamics \\
 \sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     LINKS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Links} 
-\href{https://github.com/rezarajan}{\custombold{GitHub}}| 
-\href{https://www.linkedin.com/in/rezarajan/}{\custombold{LinkedIn}} \\
-% \href{https://medium.com/@rezarajan}{\custombold{Medium}} \\
-\sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     SKILLS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Skills}
+
 \subsection{Programming}
-% \underline{Languages}\\
-Python \textbullet{} C++ \textbullet{} MATLAB \textbullet{} SQL
+% Programming Languages
+\formattedlist{Python, Go, SQL, C++, Rust}
 
 % \sectionsep
-% \underline{Libraries}\\
-TensorFlow \textbullet{} Keras \textbullet{} Pandas \textbullet{} Numpy \textbullet{} SciPy \textbullet{} Eigen \textbullet{} Git
+% Language Libraries and Frameworks
+\formattedlist{Airflow, Kafka, PySpark, Pandas, SciPy, Numpy, AWS Lambda}
 \sectionsep
 \subsection{Automation}
-\textbullet{} Ansible\\
-\textbullet{} CircleCI\\
-\textbullet{} AWS CloudFormation\\
-\textbullet{} Docker\\
-\textbullet{} Kubernetes
+\straightlist{Ansible, Terraform, AWS Cloudformation, Docker, Kubernetes}
 \sectionsep
 
 \subsection{Networking \& Cloud}
-\textbullet{} NGINX\\
-\textbullet{} Traefik\\
-\textbullet{} Proxmox
+\straightlist{NGINX, Traefik, Proxmox}
 \sectionsep
 
 \sectionsep
@@ -207,16 +244,16 @@ Two homelab environments are created by:
 % \end{tightemize}
 % \sectionsep
 
-\runsubsection{A/B Testing}
-\descript{| Udacity}
-An A/B test is performed to analyze website user conversion data by:
-\vspace{1mm}
-\begin{tightemize}
-\item Wrangling and cleaning data using Pandas
-\item Performing exploratory data analysis between the control and treatment groups of users
-\item Hypothesis testing user conversion rates
-\end{tightemize}
-\sectionsep
+ % \runsubsection{A/B Testing}
+ % \descript{| Udacity}
+ % An A/B test is performed to analyze website user conversion data by:
+ % \vspace{1mm}
+ % \begin{tightemize}
+ % \item Wrangling and cleaning data using Pandas
+ % \item Performing exploratory data analysis between the control and treatment groups of users
+ % \item Hypothesis testing user conversion rates
+ % \end{tightemize}
+ % \sectionsep
 
 \runsubsection{Cardano Stake Pool}
 \descript{| Personal}
@@ -234,6 +271,15 @@ A stake pool is created on the Cardano mainnet network by:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \sectionsep
 \section{Experience}
+\runsubsection{myKaarma}
+\descript{| Data Engineer}
+\location{Jul 2023 – Jan 2024 | Remote, Florida, USA}
+\vspace{2mm}
+\begin{tightemize}
+\item TODO
+\end{tightemize}
+\sectionsep
+
 \runsubsection{myKaarma}
 \descript{| Product Data Analyst}
 \location{Feb 2022 – Present | Remote, Canada}
@@ -279,12 +325,12 @@ A stake pool is created on the Cardano mainnet network by:
 % \item Developed both front and back-end systems for a delivery service \item Performed server response time optimization using Simplex method \end{tightemize}
 % \sectionsep
 
-\runsubsection{VOLTEC Engineering}
-\descript{| Trainee Engineer}
-\location{Jan 2016 – April 2016 | Trinidad \& Tobago, W.I.}
-\begin{tightemize}
-\item Re-modeled the company's server architecture to lower maintenance costs.
-\item Created a script to automate the import of 3D sub-surface data to a CAD file as contours, saving drafting teams hours of labour. \end{tightemize}
+ % \runsubsection{VOLTEC Engineering}
+ % \descript{| Trainee Engineer}
+ % \location{Jan 2016 – April 2016 | Trinidad \& Tobago, W.I.}
+ % \begin{tightemize}
+ % \item Re-modeled the company's server architecture to lower maintenance costs.
+ % \item Created a script to automate the import of 3D sub-surface data to a CAD file as contours, saving drafting teams hours of labour. \end{tightemize}
 \sectionsep
 
 \end{minipage} 

@@ -19,7 +19,7 @@ For general installation instructions of TexLive, see the [docs](https://tug.org
 #### Linux
 ```sh
 # Arch Linux (See AUR: https://archlinux.org/groups/x86_64/texlive)
-paru -S texlive-basic texlive-latex texlive-xetex texlive-luatex texlive-latexextra texlive-latexrecommended texlive-bibtexextra texlive-binextra texlive-context texlive-fontsextra texlive-fontsrecommended texlive-fontutils
+paru -S texlive-basic texlive-latex texlive-xetex texlive-luatex texlive-latexextra texlive-latexrecommended texlive-bibtexextra texlive-binextra texlive-context texlive-fontsextra texlive-fontsrecommended texlive-fontutils texlive-pictures
 ```
 
 ### Fonts
