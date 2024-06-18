@@ -213,18 +213,18 @@ Kinematics \& Dynamics \\
 %     PROJECTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\vspace{3mm}
-\section{Projects}
-\runsubsection{HomeLab}
-\descript{| Personal}
-Two homelab environments are created by:
-\vspace{3mm}
-\begin{tightemize}
-\item Installing Proxmox on a desktop PC, and Intel NUC
-\item Using Ansible to configure VMs, and Portainer as a container management system
-% \item Virtualizing pfSense as the router, and PiHole as a DNS server
-\end{tightemize}
-\sectionsep
+%\vspace{3mm}
+%\section{Projects}
+%\runsubsection{HomeLab}
+%\descript{| Personal}
+%Two homelab environments are created by:
+%\vspace{3mm}
+%\begin{tightemize}
+%\item Installing Proxmox on a desktop PC, and Intel NUC
+%\item Using Ansible to configure VMs, and Portainer as a container management system
+%% \item Virtualizing pfSense as the router, and PiHole as a DNS server
+%\end{tightemize}
+%\sectionsep
 
 % \runsubsection{High-Availability Cloud Architecture}
 % \descript{| Udacity}
@@ -260,16 +260,16 @@ Two homelab environments are created by:
  % \end{tightemize}
  % \sectionsep
 
-\runsubsection{Cardano Stake Pool}
-\descript{| Personal}
-A stake pool is created on the Cardano mainnet network by:
-\vspace{1mm}
-\begin{tightemize}
-\item Containerizing program binaries
-\item Provisioning infrastructure on DigitalOcean and Proxmox
-\item Automating deployments using Docker Compose and Kubernetes
-\item Bootstrapping funding using DeFi products such as Liquidity Bonds
-\end{tightemize}
+%\runsubsection{Cardano Stake Pool}
+%\descript{| Personal}
+%A stake pool is created on the Cardano mainnet network by:
+%\vspace{2mm}
+%\begin{tightemize}
+%\item Containerizing program binaries
+%\item Provisioning infrastructure on DigitalOcean and Proxmox
+%\item Automating deployments using Docker Compose and Kubernetes
+%\item Bootstrapping funding using DeFi products such as Liquidity Bonds
+%\end{tightemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     EXPERIENCE
@@ -291,7 +291,7 @@ A stake pool is created on the Cardano mainnet network by:
 
 \runsubsection{myKaarma}
 \descript{| Product Data Analyst}
-\location{Feb 2022 – Present | Remote, Canada}
+\location{Feb 2022 – Jul 2023 | Remote, Canada}
 \vspace{2mm}
 \begin{tightemize}
 \item Worked with reporting and infrastructure teams to develop a proof-of-concept for a real-time data pipeline using Airflow, AWS S3 and AWS Redshift
@@ -301,19 +301,31 @@ A stake pool is created on the Cardano mainnet network by:
 \end{tightemize}
 \sectionsep
 
-%\runsubsection{The Growing Company}
-%\descript{| Co-Founder \& Embedded Engineer}
-%\location{Mar 2019 – 2020 | Waterloo, ON}
-%\vspace{2mm}
-%\begin{tightemize}
-%% \item Co-founded a startup focused on bringing reliable, scalable and efficient agriculture to small island countries. 
-%\item Co-founded an agriculture startup focused on reliability and scalability through automation
-%% \item Designed circuits and drivers which allow connectivity to environment sensors and actuators over I2C to a Raspberry Pi
-%\item Designed the software architecture based on composability, to allow rapid testing of different sensor/actuator configurations
-%\item Developed an environment control system in Python, which uses sensor data and actuators to maintain consistent agricultural environments
-%\item Displayed proof-of-concept by successfully growing a plant without human supervision
-%\end{tightemize}
-%\sectionsep
+\runsubsection{Mochi}
+\descript{| Stake Pool Operator}
+\location{ Dec 2022 - Present | Remote}
+\vspace{2mm}
+\begin{tightemize}
+\item Provisioned highly avilable infrastructure to run Cardano nodes, using Proxmox, Terraform, Ansible and K3s
+\item Partnered with Cardano ecosystem projects to deliver blockchain introspection and transaction submission services
+\item Integrated logging and alerts for production node and submit services via Grafana and Prometheus
+\item Built ARMv8-A for deployment on a Turing RK1 cluster
+\end{tightemize}
+\sectionsep
+
+\runsubsection{The Growing Company}
+\descript{| Co-Founder \& Embedded Engineer}
+\location{Mar 2019 – 2020 | Waterloo, ON}
+\vspace{2mm}
+\begin{tightemize}
+% \item Co-founded a startup focused on bringing reliable, scalable and efficient agriculture to small island countries. 
+\item Co-founded an agriculture startup focused on reliability and scalability through automation
+ \item Designed circuits and drivers which allow connectivity to environment sensors and actuators over I2C to a Raspberry Pi
+\item Designed the software architecture based on composability, to allow rapid testing of different sensor/actuator configurations
+\item Developed an environment control system in Python, which uses sensor data and actuators to maintain consistent agricultural environments
+\item Displayed proof-of-concept by successfully growing a plant without human supervision
+\end{tightemize}
+\sectionsep
 
 % \runsubsection{UrbanShelter}
 % \descript{| Co-Founder \& Software Engineer}
