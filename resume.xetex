@@ -12,15 +12,6 @@
 % operating system or comment the line out to use the default font.
 % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 
-% TODO:
-% 1. Integrate biber/bibtex for article citation under publications.
-% 2. Figure out a smoother way for the document to flow onto the next page.
-% 3. Add styling information for a "Projects/Hacks" section.
-% 4. Add location/address information
-% 5. Merge OpenFont and MacFonts as a single sty with options.
-% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % CHANGELOG:
 % v1.1:
@@ -44,50 +35,61 @@
 % Include packages
 \usepackage{pgffor}
 
-% Define a command that takes a list of arguments and formats them with \textbullet separator. This will include a bullet on the last separator. Uncomment this, and comment out the next two functions if this formatting is desired.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     CUSTOM FUNCTIONS
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Define a command that takes a list of arguments and formats them with \textbullet separator, on a single line
 \newcommand{\formattedlist}[1]{%
     \foreach \item [count=\i] in {#1}{%
-	  {\textbullet}~{\item}
+	\ifnum\i=1
+	  \item
+	\else
+	  {\textbullet}~{\item}~
+	\fi
     }%
 }
 
-% This version creates a counter to check for the last item in the list
-\newcounter{listLength}
-\newcommand{\countlistlength}[1]{%
-  \setcounter{listLength}{0}
-  \foreach \item in {#1} {%
-    \stepcounter{listLength}
-  }
-}
-
-% Using the countlistlength function, ensure that a bullet point is not placed on the last item.
-%\newcommand{\formattedlist}[1]{%
-    %\foreach \item [count=\i] in {#1}{%
-	%\ifnum\i=1
-	  %\item
-	%\else
-	  %{\textbullet}~{\item}
-	%\fi
-    %}%
-%}
-
-% Using the countlistlength function, ensure that a linebreak is not placed on the last item. This function offers different formatting than `itemize`.
+% A list with different (unindented) formatting compared to `itemize`
 \newcommand{\straightlist}[1]{%
     \begin{minipage}{\linewidth}
-    \countlistlength{#1}
-    \def\listLen{\value{listLength}}
     \foreach \item [count=\i] in {#1}{%
-    	\textbullet \item
-	\ifnum\i<\listLen
-	    \\%
-	\fi
+    	\textbullet~\item
     }
     \end{minipage}%
 }
 
+% A counter to check for the last item in the list
+%\newcounter{listLength}
+%\newcommand{\countlistlength}[1]{%
+  %\setcounter{listLength}{0}
+  %\foreach \item in {#1} {%
+    %\stepcounter{listLength}
+  %}
+%}
+% See example usage below:
+%\newcommand{\straightlist}[1]{%
+    %\begin{minipage}{\linewidth}
+    %\countlistlength{#1} % Count the list length into the listLength counter
+    %\def\listLen{\value{listLength}} % Create the value listLen based on listLength
+    %\foreach \item [count=\i] in {#1}{%
+    	%\ifnum\i<\listLen % Compute some logic against the value of listLen
+		%\\%Do something
+	%\fi
+    %}
+    %\end{minipage}%
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     BEGIN DOCUMENT
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
 
-    
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %     LAST UPDATED DATE
@@ -185,7 +187,7 @@ Kinematics \& Dynamics \\
 
 % Tooling
 \subsection{Tooling}
-\descript{Provisioning \& Deployment}
+\descript{Deployment Tools}
 \formattedlist{Ansible, Terraform, Docker, Kubernetes, Nix, Traefik}
 \sectionsep
 
@@ -279,7 +281,11 @@ A stake pool is created on the Cardano mainnet network by:
 \location{Jul 2023 – Jan 2024 | Remote, Florida, USA}
 \vspace{2mm}
 \begin{tightemize}
-\item TODO
+\item Developed data processing tooling in Python and Java, for the generation big-data, tailored customer reports at a daily, weekly and monthly scale
+\item Automated report generation and delivery tasks for customers, using AWS State Machines and Lambda functions, with SLA guarantees
+\item Architected a data lakehouse on AWS based on the Medallion architecture, as a replacement for the legacy self-managed data infrastructure within the organization
+\item Worked with infrastructure and reporting teams to create a multi-phase project plan for the development and deployment of the proposed data lakehouse architecture
+\item Successfully coordinated a small-scale proof-of-concept of the data lakehouse architecture with the reporting team, which replicated a limited subset of functions of the production data pipeline 
 \end{tightemize}
 \sectionsep
 
@@ -288,27 +294,26 @@ A stake pool is created on the Cardano mainnet network by:
 \location{Feb 2022 – Present | Remote, Canada}
 \vspace{2mm}
 \begin{tightemize}
-\item Founding member of the Data Analytics team; established a single-source-of-truth within the organization
-\item Productized insights projects, which were then sold to customers as optimization tools for services
-\item Worked with reporting and infrastructure teams to create a new data pipeline, with real-time analytics as a focus
-\item Introduced Power BI to Product Managers, empowering other teams to conduct their own analytics research without learning code
+\item Worked with reporting and infrastructure teams to develop a proof-of-concept for a real-time data pipeline using Airflow, AWS S3 and AWS Redshift
 \item Performed product utilization research to identify key areas in which the organization may improve service to customers
+\item Developed data products for customers, which were utilized to inform logisitic decisions
+\item Introduced Power BI to Product Managers, enabling self-serve analytics across teams
 \end{tightemize}
 \sectionsep
 
-\runsubsection{The Growing Company}
-\descript{| Co-Founder \& Embedded Engineer}
-\location{Mar 2019 – 2020 | Waterloo, ON}
-\vspace{2mm}
-\begin{tightemize}
-% \item Co-founded a startup focused on bringing reliable, scalable and efficient agriculture to small island countries. 
-\item Co-founded an agriculture startup focused on reliability and scalability through automation
-% \item Designed circuits and drivers which allow connectivity to environment sensors and actuators over I2C to a Raspberry Pi
-\item Designed the software architecture based on composability, to allow rapid testing of different sensor/actuator configurations
-\item Developed an environment control system in Python, which uses sensor data and actuators to maintain consistent agricultural environments
-\item Displayed proof-of-concept by successfully growing a plant without human supervision
-\end{tightemize}
-\sectionsep
+%\runsubsection{The Growing Company}
+%\descript{| Co-Founder \& Embedded Engineer}
+%\location{Mar 2019 – 2020 | Waterloo, ON}
+%\vspace{2mm}
+%\begin{tightemize}
+%% \item Co-founded a startup focused on bringing reliable, scalable and efficient agriculture to small island countries. 
+%\item Co-founded an agriculture startup focused on reliability and scalability through automation
+%% \item Designed circuits and drivers which allow connectivity to environment sensors and actuators over I2C to a Raspberry Pi
+%\item Designed the software architecture based on composability, to allow rapid testing of different sensor/actuator configurations
+%\item Developed an environment control system in Python, which uses sensor data and actuators to maintain consistent agricultural environments
+%\item Displayed proof-of-concept by successfully growing a plant without human supervision
+%\end{tightemize}
+%\sectionsep
 
 % \runsubsection{UrbanShelter}
 % \descript{| Co-Founder \& Software Engineer}
@@ -328,13 +333,13 @@ A stake pool is created on the Cardano mainnet network by:
 % \item Developed both front and back-end systems for a delivery service \item Performed server response time optimization using Simplex method \end{tightemize}
 % \sectionsep
 
- % \runsubsection{VOLTEC Engineering}
- % \descript{| Trainee Engineer}
- % \location{Jan 2016 – April 2016 | Trinidad \& Tobago, W.I.}
- % \begin{tightemize}
- % \item Re-modeled the company's server architecture to lower maintenance costs.
- % \item Created a script to automate the import of 3D sub-surface data to a CAD file as contours, saving drafting teams hours of labour. \end{tightemize}
+% \runsubsection{VOLTEC Engineering}
+% \descript{| Trainee Engineer}
+% \location{Jan 2016 – April 2016 | Trinidad \& Tobago, W.I.}
+% \begin{tightemize}
+% \item Re-modeled the company's server architecture to lower maintenance costs.
+% \item Created a script to automate the import of 3D sub-surface data to a CAD file as contours, saving drafting teams hours of labour. \end{tightemize}
 \sectionsep
 
-\end{minipage} 
+\end{minipage}
 \end{document}
