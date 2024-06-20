@@ -249,16 +249,16 @@ Kinematics \& Dynamics \\
 % \end{tightemize}
 % \sectionsep
 
- % \runsubsection{A/B Testing}
- % \descript{| Udacity}
- % An A/B test is performed to analyze website user conversion data by:
- % \vspace{1mm}
- % \begin{tightemize}
- % \item Wrangling and cleaning data using Pandas
- % \item Performing exploratory data analysis between the control and treatment groups of users
- % \item Hypothesis testing user conversion rates
- % \end{tightemize}
- % \sectionsep
+% \runsubsection{A/B Testing}
+% \descript{| Udacity}
+% An A/B test is performed to analyze website user conversion data by:
+% \vspace{1mm}
+% \begin{tightemize}
+% \item Wrangling and cleaning data using Pandas
+% \item Performing exploratory data analysis between the control and treatment groups of users
+% \item Hypothesis testing user conversion rates
+% \end{tightemize}
+% \sectionsep
 
 %\runsubsection{Cardano Stake Pool}
 %\descript{| Personal}
@@ -279,13 +279,13 @@ Kinematics \& Dynamics \\
 \runsubsection{myKaarma}
 \descript{| Data Engineer}
 \location{Jul 2023 – Jan 2024 | Remote, Florida, USA}
-\vspace{2mm}
+\vspace{3mm}
 \begin{tightemize}
-\item Developed data processing tooling in Python and Java, for the generation big-data, tailored customer reports at a daily, weekly and monthly scale
+\item Developed data processing tooling in Python and Java, for the generation big-data, tailored customer reports at a daily, weekly and monthly scale; \textit{improved report generation speeds by up to 70\%}
 \item Automated report generation and delivery tasks for customers, using AWS State Machines and Lambda functions, with SLA guarantees
 \item Architected a data lakehouse on AWS based on the Medallion architecture, as a replacement for the legacy self-managed data infrastructure within the organization
 \item Worked with infrastructure and reporting teams to create a multi-phase project plan for the development and deployment of the proposed data lakehouse architecture
-\item Successfully coordinated a small-scale proof-of-concept of the data lakehouse architecture with the reporting team, which replicated a limited subset of functions of the production data pipeline 
+\item Successfully coordinated a small-scale proof-of-concept of the data lakehouse architecture with the reporting team, which replicated a limited subset of functions of the production data pipeline; \textit{parallelized report generation processes and reduced operational costs by up to 80\%}
 \end{tightemize}
 \sectionsep
 
@@ -294,10 +294,10 @@ Kinematics \& Dynamics \\
 \location{Feb 2022 – Jul 2023 | Remote, Canada}
 \vspace{2mm}
 \begin{tightemize}
+\item Developed data products for customers, which were utilized to inform logistical and operational decisions on a daily basis; \textit{introduced new revenue streams from hundreds of business clients}
+\item Introduced Power BI to Product Managers, enabling self-serve analytics across teams; \textit{increased data transparency within the organization}
 \item Worked with reporting and infrastructure teams to develop a proof-of-concept for a real-time data pipeline using Airflow, AWS S3 and AWS Redshift
-\item Performed product utilization research to identify key areas in which the organization may improve service to customers
-\item Developed data products for customers, which were utilized to inform logisitic decisions
-\item Introduced Power BI to Product Managers, enabling self-serve analytics across teams
+\item Performed product utilization analysis to highlight product KPI metrics, and identify key areas in which the organization may improve service to customers; \textit{used by product leads in stakeholder meetings}
 \end{tightemize}
 \sectionsep
 
@@ -309,23 +309,22 @@ Kinematics \& Dynamics \\
 \item Provisioned highly avilable infrastructure to run Cardano nodes, using Proxmox, Terraform, Ansible and K3s
 \item Partnered with Cardano ecosystem projects to deliver blockchain introspection and transaction submission services
 \item Integrated logging and alerts for production node and submit services via Grafana and Prometheus
-\item Built ARMv8-A for deployment on a Turing RK1 cluster
+\item Built ARMv8-A application binaries for deployment on a Turing RK1 cluster
 \end{tightemize}
-\sectionsep
 
-\runsubsection{The Growing Company}
-\descript{| Co-Founder \& Embedded Engineer}
-\location{Mar 2019 – 2020 | Waterloo, ON}
-\vspace{2mm}
-\begin{tightemize}
-% \item Co-founded a startup focused on bringing reliable, scalable and efficient agriculture to small island countries. 
-\item Co-founded an agriculture startup focused on reliability and scalability through automation
- \item Designed circuits and drivers which allow connectivity to environment sensors and actuators over I2C to a Raspberry Pi
-\item Designed the software architecture based on composability, to allow rapid testing of different sensor/actuator configurations
-\item Developed an environment control system in Python, which uses sensor data and actuators to maintain consistent agricultural environments
-\item Displayed proof-of-concept by successfully growing a plant without human supervision
-\end{tightemize}
-\sectionsep
+%\runsubsection{The Growing Company}
+%\descript{| Co-Founder \& Embedded Engineer}
+%\location{Mar 2019 – 2020 | Waterloo, ON}
+%\vspace{2mm}
+%\begin{tightemize}
+%% \item Co-founded a startup focused on bringing reliable, scalable and efficient agriculture to small island countries. 
+%\item Co-founded an agriculture startup focused on reliability and scalability through automation
+%% \item Designed circuits and drivers which allow connectivity to environment sensors and actuators over I2C to a Raspberry Pi
+%\item Designed the software architecture based on composability, to allow rapid testing of different sensor/actuator configurations
+%\item Developed an environment control system in Python, which uses sensor data and actuators to maintain consistent agricultural environments
+%\item Displayed proof-of-concept by successfully growing a plant without human supervision
+%\end{tightemize}
+%\sectionsep
 
 % \runsubsection{UrbanShelter}
 % \descript{| Co-Founder \& Software Engineer}
