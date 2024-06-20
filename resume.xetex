@@ -45,7 +45,7 @@
 \newcommand{\formattedlist}[1]{%
     \foreach \item [count=\i] in {#1}{%
 	\ifnum\i=1
-	  \item
+	  \item~
 	\else
 	  {\textbullet}~{\item}~
 	\fi
@@ -110,7 +110,7 @@
 \newcommand{\github}{\href{https://github.com/rezarajan}{GitHub}}
 \newcommand{\linkedin}{\href{https://www.linkedin.com/in/rezarajan/}{LinkedIn}}
 
-\namesection{}{Reza Rajan}{\email{} | \phone{} | \github{} | \linkedin{}}
+%\namesection{}{Reza Rajan}{\email{} | \phone{} | \github{} | \linkedin{}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -155,18 +155,18 @@
 %     COURSEWORK
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Coursework}
-\subsection{Online}
-% Introduction to C++
-CI/CD Pipelines, Container Orchestration, Infrastructure as Code, \\
-Deep Learning, System Integration, A/B Testing\\
-\sectionsep
-
-\subsection{Undergraduate}
-Autonomous Mobile Robotics\\
-Digital Logic \& Control Theory \\
-Kinematics \& Dynamics \\
-\sectionsep
+%\section{Coursework}
+%\subsection{Online}
+%% Introduction to C++
+%CI/CD Pipelines, Container Orchestration, Infrastructure as Code, \\
+%Deep Learning, System Integration, A/B Testing\\
+%\sectionsep
+%
+%\subsection{Undergraduate}
+%Autonomous Mobile Robotics\\
+%Digital Logic \& Control Theory \\
+%Kinematics \& Dynamics \\
+%\sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     SKILLS
@@ -174,8 +174,8 @@ Kinematics \& Dynamics \\
 
 \section{Skills}
 
+% Programming
 \subsection{Programming}
-% Programming Languages
 \descript{Languages}
 \formattedlist{Python, Go, SQL, C++, Rust}
 \sectionsep
@@ -183,6 +183,11 @@ Kinematics \& Dynamics \\
 % Language Libraries and Frameworks
 \descript{Data Frameworks, Libs \& Utils}
 \formattedlist{Airflow, Kafka, PySpark, Pandas, SciPy, Numpy}
+\sectionsep
+
+% DevOps
+\descript{DevOps Methodologies}
+\formattedlist{CI/CD, Container~Orchestration, Infrastructure~as~Code}
 \sectionsep
 
 % Tooling
@@ -193,9 +198,13 @@ Kinematics \& Dynamics \\
 
 \descript{AWS}
 \formattedlist{AWS~Cloudformation, AWS~Iceberg, AWS~Athena, AWS~Redshift, AWS~Step~Functions}
-
-
 \sectionsep
+
+
+\subsection{Communication \& Leadership}
+\formattedlist{Cross-Team~Communication, Asynchronous~Development~(Remote~Teamwork), Project~Management~(JIRA/SmartSheet)}
+\sectionsep
+
 \medskip
 
 
@@ -276,12 +285,26 @@ Kinematics \& Dynamics \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \sectionsep
 \section{Experience}
+
+\runsubsection{Mochi}
+\vspace{2mm}
+\descript{- DeFi/Web3 | Stake Pool Operator}
+\location{Dec 2022 - Present | Remote}
+\vspace{2mm}
+\begin{tightemize}
+\item Provisioned highly avilable infrastructure to run Cardano nodes, using Proxmox, Terraform, Ansible and K3s
+\item Partnered with Cardano ecosystem projects to deliver blockchain introspection and transaction submission services
+\item Integrated logging and alerts for production node and submit services via Grafana and Prometheus
+\item Built ARMv8-A application binaries for deployment on a Turing RK1 cluster
+\end{tightemize}
+\sectionsep
+
 \runsubsection{myKaarma}
-\descript{| Data Engineer}
+\descript{ - Automotive | Data Engineer}
 \location{Jul 2023 – Jan 2024 | Remote, Florida, USA}
 \vspace{3mm}
 \begin{tightemize}
-\item Developed data processing tooling in Python and Java, for the generation big-data, tailored customer reports at a daily, weekly and monthly scale; \textit{improved report generation speeds by up to 70\%}
+\item Developed data processing tooling in Python and Java to generate tailored customer reports on big-data, at daily, weekly and monthly scales; \textit{improved report generation speeds by up to 70\%}
 \item Automated report generation and delivery tasks for customers, using AWS State Machines and Lambda functions, with SLA guarantees
 \item Architected a data lakehouse on AWS based on the Medallion architecture, as a replacement for the legacy self-managed data infrastructure within the organization
 \item Worked with infrastructure and reporting teams to create a multi-phase project plan for the development and deployment of the proposed data lakehouse architecture
@@ -290,7 +313,7 @@ Kinematics \& Dynamics \\
 \sectionsep
 
 \runsubsection{myKaarma}
-\descript{| Product Data Analyst}
+\descript{- Automotive | Product Data Analyst}
 \location{Feb 2022 – Jul 2023 | Remote, Canada}
 \vspace{2mm}
 \begin{tightemize}
@@ -301,30 +324,20 @@ Kinematics \& Dynamics \\
 \end{tightemize}
 \sectionsep
 
-\runsubsection{Mochi}
-\descript{| Stake Pool Operator}
-\location{ Dec 2022 - Present | Remote}
+
+\runsubsection{The Growing Company}
+\descript{- Agriculture Startup | Co-Founder \& Embedded Engineer}
+\location{Mar 2019 – 2020 | Waterloo, ON}
 \vspace{2mm}
 \begin{tightemize}
-\item Provisioned highly avilable infrastructure to run Cardano nodes, using Proxmox, Terraform, Ansible and K3s
-\item Partnered with Cardano ecosystem projects to deliver blockchain introspection and transaction submission services
-\item Integrated logging and alerts for production node and submit services via Grafana and Prometheus
-\item Built ARMv8-A application binaries for deployment on a Turing RK1 cluster
+\item Co-founded a startup focused on bringing reliable, scalable and efficient agriculture to small island countries
+\item Communicated with small farmers in the Caribbean, and the Ministry of Agriculture in Trinidad as part of a research effort to understand agricultural painpoints
+\item Worked alongside a mechnical engineer to design a containerized test environment, for use in developing and prototyping cost-effective sensor/actuators for use in farms
+\item Developed an environment control system in Python, which used sensor data and actuators to maintain set agricultural environments
+%\item Designed circuits and drivers which allow connectivity to environment sensors and actuators over I2C to a Raspberry Pi
+%\item Displayed proof-of-concept of the software by successfully growing a basil plant without any human intervention
 \end{tightemize}
-
-%\runsubsection{The Growing Company}
-%\descript{| Co-Founder \& Embedded Engineer}
-%\location{Mar 2019 – 2020 | Waterloo, ON}
-%\vspace{2mm}
-%\begin{tightemize}
-%% \item Co-founded a startup focused on bringing reliable, scalable and efficient agriculture to small island countries. 
-%\item Co-founded an agriculture startup focused on reliability and scalability through automation
-%% \item Designed circuits and drivers which allow connectivity to environment sensors and actuators over I2C to a Raspberry Pi
-%\item Designed the software architecture based on composability, to allow rapid testing of different sensor/actuator configurations
-%\item Developed an environment control system in Python, which uses sensor data and actuators to maintain consistent agricultural environments
-%\item Displayed proof-of-concept by successfully growing a plant without human supervision
-%\end{tightemize}
-%\sectionsep
+\sectionsep
 
 % \runsubsection{UrbanShelter}
 % \descript{| Co-Founder \& Software Engineer}
