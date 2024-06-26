@@ -289,9 +289,9 @@
 \location{Dec 2022 - Present | Remote}
 \vspace{4mm}
 \begin{tightemize}
-\item Provisioned highly avilable infrastructure to run Cardano nodes, using Proxmox, Terraform, Ansible and K3s
+\item Provisioned highly avilable infrastructure to run Cardano nodes, using Proxmox, Terraform, Ansible and K3s; \textit{reduced prior manual infra provisoning efforts from hours to seconds}
 \item Partnered with Cardano ecosystem projects to deliver blockchain introspection and transaction submission services
-\item Integrated logging and alerts for production node and submit services via Grafana and Prometheus
+\item Deployed monitoring and alerting solutions with Grafana and Prometheus for production environments; \textit{reduced incident response times from hours to minutes}
 \item Built ARMv8-A application binaries for deployment on a K3s cluster
 \end{tightemize}
 \sectionsep
@@ -302,9 +302,9 @@
 \vspace{1mm}
 \begin{tightemize}
 \item Developed big data processing tooling in Python and Java to generate tailored customer reports, at daily, weekly and monthly scales; \textit{improved report generation speeds by up to 70\%}
-\item Automated report generation and delivery tasks for customers, using AWS State Machines and Lambda functions, with SLA guarantees
-\item Architected a data lakehouse on AWS based on the Medallion architecture, to replace the legacy self-managed data infrastructure within the organization
-\item Worked with infrastructure and reporting teams to create a multi-phase project plan for the development and deployment of the proposed data lakehouse architecture
+\item Automated report generation and delivery tasks for customers, using AWS State Machines and Lambda functions, with SLA guarantees; \textit{reduced weekly missed report incidents to zero}
+%\item Architected a data lakehouse on AWS based on the Medallion architecture, to replace the legacy self-managed data infrastructure within the organization
+\item Worked alongside infrastructure and reporting teams on a multi-phase project plan for the development and deployment of a new data lakehouse architecture, to replace the legacy self-managed production data warehouse 
 \item Successfully coordinated a small-scale proof-of-concept of the data lakehouse architecture with the reporting team, which replicated a subset of functions of the production data pipeline; \textit{parallelized report generation processes and reduced operational costs by up to 80\%}
 \end{tightemize}
 \sectionsep
@@ -316,7 +316,7 @@
 \begin{tightemize}
 \item Developed data products for customers, which were utilized to inform logistical and operational decisions on a daily basis; \textit{created new revenue streams from hundreds of business clients}
 \item Introduced Power BI to Product Managers, enabling self-serve analytics across teams; \textit{increased data transparency within the organization}
-\item Worked with reporting and infrastructure teams to develop a proof-of-concept for a real-time data pipeline using Airflow, AWS S3 and AWS Redshift
+\item Conducted a proof-of-concept with the reporting team, for a real-time data pipeline using Airflow, AWS S3 and AWS Redshift
 \item Performed product utilization analysis to highlight product KPI metrics, and identify key areas in which the organization may improve service to customers; \textit{used by product leads in stakeholder meetings}
 \end{tightemize}
 \sectionsep
@@ -329,8 +329,7 @@
 \begin{tightemize}
 \item Co-founded a startup focused on bringing reliable, scalable and efficient agriculture to small island countries
 \item Communicated with small farmers in the Caribbean, and the Ministry of Agriculture in Trinidad as part of a research effort to understand agricultural painpoints
-\item Worked alongside a mechnical engineer to design a containerized farm environment, used to develop environment control software and prototype cost-effective sensor/actuator hardware; \textit{Agriculture-as-Code}
-%\item Developed an environment control system in Python, which used sensor and actuator data to maintain pre-defined agricultural environments; \textit{Agriculture-as-Code}
+\item Collaborated with a mechnical engineer to design a containerized farm environment, facilitating the development of environment control software and of cost-effective sensor/actuator hardware; \textit{decreased product iteration cycles from weeks to days}
 %\item Designed circuits and drivers which allow connectivity to environment sensors and actuators over I2C to a Raspberry Pi
 %\item Displayed proof-of-concept of the software by successfully growing a basil plant without any human intervention
 \end{tightemize}
