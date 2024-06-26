@@ -110,7 +110,7 @@
 \newcommand{\github}{\href{https://github.com/rezarajan}{GitHub}}
 \newcommand{\linkedin}{\href{https://www.linkedin.com/in/rezarajan/}{LinkedIn}}
 
-%\namesection{}{Reza Rajan}{\email{} | \phone{} | \github{} | \linkedin{}}
+\namesection{}{Reza Rajan}{\email{} | \phone{} | \github{} | \linkedin{}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -186,14 +186,12 @@
 \sectionsep
 
 % DevOps
-\descript{DevOps Methodologies}
-\formattedlist{CI/CD, Container~Orchestration, Infrastructure~as~Code}
+\descript{Tooling}
+\formattedlist{Ansible, Terraform, Docker, Kubernetes, Nix, Traefik, Git}
 \sectionsep
 
-% Tooling
-\subsection{Tooling}
-\descript{Deployment Tools}
-\formattedlist{Ansible, Terraform, Docker, Kubernetes, Nix, Traefik}
+\descript{DevOps Methodologies}
+\formattedlist{CI/CD, Container~Orchestration, Infrastructure~as~Code}
 \sectionsep
 
 \descript{AWS}
@@ -202,7 +200,7 @@
 
 
 \subsection{Communication \& Leadership}
-\formattedlist{Cross-Team~Communication, Asynchronous~Development~(Remote~Teamwork), Project~Management~(JIRA/SmartSheet)}
+\formattedlist{Cross-Team~Communication, Remote/Asynchronous~Development, Project~Management~(JIRA/SmartSheet)}
 \sectionsep
 
 \medskip
@@ -287,37 +285,36 @@
 \section{Experience}
 
 \runsubsection{Mochi}
-\vspace{2mm}
 \descript{- DeFi/Web3 | Stake Pool Operator}
 \location{Dec 2022 - Present | Remote}
-\vspace{2mm}
+\vspace{4mm}
 \begin{tightemize}
 \item Provisioned highly avilable infrastructure to run Cardano nodes, using Proxmox, Terraform, Ansible and K3s
 \item Partnered with Cardano ecosystem projects to deliver blockchain introspection and transaction submission services
 \item Integrated logging and alerts for production node and submit services via Grafana and Prometheus
-\item Built ARMv8-A application binaries for deployment on a Turing RK1 cluster
+\item Built ARMv8-A application binaries for deployment on a K3s cluster
 \end{tightemize}
 \sectionsep
 
 \runsubsection{myKaarma}
 \descript{ - Automotive | Data Engineer}
 \location{Jul 2023 – Jan 2024 | Remote, Florida, USA}
-\vspace{3mm}
+\vspace{1mm}
 \begin{tightemize}
-\item Developed data processing tooling in Python and Java to generate tailored customer reports on big-data, at daily, weekly and monthly scales; \textit{improved report generation speeds by up to 70\%}
+\item Developed big data processing tooling in Python and Java to generate tailored customer reports, at daily, weekly and monthly scales; \textit{improved report generation speeds by up to 70\%}
 \item Automated report generation and delivery tasks for customers, using AWS State Machines and Lambda functions, with SLA guarantees
-\item Architected a data lakehouse on AWS based on the Medallion architecture, as a replacement for the legacy self-managed data infrastructure within the organization
+\item Architected a data lakehouse on AWS based on the Medallion architecture, to replace the legacy self-managed data infrastructure within the organization
 \item Worked with infrastructure and reporting teams to create a multi-phase project plan for the development and deployment of the proposed data lakehouse architecture
-\item Successfully coordinated a small-scale proof-of-concept of the data lakehouse architecture with the reporting team, which replicated a limited subset of functions of the production data pipeline; \textit{parallelized report generation processes and reduced operational costs by up to 80\%}
+\item Successfully coordinated a small-scale proof-of-concept of the data lakehouse architecture with the reporting team, which replicated a subset of functions of the production data pipeline; \textit{parallelized report generation processes and reduced operational costs by up to 80\%}
 \end{tightemize}
 \sectionsep
 
 \runsubsection{myKaarma}
 \descript{- Automotive | Product Data Analyst}
 \location{Feb 2022 – Jul 2023 | Remote, Canada}
-\vspace{2mm}
+\vspace{1mm}
 \begin{tightemize}
-\item Developed data products for customers, which were utilized to inform logistical and operational decisions on a daily basis; \textit{introduced new revenue streams from hundreds of business clients}
+\item Developed data products for customers, which were utilized to inform logistical and operational decisions on a daily basis; \textit{created new revenue streams from hundreds of business clients}
 \item Introduced Power BI to Product Managers, enabling self-serve analytics across teams; \textit{increased data transparency within the organization}
 \item Worked with reporting and infrastructure teams to develop a proof-of-concept for a real-time data pipeline using Airflow, AWS S3 and AWS Redshift
 \item Performed product utilization analysis to highlight product KPI metrics, and identify key areas in which the organization may improve service to customers; \textit{used by product leads in stakeholder meetings}
@@ -326,14 +323,14 @@
 
 
 \runsubsection{The Growing Company}
-\descript{- Agriculture Startup | Co-Founder \& Embedded Engineer}
+\descript{- Agriculture Startup | Co-Founder}
 \location{Mar 2019 – 2020 | Waterloo, ON}
-\vspace{2mm}
+\vspace{1mm}
 \begin{tightemize}
 \item Co-founded a startup focused on bringing reliable, scalable and efficient agriculture to small island countries
 \item Communicated with small farmers in the Caribbean, and the Ministry of Agriculture in Trinidad as part of a research effort to understand agricultural painpoints
-\item Worked alongside a mechnical engineer to design a containerized test environment, for use in developing and prototyping cost-effective sensor/actuators for use in farms
-\item Developed an environment control system in Python, which used sensor data and actuators to maintain set agricultural environments
+\item Worked alongside a mechnical engineer to design a containerized farm environment, used to develop environment control software and prototype cost-effective sensor/actuator hardware; \textit{Agriculture-as-Code}
+%\item Developed an environment control system in Python, which used sensor and actuator data to maintain pre-defined agricultural environments; \textit{Agriculture-as-Code}
 %\item Designed circuits and drivers which allow connectivity to environment sensors and actuators over I2C to a Raspberry Pi
 %\item Displayed proof-of-concept of the software by successfully growing a basil plant without any human intervention
 \end{tightemize}

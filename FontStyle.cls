@@ -1,5 +1,5 @@
 % Intro Options
-\ProvidesClass{aman-resume-openfont}[2014/04/30 CV class]
+\ProvidesClass{resume-openfont}[2014/04/30 CV class]
 \NeedsTeXFormat{LaTeX2e}
 \DeclareOption{print}{\def\@cv@print{}}
 \DeclareOption*{%
@@ -46,7 +46,7 @@ Last Updated on
 \newcommand{\namesection}[3]{\color{black}
 	\centering{
 		\sffamily
-		\fontspec[Path = fonts/lato/]{Lato-Hai}\fontsize{40pt}{10cm}\selectfont #1 
+		\fontspec[Path = fonts/lato/]{Lato-Hai}\fontsize{32pt}{1em}\selectfont #1 
 		\fontspec[Path = fonts/lato/]{Lato-Lig}\selectfont #2
 	} \\
 	\vspace{5pt}
@@ -65,14 +65,35 @@ Last Updated on
 \fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase}{}{0em}{}
 \titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
 \titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
-\newcommand{\runsubsection}[1]{\color{subheadings}
-\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase {#1} \normalfont}
+\newcommand{\runsubsection}[1]{%
+    \color{subheadings}%
+    \fontspec[Path = fonts/lato/]{Lato-Bol}%
+    \fontsize{12pt}{12pt}%
+    \selectfont\bfseries\uppercase {#1} \normalfont%
+}
 
 % Descriptors command
-\newcommand{\descript}[1]{\color{subheadings}\raggedright\scshape\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
+\newcommand{\descript}[1]{%
+	\color{subheadings}%
+	\raggedright%
+	\scshape%
+	\fontspec[Path = fonts/raleway/]{Raleway-Medium}%
+	\fontsize{11pt}{13pt}%
+	\selectfont {#1 \\} %
+	\normalfont%
+}
 
 % Location command
-\newcommand{\location}[1]{\color{headings}\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont {#1\\} \normalfont}
+\newcommand{\location}[1]{%
+    \noindent\color{headings}%
+    \raggedright%
+    \fontspec[Path = fonts/raleway/]{Raleway-Medium}%
+    \fontsize{10pt}{12pt}%
+    \selectfont%
+    #1%
+    \par%
+    \normalfont%
+}
 
 % Section seperators command
 \newcommand{\sectionsep}[0]{\vspace{8pt}}
