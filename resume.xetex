@@ -289,7 +289,7 @@
 \location{Dec 2022 - Present | Remote}
 \vspace{4mm}
 \begin{tightemize}
-\item Provisioned highly available infrastructure to run Cardano nodes, using Proxmox, Terraform, Ansible, and K3s, \textit{reducing infrastructure provisoning efforts from hours to seconds}
+\item Provisioned highly available infrastructure to run Cardano nodes, using Proxmox, Terraform, Ansible, and K3s, \textit{reducing infrastructure provisioning efforts from hours to seconds}
 \item Partnered with Cardano ecosystem projects to deliver blockchain introspection and transaction submission services
 \item Deployed monitoring and alerting solutions with Grafana and Prometheus for production environments, \textit{reducing incident response times from hours to minutes}
 \item Built ARMv8-A application binaries for deployment on a K3s cluster
@@ -302,9 +302,9 @@
 \vspace{1mm}
 \begin{tightemize}
 \item Developed big data processing tooling in Python and Java to generate tailored customer reports, at daily, weekly and monthly scales; \textit{improved report generation speeds by up to 70\%}
-\item Automated customer report generation and delivery using AWS~State~Machines and Lambda functions, ensuring SLA guarantees and reducing weekly missed report incidents by 99\%.
+\item Automated customer report generation and delivery using AWS State Machines and Lambda functions, ensuring SLA guarantees and \textit{reducing weekly missed report incidents by 99\%}
 \item Collaborated with cross-functional teams to design and deploy a data lakehouse architecture on AWS, aimed at replacing the legacy production data warehouse and \textit{reducing query times on large datasets by at least 50\%}
-\item Collaborated on a proof-of-concept for the data lakehouse architecture with the reporting team, successfully replicating key production data pipeline functions and \textit{achieving 80\% operational cost savings} through parallelized report generation
+\item Collaborated on a proof-of-concept for the data lakehouse architecture with the reporting team, successfully replicating key production data pipeline functions and \textit{achieving up to 80\% operational cost savings} through parallelized report generation
 \end{tightemize}
 \sectionsep
 
@@ -313,10 +313,10 @@
 \location{Feb 2022 – Jul 2023 | Remote, Canada}
 \vspace{1mm}
 \begin{tightemize}
-\item Developed data products for customers which were utilized to inform logistical and operational decisions on a daily basis; \textit{created new revenue streams from hundreds of business clients}
-\item Introduced Power BI to Product Managers, enabling self-serve analytics across teams; \textit{increased data transparency within the organization}
+\item Developed data products for customers, providing critical insights to inform their daily logistical and operational decisions; \textit{used by over 500 business clients}
+\item Integrated Power BI with existing data sources, and introduced it to Product Managers for self-serve analytics; \textit{reduced data team requests by 10\%}
 \item Conducted a proof-of-concept with the reporting team, for a real-time data pipeline using Airflow, AWS S3, and AWS Redshift
-\item Performed product utilization analysis to highlight product KPI metrics, and identify key areas for service improvement; \textit{used by product leads in quarterly stakeholder meetings}
+\item Performed product utilization analysis to highlight product KPI metrics, and identify key areas for service improvement; \textit{used by product leads at quarterly stakeholder meetings and at two NADA expos}
 \end{tightemize}
 \sectionsep
 
@@ -328,7 +328,7 @@
 \begin{tightemize}
 \item Co-founded a startup focused on bringing reliable, scalable and efficient agriculture to small island countries
 \item Conducted hands-on research at 5 small-scale farms in the Caribbean, engaging with Ministry officials to inform solutions for regional agricultural challenges
-\item Collaborated with a mechnical engineer to design a containerized farm, enabling rapid development of environment control software and sensor/actuator hardware, \textit{resulting in a significant reduction in product iteration cycles from weeks to days}
+\item Collaborated with a Mechanical Engineer to design a modular, containerized farm, reducing prototyping and testing time of environment control software and sensor/actuator hardware \textit{from 2 weeks to 3 days}
 \end{tightemize}
 \sectionsep
 
