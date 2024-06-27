@@ -54,11 +54,9 @@
 
 % A list with different (unindented) formatting compared to `itemize`
 \newcommand{\straightlist}[1]{%
-    \begin{minipage}{\linewidth}
     \foreach \item [count=\i] in {#1}{%
-    	\textbullet~\item
-    }
-    \end{minipage}%
+    	\textbullet~\item\\
+    }%
 }
 
 % A counter to check for the last item in the list
@@ -191,16 +189,16 @@
 \sectionsep
 
 \descript{DevOps Methodologies}
-\formattedlist{CI/CD, Container~Orchestration, Infrastructure~as~Code}
+\formattedlist{Container~Orchestration, Infrastructure~as~Code, CI/CD}
 \sectionsep
 
 \descript{AWS}
-\formattedlist{AWS~Cloudformation, AWS~Iceberg, AWS~Athena, AWS~Redshift, AWS~Step~Functions}
+\straightlist{AWS Cloudformation, AWS Step Functions, AWS Iceberg, AWS Athena, AWS Redshift}
 \sectionsep
 
 
-\subsection{Communication \& Leadership}
-\formattedlist{Cross-Team~Communication, Remote/Asynchronous~Development, Project~Management~(JIRA/SmartSheet)}
+\subsection{Teamwork}
+\straightlist{Cross-Team~Communication, Remote~Development, Project Management, JIRA/SmartSheet}
 \sectionsep
 
 \medskip
@@ -323,7 +321,7 @@
 
 \runsubsection{The Growing Company}
 \descript{- Agriculture Startup | Co-Founder}
-\location{Mar 2019 – 2020 | Waterloo, ON}
+\location{Mar 2019 – Mar 2020 | Waterloo, ON}
 \vspace{1mm}
 \begin{tightemize}
 \item Co-founded a startup focused on bringing reliable, scalable and efficient agriculture to small island countries
