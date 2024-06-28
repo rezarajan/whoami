@@ -30,6 +30,7 @@
 \setmainfont[Color=primary, Path = fonts/lato/, ItalicFont = Lato-LigIta]{Lato-Lig}
 \setsansfont[Scale=MatchLowercase,Mapping=tex-text, Path = fonts/raleway/]{Raleway-ExtraLight}
 \newcommand{\custombold}[1]{\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Reg}\selectfont #1 \normalfont}
+\newcommand{\nerdfont}[1]{\fontspec[Path=fonts/firacode/]{FiraCodeNerdFont-Regular}\selectfont #1 \kern-0.15em \normalfont}
 
 % Date command
 \setlength{\TPHorizModule}{1mm}
@@ -100,4 +101,6 @@ Last Updated on
 
 % Bullet Lists with fewer gaps command
 \newenvironment{tightemize}{\vspace{-\topsep}\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt}{\end{itemize}\vspace{-\topsep}}
+
+
 

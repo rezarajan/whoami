@@ -11,6 +11,7 @@ It's important to note that the resume is generated using the XeTeX engine. The 
 - Fonts
      - [Raleway](https://fonts.google.com/specimen/Raleway)
      - [Lato](https://fonts.google.com/specimen/Lato)
+     - [FiraCode Nerd Font](https://www.nerdfonts.com/font-downloads)
 
 ### TexLive
 <!-- TODO: Include setup guides for other OSes -->

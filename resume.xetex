@@ -103,10 +103,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Define variables for links
-\newcommand{\email}{\href{mailto:rezarajan@gmail.com}{rezarajan@gmail.com}}
-\newcommand{\phone}{\href{tel:+14076490447}{1.407.649.0447}}
-\newcommand{\github}{\href{https://github.com/rezarajan}{GitHub}}
-\newcommand{\linkedin}{\href{https://www.linkedin.com/in/rezarajan/}{LinkedIn}}
+\newcommand{\email}{\href{mailto:rezarajan@gmail.com}{{\nerdfont󰇮}rezarajan@gmail.com}}
+\newcommand{\phone}{\href{tel:+14076490447}{{\nerdfont}1.407.649.0447}}
+\newcommand{\github}{\href{https://github.com/rezarajan}{{\nerdfont󰊤}rezarajan}}
+\newcommand{\linkedin}{\href{https://www.linkedin.com/in/rezarajan/}{{\nerdfont}rezarajan}}
 
 \namesection{}{Reza Rajan}{\email{} | \phone{} | \github{} | \linkedin{}}
 
