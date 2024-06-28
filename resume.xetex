@@ -125,27 +125,22 @@
 \section{Education} 
 \subsection{Data Engineer}
 \descript{Udacity Nanodegree}
-\location{Grad. 2024 | Courseware}
-\sectionsep
-
-\subsection{Cloud DevOps Engineer}
-\descript{Udacity Nanodegree}
-\location{Grad. 2022 | Courseware}
+\location{Jan 2024 - Apr 2024}
 \sectionsep
 
 \subsection{Self-Driving Car Engineer}
 \descript{Udacity Nanodegree}
-\location{Grad. 2021 | Courseware}
+\location{Dec 2020 - Jul 2021}
 \sectionsep
 
 \subsection{Data Analyst}
 \descript{Udacity Nanodegree}
-\location{Grad. 2020 | Courseware}
+\location{Jun 2020 - Aug 2020}
 \sectionsep
 
 \subsection{University of Waterloo}
 \descript{BASc Mechanical Engineering}
-\location{Grad. 2020 | Waterloo, ON}
+\location{Sep 2015 - Apr 2020}
 \sectionsep
 
 
@@ -311,7 +306,7 @@
 \location{Feb 2022 – Jul 2023 | Remote, Canada}
 \vspace{1mm}
 \begin{tightemize}
-\item Developed data products for customers, providing critical insights to inform their daily logistical and operational decisions; \textit{used by over 500 business clients}
+\item Developed data products for customers, providing critical insights to inform daily logistical and operational decisions; \textit{used by over 500 business clients}
 \item Integrated Power BI with existing data sources, and introduced it to Product Managers for self-serve analytics; \textit{reduced data team requests by 10\%}
 \item Conducted a proof-of-concept with the reporting team, for a real-time data pipeline using Airflow, AWS S3, and AWS Redshift
 \item Performed product utilization analysis to highlight product KPI metrics, and identify key areas for service improvement; \textit{used by product leads at quarterly stakeholder meetings and at two NADA expos}
