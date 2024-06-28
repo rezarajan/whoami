@@ -185,14 +185,14 @@
 
 % DevOps
 \descript{Tooling}
-\formattedlist{Ansible, Terraform, Docker, Kubernetes, Nix, Traefik, Git}
+\formattedlist{Git, Nix, Docker, K3S, Ansible, Terraform}
 \sectionsep
 
 \descript{DevOps Methodologies}
 \formattedlist{Container~Orchestration, Infrastructure~as~Code, CI/CD}
 \sectionsep
 
-\descript{AWS}
+\descript{Cloud}
 \straightlist{AWS Cloudformation, AWS Step Functions, AWS Iceberg, AWS Athena, AWS Redshift}
 \sectionsep
 
@@ -282,8 +282,8 @@
 \sectionsep
 \section{Experience}
 
-\runsubsection{Mochi}
-\descript{- DeFi/Web3 | Stake Pool Operator}
+\runsubsection{Co-Founder}
+\descript{- Mochi - DeFi/Web3}
 \location{Dec 2022 - Present | Remote}
 \vspace{4mm}
 \begin{tightemize}
@@ -294,8 +294,8 @@
 \end{tightemize}
 \sectionsep
 
-\runsubsection{myKaarma}
-\descript{ - Automotive | Data Engineer}
+\runsubsection{Data Engineer}
+\descript{- myKaarma - Automotive PaaS}
 \location{Jul 2023 – Jan 2024 | Remote, Florida, USA}
 \vspace{1mm}
 \begin{tightemize}
@@ -306,8 +306,8 @@
 \end{tightemize}
 \sectionsep
 
-\runsubsection{myKaarma}
-\descript{- Automotive | Product Data Analyst}
+\runsubsection{Product Data Analyst}
+\descript{- myKaarma - Automotive PaaS}
 \location{Feb 2022 – Jul 2023 | Remote, Canada}
 \vspace{1mm}
 \begin{tightemize}
@@ -319,9 +319,9 @@
 \sectionsep
 
 
-\runsubsection{The Growing Company}
-\descript{- Agriculture Startup | Co-Founder}
-\location{Mar 2019 – Mar 2020 | Waterloo, ON}
+\runsubsection{Co-Founder}
+\descript{- The Growing Company - Agriculture Startup}
+\location{Mar 2019 – Jul 2021 | Waterloo, ON}
 \vspace{1mm}
 \begin{tightemize}
 \item Co-founded a startup focused on bringing reliable, scalable and efficient agriculture to small island countries
@@ -330,8 +330,8 @@
 \end{tightemize}
 \sectionsep
 
-% \runsubsection{UrbanShelter}
-% \descript{| Co-Founder \& Software Engineer}
+% \runsubsection{Co-Founder \& Software Engineer}
+% \descript{- UrbanShelter - Real Estate PaaS}
 % \location{Jan 2018 – Jan 2019 | Waterloo, ON}
 % \begin{tightemize}
 % \item Co-founded a real-estate software startup. 
@@ -341,15 +341,15 @@
 % \end{tightemize}
 % \sectionsep
 
-% \runsubsection{BlueFire Technologies}
-% \descript{| Software Engineer}
+% \runsubsection{Software Engineer}
+% \descript{- BlueFire Technologies}
 % \location{May 2017 – Sept 2017 | Waterloo, ON}
 % \begin{tightemize}
 % \item Developed both front and back-end systems for a delivery service \item Performed server response time optimization using Simplex method \end{tightemize}
 % \sectionsep
 
-% \runsubsection{VOLTEC Engineering}
-% \descript{| Trainee Engineer}
+% \runsubsection{Trainee Engineer}
+% \descript{- VOLTEC Engineering}
 % \location{Jan 2016 – April 2016 | Trinidad \& Tobago, W.I.}
 % \begin{tightemize}
 % \item Re-modeled the company's server architecture to lower maintenance costs.
