@@ -295,7 +295,7 @@
 \vspace{1mm}
 \begin{tightemize}
 \item Developed big data processing tooling in Python and Java to generate tailored customer reports, at daily, weekly and monthly scales; \textit{improved report generation speeds by up to 70\%}
-\item Automated customer report generation and delivery using AWS State Machines and Lambda functions, ensuring SLA guarantees and \textit{reducing weekly missed report incidents by 99\%}
+\item Automated customer report generation and delivery using AWS State Machines and Lambda functions, with SLA guarantees; \textit{reduced late report delivery incidents by 99\%}
 \item Collaborated with cross-functional teams to design and deploy a data lakehouse architecture on AWS, aimed at replacing the legacy production data warehouse and \textit{reducing query times on large datasets by at least 50\%}
 \item Collaborated on a proof-of-concept for the data lakehouse architecture with the reporting team, successfully replicating key production data pipeline functions and \textit{achieving up to 80\% operational cost savings} through parallelized report generation
 \end{tightemize}
