@@ -17,6 +17,60 @@
 \usepackage[UKenglish]{babel}
 \usepackage[UKenglish]{isodate}
 \usepackage{fontspec,xltxtra,xunicode}
+\usepackage{pgffor}
+\usepackage{tikz}
+\usetikzlibrary{shapes.misc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     CUSTOM FUNCTIONS
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Define a command that takes a list of arguments and formats them with \textbullet separator, on a single line
+\newcommand{\formattedlist}[1]{%
+    \foreach \item [count=\i] in {#1}{%
+	\ifnum\i=1
+	  \item~
+	\else
+	  {\textbullet}~{\item}~
+	\fi
+    }%
+}
+
+% A list with different (unindented) formatting compared to `itemize`
+\newcommand{\straightlist}[1]{%
+    \foreach \item [count=\i] in {#1}{%
+    	\textbullet~\item\\
+    }%
+}
+% A list with a formatted box (tags)
+\newcommand{\boxedlist}[1]{%
+    \vspace{3pt}
+    \foreach \item in {#1}{%
+        \boxeditem{\item}
+    }%
+}
+% A counter to check for the last item in the list
+%\newcounter{listLength}
+%\newcommand{\countlistlength}[1]{%
+  %\setcounter{listLength}{0}
+  %\foreach \item in {#1} {%
+    %\stepcounter{listLength}
+  %}
+%}
+% See example usage below:
+%\newcommand{\straightlist}[1]{%
+    %\begin{minipage}{\linewidth}
+    %\countlistlength{#1} % Count the list length into the listLength counter
+    %\def\listLen{\value{listLength}} % Create the value listLen based on listLength
+    %\foreach \item [count=\i] in {#1}{%
+    	%\ifnum\i<\listLen % Compute some logic against the value of listLen
+		%\\%Do something
+	%\fi
+    %}
+    %\end{minipage}%
+%}
 
 % Color definitions
 \definecolor{date}{HTML}{666666} 
@@ -24,6 +78,7 @@
 \definecolor{headings}{HTML}{6A6A6A}
 \definecolor{subheadings}{HTML}{333333}
 \definecolor{mygray}{gray}{0.9}
+\definecolor{tagbg}{HTML}{5A5A5A} % New fill color for the box
 
 % Set main fonts
 \defaultfontfeatures{Mapping=tex-text}
@@ -102,5 +157,8 @@ Last Updated on
 % Bullet Lists with fewer gaps command
 \newenvironment{tightemize}{\vspace{-\topsep}\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt}{\end{itemize}\vspace{-\topsep}}
 
-
+% Formatted Boxes (tags) command
+\newcommand{\boxeditem}[1]{%
+  \tikz[baseline=(X.base)] \node[rectangle, rounded corners, inner sep=4pt, fill=tagbg, text depth=2pt] (X) {\custombold{\textcolor{white}{#1}}};%
+}
 

@@ -32,54 +32,6 @@
 
 \documentclass[]{FontStyle}
 
-% Include packages
-\usepackage{pgffor}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%     CUSTOM FUNCTIONS
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Define a command that takes a list of arguments and formats them with \textbullet separator, on a single line
-\newcommand{\formattedlist}[1]{%
-    \foreach \item [count=\i] in {#1}{%
-	\ifnum\i=1
-	  \item~
-	\else
-	  {\textbullet}~{\item}~
-	\fi
-    }%
-}
-
-% A list with different (unindented) formatting compared to `itemize`
-\newcommand{\straightlist}[1]{%
-    \foreach \item [count=\i] in {#1}{%
-    	\textbullet~\item\\
-    }%
-}
-
-% A counter to check for the last item in the list
-%\newcounter{listLength}
-%\newcommand{\countlistlength}[1]{%
-  %\setcounter{listLength}{0}
-  %\foreach \item in {#1} {%
-    %\stepcounter{listLength}
-  %}
-%}
-% See example usage below:
-%\newcommand{\straightlist}[1]{%
-    %\begin{minipage}{\linewidth}
-    %\countlistlength{#1} % Count the list length into the listLength counter
-    %\def\listLen{\value{listLength}} % Create the value listLen based on listLength
-    %\foreach \item [count=\i] in {#1}{%
-    	%\ifnum\i<\listLen % Compute some logic against the value of listLen
-		%\\%Do something
-	%\fi
-    %}
-    %\end{minipage}%
-%}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %     BEGIN DOCUMENT
@@ -170,24 +122,24 @@
 % Programming
 \subsection{Programming}
 \descript{Languages}
-\formattedlist{Python, Go, SQL, C++, Rust}
+\boxedlist{Python, Go, SQL, C++, Rust}
 \sectionsep
 
 % Language Libraries and Frameworks
 \descript{Data Frameworks, Libs \& Utils}
-\formattedlist{Airflow, Kafka, PySpark, Pandas, SciPy, Numpy}
+\boxedlist{Airflow, Kafka, PySpark, Pandas, SciPy, Numpy}
 \sectionsep
 
 % DevOps
 \descript{Tooling}
-\formattedlist{Git, Nix, Docker, K3S, Ansible, Terraform}
+\boxedlist{Git, Nix, Docker, K3S, Ansible, Terraform}
 \sectionsep
 
 \descript{DevOps Methodologies}
-\formattedlist{Container~Orchestration, Infrastructure~as~Code, CI/CD}
+\boxedlist{CI/CD, Container~Orchestration, Infrastructure~as~Code}
 \sectionsep
 
-\descript{Cloud}
+\subsection{Cloud}
 \straightlist{AWS Cloudformation, AWS Step Functions, AWS Iceberg, AWS Athena, AWS Redshift}
 \sectionsep
 
@@ -275,6 +227,7 @@
 %     EXPERIENCE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \sectionsep
+\vspace{-0.5mm}
 \section{Experience}
 
 \runsubsection{Co-Founder}
