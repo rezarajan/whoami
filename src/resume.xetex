@@ -1,0 +1,355 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Reza - One Page Two Column Resume
+% LaTeX Template
+% Version 1.1 (30/4/2014)
+%
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{FontStyle}
+
+% Include packages
+\usepackage{pgffor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     CUSTOM FUNCTIONS
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Define a command that takes a list of arguments and formats them with \textbullet separator, on a single line
+\newcommand{\formattedlist}[1]{%
+    \foreach \item [count=\i] in {#1}{%
+	\ifnum\i=1
+	  \item~
+	\else
+	  {\textbullet}~{\item}~
+	\fi
+    }%
+}
+
+% A list with different (unindented) formatting compared to `itemize`
+\newcommand{\straightlist}[1]{%
+    \foreach \item [count=\i] in {#1}{%
+    	\textbullet~\item\\
+    }%
+}
+
+% A counter to check for the last item in the list
+%\newcounter{listLength}
+%\newcommand{\countlistlength}[1]{%
+  %\setcounter{listLength}{0}
+  %\foreach \item in {#1} {%
+    %\stepcounter{listLength}
+  %}
+%}
+% See example usage below:
+%\newcommand{\straightlist}[1]{%
+    %\begin{minipage}{\linewidth}
+    %\countlistlength{#1} % Count the list length into the listLength counter
+    %\def\listLen{\value{listLength}} % Create the value listLen based on listLength
+    %\foreach \item [count=\i] in {#1}{%
+    	%\ifnum\i<\listLen % Compute some logic against the value of listLen
+		%\\%Do something
+	%\fi
+    %}
+    %\end{minipage}%
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     BEGIN DOCUMENT
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\lastupdated
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Define variables for links
+\newcommand{\email}{\href{mailto:rezarajan@gmail.com}{{\nerdfont󰇮}rezarajan@gmail.com}}
+\newcommand{\phone}{\href{tel:+14076490447}{{\nerdfont}1.407.649.0447}}
+\newcommand{\github}{\href{https://github.com/rezarajan}{{\nerdfont󰊤}rezarajan}}
+\newcommand{\linkedin}{\href{https://www.linkedin.com/in/rezarajan/}{{\nerdfont}rezarajan}}
+
+\namesection{}{Reza Rajan}{\email{} | \phone{} | \github{} | \linkedin{}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.33\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\sectionsep
+\section{Education} 
+\subsection{Data Engineer}
+\descript{Udacity Nanodegree}
+\location{Jan 2024 - Apr 2024}
+\sectionsep
+
+\subsection{Self-Driving Car Engineer}
+\descript{Udacity Nanodegree}
+\location{Dec 2020 - Jul 2021}
+\sectionsep
+
+\subsection{Data Analyst}
+\descript{Udacity Nanodegree}
+\location{Jun 2020 - Aug 2020}
+\sectionsep
+
+\subsection{University of Waterloo}
+\descript{BASc Mechanical Engineering}
+\location{Sep 2015 - Apr 2020}
+\sectionsep
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     COURSEWORK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section{Coursework}
+%\subsection{Online}
+%% Introduction to C++
+%CI/CD Pipelines, Container Orchestration, Infrastructure as Code, \\
+%Deep Learning, System Integration, A/B Testing\\
+%\sectionsep
+%
+%\subsection{Undergraduate}
+%Autonomous Mobile Robotics\\
+%Digital Logic \& Control Theory \\
+%Kinematics \& Dynamics \\
+%\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Skills}
+
+% Programming
+\subsection{Programming}
+\descript{Languages}
+\formattedlist{Python, Go, SQL, C++, Rust}
+\sectionsep
+
+% Language Libraries and Frameworks
+\descript{Data Frameworks, Libs \& Utils}
+\formattedlist{Airflow, Kafka, PySpark, Pandas, SciPy, Numpy}
+\sectionsep
+
+% DevOps
+\descript{Tooling}
+\formattedlist{Git, Nix, Docker, K3S, Ansible, Terraform}
+\sectionsep
+
+\descript{DevOps Methodologies}
+\formattedlist{Container~Orchestration, Infrastructure~as~Code, CI/CD}
+\sectionsep
+
+\descript{Cloud}
+\straightlist{AWS Cloudformation, AWS Step Functions, AWS Iceberg, AWS Athena, AWS Redshift}
+\sectionsep
+
+
+\subsection{Teamwork}
+\straightlist{Cross-Team~Communication, Remote~Development, Project Management, JIRA/SmartSheet}
+\sectionsep
+
+\medskip
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.66\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PROJECTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\vspace{3mm}
+%\section{Projects}
+%\runsubsection{HomeLab}
+%\descript{| Personal}
+%Two homelab environments are created by:
+%\vspace{3mm}
+%\begin{tightemize}
+%\item Installing Proxmox on a desktop PC, and Intel NUC
+%\item Using Ansible to configure VMs, and Portainer as a container management system
+%% \item Virtualizing pfSense as the router, and PiHole as a DNS server
+%\end{tightemize}
+%\sectionsep
+
+% \runsubsection{High-Availability Cloud Architecture}
+% \descript{| Udacity}
+% AWS is used to deploy a high-availability web-app by:
+% \vspace{3mm}
+% \begin{tightemize}
+% \item Designing the cloud architecture, including a load balancer, two interconnected public and private subnets, and an auto-scaling group of machines
+% \item Using AWS CloudFormation to configure the architecture in code
+% \item Deploying the architecture in two stacks using AWS CLI
+% \end{tightemize}
+% \sectionsep
+
+% \runsubsection{Self-Driving Car Capstone}
+% \descript{| Udacity}
+% A basic self-driving car system is built and tested in a simulator by:
+% \vspace{1mm}
+% \begin{tightemize}
+% \item Generating valid trajectories for a vehicle to follow, obeying speed limits, acceleration and jerk constraints and considering obstacles
+% \item Building and tuning PID and yaw control systems for throttle, braking and steering
+% \item Training and performance evaluation of single-shot detectors in TensorFlow (\custombold{SSD MobileNet and Faster R-CNN}), to detect and classify traffic lights
+% \item Using ROS to integrate all systems to drive the car
+% \end{tightemize}
+% \sectionsep
+
+% \runsubsection{A/B Testing}
+% \descript{| Udacity}
+% An A/B test is performed to analyze website user conversion data by:
+% \vspace{1mm}
+% \begin{tightemize}
+% \item Wrangling and cleaning data using Pandas
+% \item Performing exploratory data analysis between the control and treatment groups of users
+% \item Hypothesis testing user conversion rates
+% \end{tightemize}
+% \sectionsep
+
+%\runsubsection{Cardano Stake Pool}
+%\descript{| Personal}
+%A stake pool is created on the Cardano mainnet network by:
+%\vspace{2mm}
+%\begin{tightemize}
+%\item Containerizing program binaries
+%\item Provisioning infrastructure on DigitalOcean and Proxmox
+%\item Automating deployments using Docker Compose and Kubernetes
+%\item Bootstrapping funding using DeFi products such as Liquidity Bonds
+%\end{tightemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\sectionsep
+\section{Experience}
+
+\runsubsection{Co-Founder}
+\descript{- Mochi - DeFi/Web3}
+\location{Dec 2022 - Present | Remote}
+\vspace{4mm}
+\begin{tightemize}
+\item Provisioned highly available infrastructure to run Cardano nodes, using Proxmox, Terraform, Ansible, and K3s, \textit{reducing infrastructure provisioning efforts from hours to seconds}
+\item Partnered with Cardano ecosystem projects to deliver blockchain introspection and transaction submission services
+\item Deployed monitoring and alerting solutions with Grafana and Prometheus for production environments, \textit{reducing incident response times from hours to minutes}
+\item Built ARMv8-A application binaries for deployment on a K3s cluster
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Data Engineer}
+\descript{- myKaarma - Automotive PaaS}
+\location{Jul 2023 – Jan 2024 | Remote, Florida, USA}
+\vspace{1mm}
+\begin{tightemize}
+\item Developed big data processing tooling in Python and Java to generate tailored customer reports, at daily, weekly and monthly scales; \textit{improved report generation speeds by up to 70\%}
+\item Automated customer report generation and delivery using AWS State Machines and Lambda functions, with SLA guarantees; \textit{reduced late report delivery incidents by 99\%}
+\item Collaborated with cross-functional teams to design and deploy a data lakehouse architecture on AWS, aimed at replacing the legacy production data warehouse and \textit{reducing query times on large datasets by at least 50\%}
+\item Collaborated on a proof-of-concept for the data lakehouse architecture with the reporting team, successfully replicating key production data pipeline functions and \textit{achieving up to 80\% operational cost savings} through parallelized report generation
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Product Data Analyst}
+\descript{- myKaarma - Automotive PaaS}
+\location{Feb 2022 – Jul 2023 | Remote, Canada}
+\vspace{1mm}
+\begin{tightemize}
+\item Developed data products for customers, providing critical insights to inform daily logistical and operational decisions; \textit{used by over 500 business clients}
+\item Integrated Power BI with existing data sources, and introduced it to Product Managers for self-serve analytics; \textit{reduced data team requests by 10\%}
+\item Conducted a proof-of-concept with the reporting team, for a real-time data pipeline using Airflow, AWS S3, and AWS Redshift
+\item Performed product utilization analysis to highlight product KPI metrics, and identify key areas for service improvement; \textit{used by product leads at quarterly stakeholder meetings and at two NADA expos}
+\end{tightemize}
+\sectionsep
+
+
+\runsubsection{Co-Founder}
+\descript{- The Growing Company - Agriculture Startup}
+\location{Mar 2019 – Jul 2021 | Waterloo, ON}
+\vspace{1mm}
+\begin{tightemize}
+\item Co-founded a startup focused on bringing reliable, scalable and efficient agriculture to small island countries
+\item Conducted hands-on research at 5 small-scale farms in the Caribbean, engaging with Ministry officials to inform solutions for regional agricultural challenges
+\item Collaborated with a Mechanical Engineer to design a modular, containerized farm, reducing prototyping and testing time of environment control software and sensor/actuator hardware \textit{from 2 weeks to 3 days}
+\end{tightemize}
+\sectionsep
+
+% \runsubsection{Co-Founder \& Software Engineer}
+% \descript{- UrbanShelter - Real Estate PaaS}
+% \location{Jan 2018 – Jan 2019 | Waterloo, ON}
+% \begin{tightemize}
+% \item Co-founded a real-estate software startup. 
+% \item Developed the technical architecture for both the front and back-end systems.
+% \item Performed product iteration strategies for design and development.
+% \item Created a design-development pipeline to meet agile development criteria.
+% \end{tightemize}
+% \sectionsep
+
+% \runsubsection{Software Engineer}
+% \descript{- BlueFire Technologies}
+% \location{May 2017 – Sept 2017 | Waterloo, ON}
+% \begin{tightemize}
+% \item Developed both front and back-end systems for a delivery service \item Performed server response time optimization using Simplex method \end{tightemize}
+% \sectionsep
+
+% \runsubsection{Trainee Engineer}
+% \descript{- VOLTEC Engineering}
+% \location{Jan 2016 – April 2016 | Trinidad \& Tobago, W.I.}
+% \begin{tightemize}
+% \item Re-modeled the company's server architecture to lower maintenance costs.
+% \item Created a script to automate the import of 3D sub-surface data to a CAD file as contours, saving drafting teams hours of labour. \end{tightemize}
+\sectionsep
+
+\end{minipage}
+\end{document}

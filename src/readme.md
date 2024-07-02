@@ -1,5 +1,5 @@
-# Resume Repo
-Resume source files, in XeTeX, version-controlled 😎. Will be updated as new skills and experience are required.
+# Resume Build Instructions
+Resume source files, in XeTeX, version-controlled 😎. Will be updated as new skills and experience are acquired.
 
 
 ## Getting Started
