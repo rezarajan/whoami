@@ -1,0 +1,25 @@
+- company: Mochi
+  roles:
+    - role: CTO / Co-Founder
+      date: Dec 2022 -  Present
+      details: |
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare sollicitudin fringilla.
+        Aenean nec volutpat arcu. Maecenas quis tempus risus. Curabitur condimentum ligula in erat pharetra porta. 
+        Nam suscipit nisi a bibendum lacinia. Donec aliquet, nibh dignissim placerat efficit
+
+- company: myKaarma
+  page: 1
+  roles: 
+    - role: Data Engineer
+      tools: Python, SQL, Flink, Kafka, AirFlow, Java, Redshift
+      date: July 2023 - Jan 2024
+      details: |
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare sollicitudin fringilla.
+        Aenean nec volutpat arcu. Maecenas quis tempus risus.
+    
+    - role: Data Analyst
+      tools: Python, SQL, MariaDB
+      date: Feb 2022 - July 2023
+      details: |
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare sollicitudin fringilla.
+        Aenean nec volutpat arcu. Maecenas quis tempus risus.

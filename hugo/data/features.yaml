@@ -1,0 +1,54 @@
+about:
+  name: Reza Rajan
+  tagline: Data Engineer
+  phone: "1-407-649-0447"
+  email: rezarajan@gmail.com
+  links:
+    - title: /in/rezarajan
+      url: https://linkedin.com/in/rezarajan
+      icon: fab fa-linkedin
+    - title: rezarajan
+      url: https://github.com/rezarajan
+      icon: fab fa-github
+  details: |
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare sollicitudin fringilla.
+    Aenean nec volutpat arcu. Maecenas quis tempus risus. Curabitur condimentum ligula in erat pharetra porta.
+
+    Nam suscipit nisi a bibendum lacinia.
+
+
+skills:
+  - groupName: Databases & Visualization
+    list:
+      - Grafana - PowerBI
+      - InfluxDB - MariaDB - AWS Redshift - SQLite
+
+  - groupName: Data Analysis & Analytics
+    list:
+      - Python - SQL
+      - Seaborn - Matplotlib - Plotly - Pandas - SciPy - Numpy
+      - AWS Glue - Spark
+
+  - groupName: Programming & Systems
+    list:
+      - Python - Golang - Git - Docker - Kubernetes - Traefik
+      - Ansible - Terraform - OpenTofu
+      - Linux - Nix
+
+languages:
+  - name: English
+    level: Native
+
+# This will use the default widget: "details-list"
+awards:
+
+certificates:
+  - title: "Supervised Learning: Regression"
+    subtitle: Coursera
+    date: "2020"
+    link: https://xkcd.com/605/ # This link will be on title level.
+
+  - title: "Supervised Learning: Classification"
+    subtitle: Coursera
+    date: "2020"
+    link: https://xkcd.com/388/

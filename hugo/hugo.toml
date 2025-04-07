@@ -1,0 +1,66 @@
+baseURL = 'whoami.rezarajan.me/'
+languageCode = 'en-us'
+title = 'Resume'
+theme = 'resume-a4'
+disableKinds= ["taxonomy", "term", "page", "section", "RSS", "sitemap", "robotsTXT", "404"]
+
+[params]
+useFontAwesome = true
+externalLinkIcon = true
+css = ["custom.scss"] # ["print_urls.scss"]
+
+[params.header]
+avatar = false # "avatar.jpg"
+contact = true
+tagline = true
+links = true
+
+[[params.side]]
+feature = "education"
+
+[[params.side]]
+feature = "skills"
+widget = "word-list"
+style = "title-list" # "list", "compact", "title-list"
+
+[[params.pages]]
+
+[[params.pages.features]]
+feature = "experience"
+title = "Experience"
+
+[[params.pages.features]]
+feature = "certificates"
+title = "Certifications"
+
+[params.experience.tools]
+show = true
+title = "Technologies"
+
+[params.education]
+useFontAwesome = true
+externalLinkIcon = false
+location.show = false
+details.show = false
+namePrimary = false
+
+[params.itemTitle]
+useFontAwesome = true
+externalLinkIcon = false
+
+[params.footer]
+footnote = "You can print this resume in A4 size or save as pdf."
+show = true
+credits = false
+
+[[params.footer.links]]
+prefix = "Contact me on"
+title = "Linkedin"
+url = "https://linkedin.com/in/rezarajan/"
+icon = "fab fa-linkedin"
+
+[[params.footer.links]]
+prefix = "Check out my"
+title = "GitHub"
+url = "https://github.com/rezarajan"
+icon = "fab fa-github"
