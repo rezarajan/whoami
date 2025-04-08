@@ -46,7 +46,7 @@ feature = "experience"
 title = "Experience"
 
 [params.experience.tools]
-show = false
+show = true
 title = "Technologies"
 
 [params.experience.roles.role]

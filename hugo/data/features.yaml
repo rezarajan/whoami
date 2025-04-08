@@ -24,11 +24,11 @@ skills:
 
   - groupName: Data
     list:
-      - PostgreSQL, MariaDB, SQLite, Redshift, InfluxDB, S3, Iceberg, dbt, Airflow, Kafka
+      - PostgreSQL, MariaDB, SQLite, Redshift, InfluxDB, Cassandra, MongoDB, S3, Iceberg, Flink, Lambda, dbt, Airflow, Kafka, ETL/ELT, ElasticSearch, Spark
 
   - groupName: Visualization
     list:
-      - Grafana, PowerBI, Looker Studio, Seaborn, Matplotlib, Plotly
+      - Grafana, Power BI, Looker Studio, Plotly
 
   - groupName: Data Libraries
     list:
@@ -38,9 +38,9 @@ skills:
     list:
       - Linux, Docker, Kubernetes, AWS, Proxmox, Ansible, Terraform, OpenTofu, Prometheus
 
-  - groupName: DevOps
+  - groupName: GitOps
     list:
-      - Git, GitHub Actions
+      - Git, GitHub Actions, CI/CD
 
 languages:
   - name: English

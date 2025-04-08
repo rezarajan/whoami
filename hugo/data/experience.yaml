@@ -2,30 +2,32 @@
   roles:
     - role: DevOps Engineer
       date: Dec 2022 -  Present
-      tools: SQLite, InfluxDB, Ansible, Terraform, Kubernetes
+      tools: Bash, Nix, SQLite, InfluxDB, Ansible, Terraform, Kubernetes, Cloud-Init
       details: |
         Self-hosted, independent network and infrastructure service provider for the Cardano blockchain network and associated ecosystem projects.
-        - Architected a CI/CD build pipeline for containerized application binaries on both x86_64 and ARMv8-A processors.
-        - Automated the provisioning of highly available infrastrcture using proxmox, Terraform, Ansible and K3S, *reducing overall recovery time objectives*.
-        - *Reduced Mean Time To Resolution (MTTR) by 60%* through deploying comprehensive monitoring solutions using Grafana and Prometheus, resulting in faster issue resolution and increased service availability.
+        - Architected a CI/CD pipeline for building, testing and deploying of multiplatform containerized applications, *reducing deployment errors by 90%*.
+        - Employed automation and Infrastructure-as-Code to provision highly available infrastrcture using Proxmox, Terraform, Ansible and K3S, improving operational reliability and *reducing overall recovery time objectives by up to 40%*.
+        - *Reduced Mean Time To Resolution by 60%* through deploying comprehensive monitoring solutions using Grafana and Prometheus, resulting in faster issue resolution and increased service availability.
 
 - company: myKaarma
   page: 1
   roles:
     - role: Data Engineer
-      tools: Python, SQL, Flink, Kafka, AirFlow, Redshift
+      tools: Python, SQL, Flink, Kafka, PySpark, AirFlow, Redshift, Lambda, Iceberg
       date: Jul 2023 - Jan 2024
       details: |
         Data Engineer at an automotive PaaS company, transitioning the company's data warehouse architecture to a modern lakehouse aimed at scalability and real-time, self-service analytics.
-        - Collaborated with cross-functional teams to design and deploy a data lakehouse architecture on AWS, incrementally replacing the legacy production data warehouse.
-        - Developed and deployed big data processing jobs using Python and AWS Glue, *reducing query times on large datasets by 70%* compared to SQL stored procedures on the data warehouse.
+        - Collaborated with cross-functional teams to design and deploy a cloud data lakehouse architecture on AWS which *replaced 3 stored procedures from the legacy MySQL data warehouse*. 
+        - Developed and deployed big data processing jobs using Python, AWS Glue and Apache Flink, *reducing ETL processing times on large datasets by 70%* compared to SQL stored procedures on the MySQL data warehouse.
+        - Executed a PoC for distributed streaming big-data processing using AWS Redshift, *reducing processing times of message data reports by up to 80% as compared to MySQL data warehouse stored procedures*.
         - Automated customer report generation and delivery using AWS State Machines and Lambda functions, with SLA guarantees, *reducing late report delivery incidents by 99%*.
 
     - role: Data Analyst
       date: Feb 2022 - Jul 2023
-      tools: Python, SQL, PowerBI
+      tools: Python, SQL, Power BI, Looker Studio, Airflow, PySpark, S3, Iceberg,
       details: |
         Data Analyst tasked with requirements gathering, report generation and automation, for business clients and internal stakeholders.
         - Developed data products and reports for *over 500 business clients*.
         - Enabled simple self-service analytics through integration of limited data sources with Power BI, *reducing ad-hoc report requests by 10%*.
-        - Spearheaded a proof-of-concept initiative for stream data processing and reporting using Kafka, Flink, Airflow, AWS S3 and AWS Redshift.
+        - Spearheaded a PoC which *reduced processing times of large-scale message data by 60% over the MySQL data warehouse*, using Airflow, PySpark, S3 and Iceberg.
+
