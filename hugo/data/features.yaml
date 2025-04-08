@@ -18,22 +18,29 @@ about:
     My focus is on building pragmatic solutions to real-world problems, aiming for simplicity and felxibility at each step.
 
 skills:
-  - groupName: Databases & Visualization
+  - groupName: Programming Languages
     list:
-      - Grafana - PowerBI
-      - InfluxDB - PosgreSQL - MariaDB - AWS Redshift - SQLite
+      - Python, Golang, SQL, Bash, Nix
 
-  - groupName: Data Analysis & Analytics
+  - groupName: Data
     list:
-      - Python - SQL
-      - Seaborn - Matplotlib - Plotly - Pandas - SciPy - Numpy
-      - Apache Airflow - Kafka - Flink - Spark - AWS Glue - dbt
+      - PostgreSQL, MariaDB, SQLite, Redshift, InfluxDB, S3, Iceberg, dbt, Airflow, Kafka
 
-  - groupName: Programming & Systems
+  - groupName: Visualization
     list:
-      - Python - Golang - Git - Docker - Kubernetes
-      - Ansible - Terraform - OpenTofu
-      - Linux - Nix
+      - Grafana, PowerBI, Looker Studio, Seaborn, Matplotlib, Plotly
+
+  - groupName: Data Libraries
+    list:
+      - Pandas, SciPy, Numpy, TensorFlow, PySpark
+
+  - groupName: Infrastructure
+    list:
+      - Linux, Docker, Kubernetes, AWS, Proxmox, Ansible, Terraform, OpenTofu, Prometheus
+
+  - groupName: DevOps
+    list:
+      - Git, GitHub Actions
 
 languages:
   - name: English
@@ -41,6 +48,8 @@ languages:
 
 # This will use the default widget: "details-list"
 awards:
+  - title: "University of Waterloo President's Scholarship of Distinction"
+    date: "2015"
 
 certificates:
   - title: "Data Engineer"

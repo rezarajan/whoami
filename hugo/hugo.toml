@@ -16,21 +16,28 @@ css = ["custom.scss"] # ["print_urls.scss"]
 
 [params.header]
 avatar = false # "avatar.jpg"
-contact = true
+contact = false
 tagline = true
 links = true
-
-[[params.side]]
-feature = "education"
 
 [[params.side]]
 feature = "certificates"
 title = "Certifications"
 
 [[params.side]]
+feature = "education"
+
+[[params.side]]
+feature = "awards"
+
+[[params.side]]
+feature = "languages"
+
+[[params.side]]
 feature = "skills"
+title = "Technical Skills"
 widget = "word-list"
-style = "title-list" # "list", "compact", "title-list"
+style = "compact" # "list", "compact", "title-list"
 
 [[params.pages]]
 
@@ -39,15 +46,18 @@ feature = "experience"
 title = "Experience"
 
 [params.experience.tools]
-show = true
+show = false
 title = "Technologies"
+
+[params.experience.roles.role]
+show = false
 
 [params.education]
 useFontAwesome = true
 externalLinkIcon = false
 location.show = false
 details.show = false
-namePrimary = false
+namePrimary = true
 
 [params.itemTitle]
 useFontAwesome = true
