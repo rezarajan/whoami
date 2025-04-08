@@ -24,7 +24,7 @@ skills:
 
   - groupName: Data
     list:
-      - PostgreSQL, MariaDB, SQLite, Redshift, InfluxDB, Cassandra, MongoDB, S3, Iceberg, Flink, Lambda, dbt, Airflow, Kafka, ETL/ELT, ElasticSearch, Spark
+      - PostgreSQL, MariaDB, SQLite, Redshift, InfluxDB, Cassandra, MongoDB, S3, Flink, Lambda, dbt, Airflow, Kafka, Spark, ElasticSearch, ETL/ELT
 
   - groupName: Visualization
     list:
@@ -36,7 +36,7 @@ skills:
 
   - groupName: Infrastructure
     list:
-      - Linux, Docker, Kubernetes, AWS, Proxmox, Ansible, Terraform, OpenTofu, Prometheus
+      - Linux, Docker, Kubernetes, AWS, Proxmox, Ansible, Terraform, OpenTofu
 
   - groupName: GitOps
     list:
