@@ -19,6 +19,10 @@ links = true
 feature = "education"
 
 [[params.side]]
+feature = "certificates"
+title = "Certifications"
+
+[[params.side]]
 feature = "skills"
 widget = "word-list"
 style = "title-list" # "list", "compact", "title-list"
@@ -28,10 +32,6 @@ style = "title-list" # "list", "compact", "title-list"
 [[params.pages.features]]
 feature = "experience"
 title = "Experience"
-
-[[params.pages.features]]
-feature = "certificates"
-title = "Certifications"
 
 [params.experience.tools]
 show = true

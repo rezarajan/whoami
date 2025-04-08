@@ -11,27 +11,27 @@ about:
       url: https://github.com/rezarajan
       icon: fab fa-github
   details: |
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare sollicitudin fringilla.
-    Aenean nec volutpat arcu. Maecenas quis tempus risus. Curabitur condimentum ligula in erat pharetra porta.
+    Self-motivated engineer with professional experience in building robust data systems.
 
-    Nam suscipit nisi a bibendum lacinia.
+    Academic background in Mechanical Engineering with further studies in Autonomous Robotics. Along this learning path, I have had the opportunity to train ML models for real-time object detection; ultimately this sparked my passion for working with data.
 
+    My focus is on building pragmatic solutions to real-world problems, aiming for simplicity and felxibility at each step.
 
 skills:
   - groupName: Databases & Visualization
     list:
       - Grafana - PowerBI
-      - InfluxDB - MariaDB - AWS Redshift - SQLite
+      - InfluxDB - PosgreSQL - MariaDB - AWS Redshift - SQLite
 
   - groupName: Data Analysis & Analytics
     list:
       - Python - SQL
       - Seaborn - Matplotlib - Plotly - Pandas - SciPy - Numpy
-      - AWS Glue - Spark
+      - Apache Airflow - Kafka - Flink - Spark - AWS Glue - dbt
 
   - groupName: Programming & Systems
     list:
-      - Python - Golang - Git - Docker - Kubernetes - Traefik
+      - Python - Golang - Git - Docker - Kubernetes
       - Ansible - Terraform - OpenTofu
       - Linux - Nix
 
@@ -43,12 +43,17 @@ languages:
 awards:
 
 certificates:
-  - title: "Supervised Learning: Regression"
-    subtitle: Coursera
-    date: "2020"
-    link: https://xkcd.com/605/ # This link will be on title level.
+  - title: "Data Engineer"
+    subtitle: Udacity
+    date: "2024"
+    link: certificates/udacity-data-engineer-certificate.pdf
 
-  - title: "Supervised Learning: Classification"
-    subtitle: Coursera
+  - title: "Self-Driving Car Engineer"
+    subtitle: Udacity
+    date: "2021"
+    link: certificates/udacity-sdc-certificate.pdf
+
+  - title: "Data Analyst"
+    subtitle: Udacity
     date: "2020"
-    link: https://xkcd.com/388/
+    link: certificates/udacity-data-analyst-certificate.pdf
