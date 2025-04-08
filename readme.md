@@ -1,9 +1,5 @@
-# Overview
+# Welcome
 
-This repo documents my professional experiences. Contained within it are my resume, and any certifications from courses or programmes.
+This repository serves a living document of my professional experiences. By utilizing Git, the lineage and evolution of experiences over time is preserved.
 
-My hope is that the documents contained within provide a better understanding of my capabilities as a programmer.
-
-## Quick Links
-- [Resume](./resume.pdf)
-- [Certifications](./files/certificates/)
+👉 [Resume](./resume.pdf)
