@@ -4,6 +4,11 @@ title = 'Resume'
 theme = 'resume-a4'
 disableKinds= ["taxonomy", "term", "page", "section", "RSS", "sitemap", "robotsTXT", "404"]
 
+# For GitHub Actions
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 [params]
 useFontAwesome = true
 externalLinkIcon = true
