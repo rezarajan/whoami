@@ -43,10 +43,10 @@ style = "compact" # "list", "compact", "title-list"
 
 [[params.pages.features]]
 feature = "experience"
-title = "Experience"
+title = ""
 
 [params.experience.tools]
-show = true
+show = false
 title = "Technologies"
 
 [params.experience.roles.role]

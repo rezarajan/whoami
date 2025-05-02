@@ -1,6 +1,6 @@
 - company: Mochi
   roles:
-    - role: DevOps Engineer
+    - role: Co-Founder & DevOps Engineer
       date: Dec 2022 -  Present
       tools: Bash, Nix, SQLite, InfluxDB, Ansible, Terraform, Kubernetes, Cloud-Init
       # details: Self-hosted, independent network and infrastructure service provider for the Cardano blockchain network and associated ecosystem projects.
@@ -8,7 +8,9 @@
       details: |
         - Architected a CI/CD pipeline for building, testing and deploying of multiplatform containerized applications, *reducing deployment errors by 90%*.
         - Employed automation and Infrastructure-as-Code to provision highly available infrastrcture using Proxmox, Terraform, Ansible and K3S, *enabling 98% operational reliability and reducing overall recovery time by up to 40%*.
-        - *Reduced incident response time by 60%* through deploying comprehensive monitoring solutions using Grafana and Prometheus, resulting in faster issue resolution and increased service availability.
+        - *Reduced incident response time by 60%* through deploying comprehensive real-time monitoring solutions using Grafana and Prometheus, resulting in faster issue resolution and increased service availability.
+        - Developed Python scripts for blockchain observability and processing of block minting schedules.
+        - Authored and published internal documentation and guides using Hugo, *reducing ad-hoc knowledge-sharing requests by 80%*.
 
 - company: myKaarma
   page: 1
@@ -19,10 +21,10 @@
       # details: Data Engineer at an automotive PaaS company, transitioning the company's data warehouse architecture to a modern lakehouse aimed at scalability, reliability and real-time, self-service analytics.
 
       details: |
-        - Collaborated with cross-functional teams to design and deploy a cloud data lakehouse architecture on AWS which *replaced 3 stored procedures from the legacy MySQL data warehouse*. 
-        - Developed and deployed a ELT data processing pipeline using Python, Airflow, AWS Glue and AWS Redshift, to process terabyte-scale big data, *reducing processing times on large datasets by 70%* compared to SQL stored procedures on the MySQL data warehouse.
-        - Executed a PoC for a distributed streaming data processing pipeline using Apache Flink AWS S3, AWS Glue and AWS Iceberg, providing real-time reports on message data, *reducing time-to-value by 95%*.
-        - Automated customer report generation and delivery using AWS State Machines and Lambda functions, with SLA guarantees, *reducing late report delivery incidents by 99%*.
+        - Collaborated with cross-functional teams to design a cloud data lakehouse architecture on AWS.
+        - Built data infrastructure and ETL/ELT pipelines using Python, Airflow, S3, AWS Glue and Redshift.
+        - Automated customer report generation and delivery using AWS State Machines and Lambda functions, with SLA guarantees.
+        - Deployed a PoC ETL pipeline using Airflow and PySpark, which *reduced message data processing times by 70% over stored procedures*.
 
     - role: Data Analyst
       date: Feb 2022 - Jul 2023
@@ -30,8 +32,27 @@
       # details: Data Analyst tasked with requirements gathering, report generation and automation for business clients and internal stakeholders.
 
       details: |
-        - Communicated with major client groups to gather requirements for *five group-level reports*.
-        - Developed and delivered data products and drill-down reports for *over 500 business clients* based on group-level report requirements.
-        - Enabled self-service analytics through integration of data sources with Power BI, *reducing ad-hoc report requests by 10%*.
-        - Executed a PoC for a ETL data processing pipline, using Airflow, PySpark, S3 and Iceberg which *reduced processing times of large-scale message data by 60% over the MySQL data warehouse*.
+        - Performed requirements gathering for group-level reports from external clients.
+        - Developed and deployed reports to the MySQL data warehouse using stored procedures.
+        - Integrated data sources with PowerBI to enable self-service analytics.
+        - Managed and extended MySQL data warehouse tables in accordance with reporting requirements.
 
+- company: Urban Shelter Technologies
+  roles:
+    - role: Software Engineer
+      date: Jun 2018 - Jul 2019
+      tools: JavaScript, React, Firebase
+
+      details: |
+        - Developed a prototype web-interface in React for the company's house listing platform.
+        - Implemented user authentication and SSO using Firebase authentication.
+
+- company: BlueFire Technologies Inc.
+  roles:
+    - role: Software Engineer
+      date: Sep 2016 - Aug 2017
+      tools: JavaScript, React, Firebase
+
+      details: |
+        - Developed and deployed the front-end infrastructure for a Canadian food-delivery platform, on both web and Android.
+        - *Reduced data consumption on back-end requests by 65%* through front-end payload optimization.
