@@ -1,6 +1,6 @@
 .paper {
   position: relative;
-  margin: 0.5rem auto;
+  margin: 0.0rem auto;
   padding: 0.45in 0.5in;
   width: 210mm;
   height: 297mm;
@@ -23,7 +23,7 @@
 
   h2 {
     margin-bottom: 0.4rem;
-    font-size: 1.20rem;
+    font-size: 1.10rem;
   }
 
   h3 {
@@ -52,7 +52,7 @@ main.paper {
     height: 100%;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(7, 1fr);
     grid-column-gap: 0;
     grid-row-gap: 0;
 
@@ -69,14 +69,14 @@ main.paper {
     border-bottom: $border-color 0.05rem solid;
 
     .title {
-      display: flex;
       flex-direction: column;
       justify-content: center;
       font-family: $font-1;
 
       h1 {
         margin-bottom: 0.4rem;
-        font-size: 4rem;
+        margin-top: 1rem;
+        font-size: 3.5rem;
         color: $text-color;
         letter-spacing: 0.15rem;
         text-transform: uppercase;
@@ -84,7 +84,7 @@ main.paper {
 
       h2 {
         margin-bottom: 0.3rem;
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
     }
 
@@ -123,7 +123,7 @@ main.paper {
   }
 
   .left-column {
-    grid-area: 2 / 1 / 7 / 6;
+    grid-area: 2 / 1 / 8 / 6;
     border-right: $border-color 0.05rem solid;
     padding-right: 1rem;
   }
