@@ -1,6 +1,28 @@
 # Welcome
 
-This repository serves a living document of my professional experiences. By utilizing Git, the lineage and evolution of experiences over time is preserved.
+This repository serves as a portfolio of my professional, academic and project experiences. It uses Git to track changes over time, as well as to auto-update my resume through CI/CD workflows.
 
 📄 [Resume](./resume.pdf)
+
 👉 [Website](https://rezarajan.github.io/whoami)
+
+# Courses
+
+Below are some of my courses, which showcase different competencies through projects.
+
+| Course                                                                                   | Projects                                                                                                                  | Skills                                                                                       | Year |
+| ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ---- |
+| [Data Engineering Nanodegree](https://github.com/rezarajan/udacity-aws-data-engineering) | Data Modelling with Apache Cassandra, Data Warehosue, Data Lakehouse, Data Pipelines                                      | SQL, NoSQL, Python, AWS Redshift, AWS Glue, PySpark, Data Lakehouse, Apache Airflow, ETL/ELT | 2024 |
+| [Self-Driving Car Nanodegree](https://github.com/rezarajan/sdc-capstone)                 | Simulation of an Autonomous Vehicle, Traffic Sign Classifier, Extended Kalman Filters, Path Planning, Lane Line Detection | Python, C++ Tensorflow, ROS, OpenCV                                                          | 2021 |
+| Data Analyst Nanodegree                                                                  | Exploratory Data Analysis, A/B Testing                                                                                    | Python, scikit, Pandas, NumPy                                                                | 2020 |
+
+# Projects
+
+Most of my time is spent working on projects - both in production and hobbyist. These projects help me stay engaged with the latest technology developments, as well as gain a working understanding of their implications in a real-world environment.
+
+| Project                                                     | Description                                                                                                                                                                                                                                                                                     | Skillsets                                      |
+| ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| [dotfiles](https://github.com/rezarajan/dotfiles)           | A collection of my Linux configurations, mostly focused on Nix. It helps me learn which tools are the most effective at bootstrapping Linux systems from scratch, and the drawbacks of each.                                                                                                    | Infrastructure-as-Code (IAC), Linux, Nix, Bash |
+| [mbok](https://github.com/mochipool/mbok)                   | Internal documentation for Mochi, a Web3 project. This project has helped me learn what constitutes good technical documentation, and how to share that among stakeholders effectively.                                                                                                         | Hugo, GitHub Actions (CI/CD)                   |
+| [mainline (private)](https://github.com/mochipool/mainline) | This repository contains source code for microservices run in the Mochi project. Microservices are usually written in Golang, development environments created with Nix, containerized build systems run with Earthly, and deployments done using Kustomize or Flux across Kubernetes clusters. | Kubernetes, Golang, Nix, Podman, Earthly (CD)  |
+
