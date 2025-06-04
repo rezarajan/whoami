@@ -16,7 +16,7 @@ css = ["custom.scss"] # ["print_urls.scss"]
 
 [params.header]
 avatar = false # "avatar.jpg"
-contact = false
+contact = true
 tagline = true
 links = true
 
