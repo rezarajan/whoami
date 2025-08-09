@@ -11,7 +11,7 @@ about:
       url: https://github.com/rezarajan
       icon: fab fa-github
   details: |
-    Self-motivated engineer with professional experience in building robust data systems.
+    Self-motivated software engineer with professional experience in building robust data systems.
 
     Academic background in Mechanical Engineering with further studies in Autonomous Robotics. Along this learning path, I have had the opportunity to train ML models for real-time object detection; ultimately this sparked my passion for working with data.
 
@@ -52,6 +52,10 @@ awards:
     date: "2015"
 
 certificates:
+  - title: "AWS Certified Data Engineer"
+    subtitle: Amazon
+    date: "In-Progress"
+
   - title: "Data Engineer"
     subtitle: Udacity
     date: "2024"
