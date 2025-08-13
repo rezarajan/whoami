@@ -1,0 +1,31 @@
+
+{{ range .Data.projects }}
+{{ $useFontAwesome := $.Params.projects.useFontAwesome | default $.Params.useFontAwesome }}
+{{ $noExternalIcon := not ($.Params.projects.externalLinkIcon | default $.Params.externalLinkIcon) }}
+<div class="item group">
+	<div class="item">
+		<h2 class="item-title">
+			<!-- {{ $useFontAwesome := $.Params.itemTitle.useFontAwesome | default $.Params.useFontAwesome }} -->
+			<!-- {{ $noExternalIcon := not ($.Params.itemTitle.externalLinkIcon | default $.Params.externalLinkIcon) }} -->
+
+			{{- if .link -}}
+				{{- if $useFontAwesome -}}
+				<i class="fas fa-link"></i> <a class="no-external-icon" href="{{ .link }}">{{ .title }}</a>
+				{{- else -}}
+				<a class="{{ if $noExternalIcon }}no-external-icon{{ end }}" href="{{ .link }}">{{ .title }}</a>
+				{{- end -}}
+			{{- else -}}
+			{{ .title }}
+			{{- end -}}
+		</h2>
+		<!-- <div class="flex-row"> -->
+		<!-- 	<span><a class="job-title" href="{{ .link }}">{{ .title }}</a></span><br> -->
+		<!-- 	<span class="soft-color">{{ .date }}</span> -->
+		<!-- </div> -->
+
+		{{ if .details }}
+		{{- partial "markdown" .details }}
+		{{ end }}
+	</div>
+</div>
+{{ end }}

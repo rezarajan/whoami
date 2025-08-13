@@ -1,6 +1,6 @@
 about:
   name: Reza Rajan
-  tagline: Data Engineer
+  tagline: Data Engineer - AWS Specialization
   phone: "1-407-649-0447"
   email: rezarajan@gmail.com
   links:
@@ -18,6 +18,10 @@ about:
     My focus is on building pragmatic solutions to real-world problems, aiming for simplicity and felxibility at each step.
 
 skills:
+  - groupName: Core Competencies
+    list:
+      - ETL/ELT, Data Lakehouse, PySpark, Apache Airflow, dbt, Kafka, AWS S3/Glue/Redshift, Lambda, Step Functions, SQL, Data Modeling, Performance Tuning, Monitoring (Grafana/Prometheus), CI/CD for data pipelines
+
   - groupName: Programming Languages
     list:
       - Python, Golang, SQL, Bash, Nix
@@ -42,9 +46,9 @@ skills:
     list:
       - Git, GitHub Actions, CI/CD
 
-languages:
-  - name: English
-    level: Native
+# languages:
+#   - name: English
+#     level: Native
 
 # This will use the default widget: "details-list"
 awards:
@@ -70,3 +74,11 @@ certificates:
     subtitle: Udacity
     date: "2020"
     link: certificates/udacity-data-analyst-certificate.pdf
+
+# projects:
+#   - title: "Data Pipeline in AWS using Apache Airflow"
+#     link: https://github.com/rezarajan/udacity-aws-data-engineering/tree/main/projects/4%20-%20Data%20Pipelines
+#   - title: "Data Warehouse using AWS Redshift"
+#     link: https://github.com/rezarajan/udacity-aws-data-engineering/tree/main/projects/2%20-%20Data%20Warehouse
+#   - title: "Data Modeling with Apache Cassandra"
+#     link: https://github.com/rezarajan/udacity-aws-data-engineering/tree/main/projects/1%20-%20Data%20Modelling%20with%20Apache%20Cassandra

@@ -1,0 +1,31 @@
+{{ range .Data.education }}
+<div class="item">
+
+	<div class="flex-row">
+		<h3 class="item-title">{{ .university }} - {{ .name }}</h3>
+		<span>{{ .date }}</span>
+	</div>	
+
+	{{- end -}}
+	
+	{{ $useFontAwesome := $.Params.education.useFontAwesome | default $.Params.useFontAwesome }}
+	{{ $noExternalIcon := not ($.Params.education.externalLinkIcon | default $.Params.externalLinkIcon) }}
+
+	<span>{{ .date }}{{ if .gpa }} | GPA: {{ .gpa }}{{ end }}</span>
+	{{- if .more -}}
+		{{- if .link -}}
+			{{- if $useFontAwesome -}}
+			<br><span><a class="no-external-icon" href="{{ .link }}">{{ .more }}</a></span>
+			<i class="fas fa-link"></i><br>
+			{{- else -}}
+			<span><a class="{{ if $noExternalIcon }}no-external-icon{{ end }}" href="{{ .link }}">{{ .more }}</a></span><br>
+			{{- end -}}
+		{{- else -}}
+		<span>{{ .more }}</span>
+		{{- end -}}
+	{{- end -}}
+	
+	{{ if .details }}
+		{{- partial "markdown" .details }}
+	{{ end }}
+</div>

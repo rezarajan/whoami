@@ -1,17 +1,17 @@
-projects:
-- title: "Simulated Annealing for Traveling Salesman Problem"
-  subtitle: "Some University"
-  date: "2016"
+- title: "Data Pipeline in AWS using Apache Airflow"
+  link: https://github.com/rezarajan/udacity-aws-data-engineering/tree/main/projects/4%20-%20Data%20Pipelines
+  date: "2024"
   details: |
-    Lorem ipsum dolor sit amet
+    Built a modular, production-grade ETL pipeline in Apache Airflow on AWS that supports reusable tasks, backfills, monitoring, and automated data quality checks.
 
-- title: "Resume - A4"
-  subtitle: "mertbakir.gitlab.io/resume"
-  link: "https://gitlab.com/mertbakir/resume-a4"
-  date: "2020"
+- title: "Data Warehouse using AWS Redshift"
+  link: https://github.com/rezarajan/udacity-aws-data-engineering/tree/main/projects/2%20-%20Data%20Warehouse
+  date: "2024"
   details: |
-    Bring CI/CD to your resume using YAML and Git."
-  links:
-  - title: Available in GitLab
-    url: https://gitlab.com/mertbakir/resume-a4
-    icon: fab fa-gitlab
+    Developed an ETL process to extract data from S3, stage in Redshift, and transform into dimensional star-schema tables for downstream analytics.
+
+- title: "Data Modeling with Apache Cassandra"
+  link: https://github.com/rezarajan/udacity-aws-data-engineering/tree/main/projects/1%20-%20Data%20Modelling%20with%20Apache%20Cassandra
+  date: "2024"
+  details: |
+    Designed and implemented an Apache Cassandra data model optimized for query performance and analytics use cases.

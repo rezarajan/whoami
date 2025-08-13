@@ -9,6 +9,7 @@ disableKinds= ["taxonomy", "term", "page", "section", "RSS", "sitemap", "robotsT
   [caches.images]
     dir = ':cacheDir/images'
 
+# Customizations 
 [params]
 useFontAwesome = true
 externalLinkIcon = true
@@ -20,37 +21,16 @@ contact = true
 tagline = true
 links = true
 
-[[params.side]]
-feature = "certificates"
-title = "Certifications"
+[params.itemTitle]
+useFontAwesome = false
+externalLinkIcon = false
 
-[[params.side]]
-feature = "education"
-
-[[params.side]]
-feature = "awards"
-
-[[params.side]]
-feature = "languages"
-
-[[params.side]]
-feature = "skills"
-title = "Technical Skills"
-widget = "word-list"
-style = "compact" # "list", "compact", "title-list"
-
-[[params.pages]]
-
-[[params.pages.features]]
-feature = "experience"
-title = ""
+[params.experience.roles.role]
+show = false
 
 [params.experience.tools]
 show = false
 title = "Technologies"
-
-[params.experience.roles.role]
-show = false
 
 [params.education]
 useFontAwesome = true
@@ -59,10 +39,67 @@ location.show = false
 details.show = false
 namePrimary = true
 
-[params.itemTitle]
-useFontAwesome = true
-externalLinkIcon = false
 
+# Page 1
+[[params.pages]]
+
+# Side column
+
+[[params.side]]
+feature = "certificates"
+title = "Certifications"
+#
+[[params.side]]
+feature = "education"
+#
+# [[params.side]]
+# feature = "awards"
+#
+[[params.side]]
+feature = "skills"
+title = "Technical Skills"
+widget = "word-list"
+style = "compact" # "list", "compact", "title-list"
+
+# [[params.side]]
+# feature = "projects"
+
+# [[params.side]]
+# feature = "languages"
+
+# Main Section
+
+# [[params.pages.features]]
+# feature = "skills"
+# title = "Technical Skills"
+# widget = "word-list"
+# style = "compact" # "list", "compact", "title-list"
+
+[[params.pages.features]]
+feature = "experience"
+title = "Experience"
+
+[[params.pages.features]]
+feature = "projects"
+title = "Project Experience"
+
+# [[params.pages.features]]
+# feature = "education"
+# title = "Education"
+
+
+# Page 2
+
+## Uncomment this to add the second page
+# [[params.pages]]
+
+# [[params.pages.features]]
+# feature = "courses"
+# title = "Courses"
+
+
+
+# Footer
 [params.footer]
 footnote = "You can print this resume in A4 size or save as pdf."
 show = true
