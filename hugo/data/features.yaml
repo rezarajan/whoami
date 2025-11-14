@@ -20,7 +20,7 @@ about:
 skills:
   - groupName: Core Competencies
     list:
-      - ETL/ELT, Data Lakehouse, PySpark, Apache Airflow, dbt, Kafka, AWS S3/Glue/Redshift, Lambda, Step Functions, SQL, Data Modeling, Performance Tuning, Monitoring (Grafana/Prometheus), CI/CD for data pipelines
+      - ETL/ELT, Real-Time Analyics, Data Lakehouse, Data Modeling, Apache Airflow, Kafka, Flink, AWS S3, Glue, Redshift
 
   - groupName: Programming Languages
     list:
@@ -40,7 +40,7 @@ skills:
 
   - groupName: Infrastructure
     list:
-      - Linux, Docker, Kubernetes, AWS, Proxmox, Ansible, Terraform, OpenTofu
+      - Linux, Docker, Kubernetes, AWS, Proxmox, Ansible, Terraform, OpenTofu, dbt
 
   - groupName: GitOps
     list:
