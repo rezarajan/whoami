@@ -79,9 +79,9 @@ style = "compact" # "list", "compact", "title-list"
 feature = "experience"
 title = "Experience"
 
-[[params.pages.features]]
-feature = "projects"
-title = "Project Experience"
+# [[params.pages.features]]
+# feature = "projects"
+# title = "Project Experience"
 
 # [[params.pages.features]]
 # feature = "education"

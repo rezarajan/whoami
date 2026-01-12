@@ -1,3 +1,17 @@
+- company: Mochi
+  roles:
+    - role: Co-Founder / Platform Engineer
+      date: Dec 2022 - Present
+      tools: Bash, Nix, SQLite, InfluxDB, Ansible, Terraform, Kubernetes, Cloud-Init
+      # details: Self-hosted, independent network and infrastructure service provider for the Cardano blockchain network and associated ecosystem projects.
+
+      details: |
+        - Built the forge-manager application and Kubernetes Helm charts to enable fully automated, highly-available Cardano node deployments, eliminating manual coordination and supporting continuous operation across all nodes.
+        - Authored comprehensive documentation for the forge-manager application, including functional and non-functional requirements, system architecture, and operational workflows.
+        - Migrated infrastructure to Talos Linux, creating a fully declarative provisioning system that supports infrastructure-as-code.  
+        - Implemented CI/CD pipelines with automated validation, reducing setup and upgrade times from 3+ hours to under 15 minutes with 100% successful deployments.
+        - Implemented real-time monitoring and alerting with Grafana and Prometheus, cutting incident response time by ~60%.
+
 - company: myKaarma
   page: 1
   roles:
@@ -23,20 +37,6 @@
         - Integrated multiple operational and external data sources into Power BI, enabling standardized dashboards that reduced manual reporting workload for the analytics team.
         - Partnered with engineers to improve data quality checks and streamline ETL processes feeding the reporting warehouse.
 
-# - company: Mochi
-#   roles:
-#     - role: DevOps / Platform Engineer
-#       date: Jan 2024 -  Present
-#       tools: Bash, Nix, SQLite, InfluxDB, Ansible, Terraform, Kubernetes, Cloud-Init
-#       # details: Self-hosted, independent network and infrastructure service provider for the Cardano blockchain network and associated ecosystem projects.
-#
-#       details: |
-#         - Architected and maintained CI/CD pipelines for multi-platform containerized applications, reducing deployment errors by ~90%.
-#         - Used Infrastructure-as-Code (Terraform / Ansible / Proxmox / K3s) to provision and maintain reliable infrastructure supporting data ingestion and processing workloads achieving ~98% operational reliability.
-#         - Implemented monitoring and alerting with Grafana & Prometheus — reduced incident response time by ~60% via real-time observability.
-
-      # - Built Python scripts for blockchain observability and processing of block minting schedules (data ingestion & transform logic).
-      # - Authored and published internal documentation and guides using Hugo, *reducing ad-hoc knowledge-sharing requests by 80%*.
 
 # - company: Earlier Roles
 #   roles:
