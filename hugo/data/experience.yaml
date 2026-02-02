@@ -6,11 +6,11 @@
       # details: Self-hosted, independent network and infrastructure service provider for the Cardano blockchain network and associated ecosystem projects.
 
       details: |
-        - Built the forge-manager application and Kubernetes Helm charts to enable fully automated, highly-available Cardano node deployments, eliminating manual coordination and supporting continuous operation across all nodes.
-        - Authored comprehensive documentation for the forge-manager application, including functional and non-functional requirements, system architecture, and operational workflows.
+        - Developed a coordination application for Kubernetes which enables highly-availabe deployment of Cardano Node, fully eliminating manual intervention and supporting continuous service operation across upgrades.
+        - Authored comprehensive system documentation, providing end-to-end operational guidance, ensuring reliability and knowledge continuity.
         - Migrated infrastructure to Talos Linux, creating a fully declarative provisioning system that supports infrastructure-as-code.  
-        - Implemented CI/CD pipelines with automated validation, reducing setup and upgrade times from 3+ hours to under 15 minutes with 100% successful deployments.
-        - Implemented real-time monitoring and alerting with Grafana and Prometheus, cutting incident response time by ~60%.
+        - Built CI/CD pipelines with automated code validation and testing, reducing feature rollout times from 3+ hours to under 15 minutes and ensuring 100% successful deployments.
+        - Implemented real-time infrastructure monitoring and alerting with Grafana and Prometheus, cutting incident response time by ~60%.
 
 - company: myKaarma
   page: 1
@@ -21,10 +21,10 @@
       # details: Data Engineer at an automotive PaaS company, transitioning the company's data warehouse architecture to a modern lakehouse aimed at scalability, reliability and real-time, self-service analytics.
 
       details: |
+        - Automated enterprise report generation and delivery with SLA adherence, using AWS Step Functions and Lambda.
+        - Identified scalability bottlenecks in production data pipelines; presented findings to engineering leadership and initiated efforts to evaluate modernized solutions
+        - Delivered a proof-of-concept batch data processing pipeline on AWS using PySpark and Redshift, reducing processing time by ~70% compared to production.
         - Designed and contributed to a cloud data lakehouse architecture on AWS to centralize and scale analytics and reporting.
-        - Built and maintained ETL/ELT pipelines using Python, Apache Airflow, AWS S3, AWS Glue and Redshift to ingest, transform and store cleaned event and transactional data.
-        - Automated scheduled customer report generation and delivery using AWS Step Functions and Lambda with SLA monitoring and alerting.
-        - Delivered a PoC batch processing pipeline using Airflow + PySpark that reduced message data processing time by ~70% compared to a stored-procedure based approach; validated performance and reliability metrics before handoff.
 
     - role: Data Engineer (Analytics)
       date: Feb 2022 - Jul 2023
@@ -32,9 +32,9 @@
       # details: Data Analyst tasked with requirements gathering, report generation and automation for business clients and internal stakeholders.
 
       details: |
-        - Collaborated with external stakeholders to capture reporting requirements and translate them into actionable technical specifications for the data team.
+        - Collaborated with external stakeholders to capture and translate reporting requirements into technical specifications for the data team.
         - Developed stored procedures for the reporting warehouse, optimizing several with indexing strategies to achieve up to 50% reduction in query execution time.
-        - Integrated multiple operational and external data sources into Power BI, enabling standardized dashboards that reduced manual reporting workload for the analytics team.
+        - Integrated multiple operational and external data sources into Power BI, enabling standardized dashboards for internal teams, and reducing manual reporting workload for the analytics team.
         - Partnered with engineers to improve data quality checks and streamline ETL processes feeding the reporting warehouse.
 
 
