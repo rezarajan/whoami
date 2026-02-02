@@ -6,11 +6,11 @@
       # details: Self-hosted, independent network and infrastructure service provider for the Cardano blockchain network and associated ecosystem projects.
 
       details: |
-        - Developed a coordination application for Kubernetes which enables highly-availabe deployment of Cardano Node, fully eliminating manual intervention and supporting continuous service operation across upgrades.
-        - Authored comprehensive system documentation, providing end-to-end operational guidance, ensuring reliability and knowledge continuity.
+        - Designed and implemented a Python-based Kubernetes sidecar that enabled replica coordination in a highly available Cardano Node deployment.
+        - Authored comprehensive system documentation, providing end-to-end operational guidance, and supporting knowledge continuity.
         - Migrated infrastructure to Talos Linux, creating a fully declarative provisioning system that supports infrastructure-as-code.  
-        - Built CI/CD pipelines with automated code validation and testing, reducing feature rollout times from 3+ hours to under 15 minutes and ensuring 100% successful deployments.
-        - Implemented real-time infrastructure monitoring and alerting with Grafana and Prometheus, cutting incident response time by ~60%.
+        - Built Github Actions CI/CD pipelines for feature repositories, with code validation and testing, reducing rollout times from 3+ hours to <15 minutes.
+        - Implemented real-time infrastructure monitoring and alerting with Prometheus and Grafana, cutting incident response time by ~60%.
 
 - company: myKaarma
   page: 1
@@ -22,9 +22,9 @@
 
       details: |
         - Automated enterprise report generation and delivery with SLA adherence, using AWS Step Functions and Lambda.
-        - Identified scalability bottlenecks in production data pipelines; presented findings to engineering leadership and initiated efforts to evaluate modernized solutions
-        - Delivered a proof-of-concept batch data processing pipeline on AWS using PySpark and Redshift, reducing processing time by ~70% compared to production.
-        - Designed and contributed to a cloud data lakehouse architecture on AWS to centralize and scale analytics and reporting.
+        - Identified scalability bottlenecks in production data pipelines; presented findings to engineering leadership and initiated efforts to evaluate modernized solutions.
+        - Delivered a proof-of-concept data processing pipeline on AWS using PySpark and Redshift, reducing data processing time by ~70% compared to the production data warehouse.
+        - Designed and contributed to a cloud data lakehouse architecture on AWS to scale analytics and reporting.
 
     - role: Data Engineer (Analytics)
       date: Feb 2022 - Jul 2023
@@ -32,30 +32,22 @@
       # details: Data Analyst tasked with requirements gathering, report generation and automation for business clients and internal stakeholders.
 
       details: |
-        - Collaborated with external stakeholders to capture and translate reporting requirements into technical specifications for the data team.
-        - Developed stored procedures for the reporting warehouse, optimizing several with indexing strategies to achieve up to 50% reduction in query execution time.
-        - Integrated multiple operational and external data sources into Power BI, enabling standardized dashboards for internal teams, and reducing manual reporting workload for the analytics team.
-        - Partnered with engineers to improve data quality checks and streamline ETL processes feeding the reporting warehouse.
+        - Interfaced with external stakeholders to capture and translate reporting requirements into technical specifications.
+        - Developed SQL stored procedures for the MariaDB reporting warehouse, optimizing several with indexing strategies to achieve up to 50% reduction in query execution time.
+        - Integrated multiple operational and external data sources into Power BI, enabling standardized dashboards for internal teams and reducing manual reporting workload for the analytics team.
+        - Collaborated with software engineers to improve data quality checks and streamline ETL processes feeding the reporting warehouse.
 
 
-# - company: Earlier Roles
-#   roles:
-#     - role: Software Engineer
-#       date: 2016 - 2019
-#
-#       details: |
-#         - Front-end and product experience (web & mobile) that complement full-stack pipeline delivery.
+- company: Urban Shelter Technologies
+  roles:
+    - role: Software Engineer
+      date: Jun 2018 - Jul 2019
+      tools: JavaScript, React, Firebase
 
-# - company: Urban Shelter Technologies
-#   roles:
-#     - role: Software Engineer
-#       date: Jun 2018 - Jul 2019
-#       tools: JavaScript, React, Firebase
-#
-#       details: |
-#         - Developed a prototype web-interface in React for the company's house listing platform.
-#         - Implemented user authentication and SSO using Firebase authentication.
-#
+      details: |
+        - Developed the front-end web interface in React for the company's house listing platform; implemented user authentication and SSO using Firebase.
+        - Optimized event data model in the Firebase document store backend to reduce redundancy and improve query latency.
+
 # - company: BlueFire Technologies Inc.
 #   roles:
 #     - role: Software Engineer
@@ -64,4 +56,4 @@
 #
 #       details: |
 #         - Developed and deployed the front-end infrastructure for a Canadian food-delivery platform, on both web and Android.
-#         - *Reduced data consumption on back-end requests by 65%* through front-end payload optimization.
+#         - Optimized data model in the Firebase document store backend to reduce redundancy and improve query latency.
