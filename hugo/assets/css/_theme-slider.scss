@@ -7,6 +7,7 @@
   top: 18px;
   right: #{"max(18px, env(safe-area-inset-right, 0px))"};
   z-index: 50;
+  transition: transform 0.25s ease, opacity 0.25s ease;
   display: flex;
   align-items: center;
   padding: 3px;
@@ -76,6 +77,14 @@
     bottom: calc(18px + env(safe-area-inset-bottom, 0px));
     right: calc(18px + env(safe-area-inset-right, 0px));
   }
+}
+
+/* Floating controls slide away while the reader scrolls down and return on
+   scroll-up, staying out of the content's way (driven by theme-script). */
+html[data-controls-hidden] .theme-slider {
+  transform: translateX(140%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 @media print {

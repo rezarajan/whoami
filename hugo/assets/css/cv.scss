@@ -14,11 +14,8 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
+/* Smooth scrolling is handled in JS (nav clicks) so the browser never
+   double-animates; CSS scroll-behavior is intentionally not set. */
 
 /* Larger type on screens for readability; rem-based sizes scale together.
    Print resets to the 16px root so the A4 output is unchanged. */
@@ -230,9 +227,13 @@ main section {
     color: $soft;
     transition: color 0.25s ease;
 
-    &:hover {
-      color: $accent;
-      text-decoration: none;
+    /* Hover color only on devices with real hover; on touch, tapping would
+       otherwise leave a stuck highlight. */
+    @media (hover: hover) {
+      &:hover {
+        color: $accent;
+        text-decoration: none;
+      }
     }
 
     &.active {
@@ -255,6 +256,11 @@ main section {
 @include focus-ring;
 
 @media (max-width: 88rem) {
+  /* Anchored sections land below the sticky bar. */
+  main section {
+    scroll-margin-top: 3.4rem;
+  }
+
   .cv-nav {
     position: sticky;
     top: 0;
@@ -471,7 +477,12 @@ main section {
     a {
       color: $dark-muted;
 
-      &:hover,
+      @media (hover: hover) {
+        &:hover {
+          color: $dark-accent;
+        }
+      }
+
       &.active {
         color: $dark-accent;
       }

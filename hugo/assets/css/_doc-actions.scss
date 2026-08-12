@@ -16,6 +16,7 @@
   border: 1px solid $line;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.14);
   backdrop-filter: blur(5px);
+  transition: transform 0.25s ease, opacity 0.25s ease;
 
   a {
     display: flex;
@@ -37,10 +38,12 @@
       color: $accent;
     }
 
-    &:hover {
-      color: $accent;
-      background: $accent-tint;
-      text-decoration: none;
+    @media (hover: hover) {
+      &:hover {
+        color: $accent;
+        background: $accent-tint;
+        text-decoration: none;
+      }
     }
   }
 }
@@ -51,6 +54,12 @@
     bottom: calc(64px + env(safe-area-inset-bottom, 0px));
     right: calc(18px + env(safe-area-inset-right, 0px));
   }
+}
+
+html[data-controls-hidden] .doc-actions {
+  transform: translateX(140%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 @media print {
@@ -72,9 +81,11 @@
         color: $dark-accent;
       }
 
-      &:hover {
-        color: $dark-accent;
-        background: $dark-accent-tint;
+      @media (hover: hover) {
+        &:hover {
+          color: $dark-accent;
+          background: $dark-accent-tint;
+        }
       }
     }
   }

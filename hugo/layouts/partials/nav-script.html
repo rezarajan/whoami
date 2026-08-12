@@ -12,8 +12,15 @@
 		var sections = links
 			.map(function (a) { return document.querySelector(a.getAttribute("href")); })
 			.filter(Boolean);
+		var currentId = null;
 
-		function setActive(id) {
+		function reducedMotion() {
+			return matchMedia("(prefers-reduced-motion: reduce)").matches;
+		}
+
+		function setActive(id, smoothNav) {
+			if (id === currentId) return;
+			currentId = id;
 			var active = null;
 			links.forEach(function (l) {
 				var match = l.getAttribute("href") === "#" + id;
@@ -30,11 +37,13 @@
 				indicator.style.transform = "translateY(" + active.offsetTop + "px)";
 				indicator.style.height = active.offsetHeight + "px";
 			}
-			// In the horizontal (narrow-viewport) layout, keep the active pill in view.
+			// In the horizontal (narrow-viewport) layout, keep the active pill
+			// in view. Only animates on explicit clicks; spy updates are instant
+			// so scrolling the page never queues competing animations.
 			if (nav.scrollWidth > nav.clientWidth) {
 				nav.scrollTo({
 					left: active.offsetLeft - nav.clientWidth / 2 + active.offsetWidth / 2,
-					behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+					behavior: smoothNav && !reducedMotion() ? "smooth" : "auto"
 				});
 			}
 		}
@@ -49,17 +58,30 @@
 			sections.forEach(function (s) {
 				if (s.offsetTop <= line) id = s.id;
 			});
-			if (id) setActive(id);
+			if (id) setActive(id, false);
 		}
 
+		// After a nav click the spy pauses until the scroll animation settles
+		// (scrollend where supported, generous timeout as fallback), so the
+		// pinned section is not fought over mid-flight.
 		var suppressUntil = 0;
+		function lift() {
+			if (suppressUntil) {
+				suppressUntil = 0;
+			}
+		}
+		if ("onscrollend" in window) {
+			window.addEventListener("scrollend", lift, { passive: true });
+		}
+
 		var ticking = false;
 		function onScroll() {
 			if (ticking) return;
 			ticking = true;
 			requestAnimationFrame(function () {
 				ticking = false;
-				if (performance.now() < suppressUntil) return;
+				if (suppressUntil && performance.now() < suppressUntil) return;
+				suppressUntil = 0;
 				update();
 			});
 		}
@@ -70,10 +92,9 @@
 			l.addEventListener("click", function (e) {
 				e.preventDefault();
 				var target = document.querySelector(l.getAttribute("href"));
-				var motion = matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
-				suppressUntil = performance.now() + 1000;
-				setActive(l.getAttribute("href").slice(1));
-				if (target) target.scrollIntoView({ behavior: motion, block: "start" });
+				suppressUntil = performance.now() + 1600;
+				setActive(l.getAttribute("href").slice(1), true);
+				if (target) target.scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth", block: "start" });
 				history.replaceState(null, "", l.getAttribute("href"));
 			});
 		});

@@ -32,4 +32,27 @@
 		}
 		apply(current());
 	})();
+
+	// Keep the floating controls out of the reader's way: slide them off
+	// while scrolling down, bring them back on scroll-up or near the top.
+	(function () {
+		var lastY = window.scrollY;
+		var ticking = false;
+		function onScroll() {
+			if (ticking) return;
+			ticking = true;
+			requestAnimationFrame(function () {
+				ticking = false;
+				var y = window.scrollY;
+				var delta = y - lastY;
+				lastY = y;
+				if (y < 60 || delta < -4) {
+					delete document.documentElement.dataset.controlsHidden;
+				} else if (delta > 4) {
+					document.documentElement.dataset.controlsHidden = "";
+				}
+			});
+		}
+		window.addEventListener("scroll", onScroll, { passive: true });
+	})();
 </script>
