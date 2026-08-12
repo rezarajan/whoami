@@ -24,6 +24,7 @@
 
 <body>
 	{{ partial "theme-slider" . }}
+	{{ partial "doc-actions" (dict "pdf" "resume.pdf" "pdfName" "reza-rajan-resume.pdf" "otherURL" "" "otherLabel" "CV") }}
 	{{ $.Scratch.Set "index" 0 }}
 	{{ range .Site.Params.pages }}
 	{{ $.Scratch.Set "index" (add ($.Scratch.Get "index") 1) }}
@@ -41,6 +42,7 @@
 		</div>
 	</main>
 	{{ end }}
+	{{ partial "pdf-modal" . }}
 	{{ partial "theme-script" . }}
 </body>
 </html>

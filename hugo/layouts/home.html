@@ -13,6 +13,7 @@
 
 <body class="cv">
 	{{ partial "theme-slider" . }}
+	{{ partial "doc-actions" (dict "pdf" "cv.pdf" "pdfName" "reza-rajan-cv.pdf" "otherURL" "resume/" "otherLabel" "Resume") }}
 	<nav class="cv-nav no-print" aria-label="Sections">
 		<span class="cv-nav-indicator" aria-hidden="true"></span>
 		<a href="#summary">Summary</a>
@@ -33,11 +34,6 @@
 			<li><a href="{{ .url }}"><i class="{{ .icon }}"></i>{{ .title }}</a></li>
 			{{ end }}
 		</ul>
-		<nav class="doc-links no-print">
-			<a href="{{ "cv.pdf" | relURL }}" download="reza-rajan-cv.pdf"><i class="fas fa-file-pdf"></i>Download PDF</a>
-			<span aria-hidden="true">·</span>
-			<a href="{{ "resume/" | relURL }}"><i class="fas fa-file-alt"></i>Resume</a>
-		</nav>
 	</header>
 
 	<main>
@@ -97,7 +93,7 @@
 				<div class="entry-head">
 					<h3>
 						{{- if .link -}}
-						<a href="{{ .link | absURL }}">{{ .title }}</a>
+						<a href="{{ .link | absURL }}" data-pdf-preview>{{ .title }}</a>
 						{{- else -}}
 						{{ .title }}
 						{{- end }}<span class="issuer">, {{ .subtitle }}</span>
@@ -132,6 +128,7 @@
 	<footer class="cv-footer no-print">
 		<p>Generated from <a href="https://github.com/rezarajan/whoami">rezarajan/whoami</a>.</p>
 	</footer>
+	{{ partial "pdf-modal" . }}
 	{{ partial "theme-script" . }}
 	{{ partial "nav-script" . }}
 </body>

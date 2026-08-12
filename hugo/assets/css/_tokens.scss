@@ -1,19 +1,32 @@
-/* Shared design tokens and scheme helpers for the resume and CV pages. */
+/* Shared design tokens and scheme helpers for the resume and CV pages.
+   Light: neutral paper — crisp near-white page, no color cast. Dark: classic
+   gruvbox. Accent: gruvbox-material pine/sage green. Print stays
+   black-on-white regardless. */
 
-// Light palette
-$crimson: #a51c30;
-$ink: #111111;
-$muted: #555555;
-$soft: #6e6e6e;
+// Light scheme
+$bg: #fafaf9;          // page / paper background (neutral near-white)
+$bg-dim: #e8e6e1;      // backdrop behind the resume paper
+$ink: #24292e;         // body text
+$muted: #57606a;       // secondary text
+$soft: #6e7781;        // tertiary text, dates
+$line: #d0cec8;        // subtle borders and rails
+$accent: #4c7a5d;      // links, icons, nav highlight (pine green)
+$accent-tint: rgba(76, 122, 93, 0.12);
 
-// Dark palette
-$dark-bg: #14161a;
-$dark-surface: #1d2026;
-$dark-text: #d6d9de;
-$dark-heading: #e8eaed;
-$dark-muted: #9aa0a8;
-$dark-crimson: #e08590;
-$dark-rule: #565c66;
+// Dark scheme
+$dark-bg: #282828;         // page background (bg0)
+$dark-bg-dim: #1d2021;     // backdrop behind the resume paper (bg0_h)
+$dark-surface: #32302f;    // resume paper surface (bg0_s)
+$dark-text: #d4be98;       // body text (material fg)
+$dark-heading: #ebdbb2;    // headings (fg1)
+$dark-muted: #928374;      // secondary text (gray)
+$dark-line: #504945;       // subtle borders and rails (bg2)
+$dark-rule: #7c6f64;       // heading rules
+$dark-accent: #89b482;     // links, icons, nav highlight (sage green)
+$dark-accent-tint: rgba(137, 180, 130, 0.16);
+
+// Print (monotone)
+$print-ink: #111111;
 
 /* Applies @content when dark mode is active: the OS prefers dark and the
    user has not forced light, or the user forced dark via the toggle. */
@@ -35,7 +48,7 @@ $dark-rule: #565c66;
 @mixin focus-ring {
   a:focus-visible,
   button:focus-visible {
-    outline: 2px solid $crimson;
+    outline: 2px solid $accent;
     outline-offset: 2px;
     border-radius: 2px;
   }

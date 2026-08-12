@@ -1,19 +1,22 @@
 /* Harvard-format overrides for the one-page resume. */
 @import "tokens";
 @import "theme-slider";
+@import "doc-actions";
+@import "pdf-modal";
 
 main.paper {
   font-family: "Times New Roman", Times, Georgia, serif;
+  color: $ink;
 
   a {
-    color: $crimson;
+    color: $accent;
   }
 
   i.fas,
   i.fab {
     margin-right: 0.35rem;
     font-size: 0.85em;
-    color: $crimson;
+    color: $accent;
   }
 
   header {
@@ -64,7 +67,7 @@ main.paper {
 
         span {
           margin: 0 0.5rem;
-          color: #666666;
+          color: $soft;
         }
       }
     }
@@ -97,8 +100,30 @@ main.paper {
     color: $ink;
   }
 
+  .soft-color {
+    color: $soft;
+  }
+
   p {
     text-align: left;
+  }
+}
+
+/* Warm paper tones on screen only; print keeps pure white. A hairline border
+   keeps the sheet's bounding box visible even on similar backdrops. */
+@media screen {
+  body {
+    background-color: $bg-dim;
+  }
+
+  .paper,
+  main.paper {
+    background-color: $bg;
+    border: 1px solid $line;
+  }
+
+  main.paper {
+    margin-bottom: 2.5rem;
   }
 }
 
@@ -142,15 +167,28 @@ main.paper {
     display: none !important;
   }
 
-  /* Monotone output: no colour-highlighted links or icons on paper. */
+  /* Monotone output: pure ink on white, no colour-highlighted links. */
   main.paper {
+    color: $print-ink;
+
     a {
       color: inherit;
     }
 
     i.fas,
     i.fab {
-      color: $ink;
+      color: $print-ink;
+    }
+
+    .item-title,
+    .job-title,
+    h1, h2, h3,
+    header .harvard-header .name {
+      color: $print-ink;
+    }
+
+    .section-title {
+      border-bottom-color: $print-ink;
     }
   }
 }
@@ -158,12 +196,13 @@ main.paper {
 /* Dark styles; print stays light. */
 @include dark-scheme {
   body {
-    background-color: $dark-bg;
+    background-color: $dark-bg-dim;
   }
 
   .paper,
   main.paper {
     background-color: $dark-surface;
+    border-color: $dark-line;
     box-shadow: 0.2rem 0.2rem 0.6rem #000;
     color: $dark-text;
   }
@@ -188,12 +227,12 @@ main.paper {
     }
 
     a {
-      color: $dark-crimson;
+      color: $dark-accent;
     }
 
     i.fas,
     i.fab {
-      color: $dark-crimson;
+      color: $dark-accent;
     }
 
     .doc-links span {

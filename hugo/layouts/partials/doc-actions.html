@@ -1,0 +1,11 @@
+{{- /* Floating document actions: download the page's pdf, switch document.
+     Expects a dict: "pdf" (relURL target), "pdfName" (download filename),
+     "otherURL" (relURL of the sibling page), "otherLabel" (its short name). */ -}}
+<nav class="doc-actions no-print" aria-label="Document actions">
+	<a class="no-external-icon" href="{{ .pdf | relURL }}" download="{{ .pdfName }}" title="Download PDF">
+		<i class="fas fa-file-pdf" aria-hidden="true"></i>PDF
+	</a>
+	<a class="no-external-icon" href="{{ .otherURL | relURL }}" title="Switch to the {{ .otherLabel }}">
+		<i class="fas fa-file-alt" aria-hidden="true"></i>{{ .otherLabel }}
+	</a>
+</nav>

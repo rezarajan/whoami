@@ -1,0 +1,55 @@
+<div class="pdf-modal" hidden>
+	<div class="pdf-modal-backdrop" data-close></div>
+	<div class="pdf-modal-panel" role="dialog" aria-modal="true" aria-label="Certificate preview">
+		<div class="pdf-modal-bar">
+			<span class="pdf-modal-title"></span>
+			<span class="pdf-modal-actions">
+				<a class="pdf-modal-open" target="_blank" rel="noopener">Open in new tab</a>
+				<button type="button" data-close aria-label="Close preview">&times;</button>
+			</span>
+		</div>
+		<iframe class="pdf-modal-frame" title="PDF preview"></iframe>
+	</div>
+</div>
+<script>
+	// Certificate links open an in-page preview instead of navigating away.
+	(function () {
+		var modal = document.querySelector(".pdf-modal");
+		if (!modal) return;
+		var frame = modal.querySelector(".pdf-modal-frame");
+		var title = modal.querySelector(".pdf-modal-title");
+		var openLink = modal.querySelector(".pdf-modal-open");
+		var lastFocus = null;
+
+		function open(href, label) {
+			lastFocus = document.activeElement;
+			title.textContent = label;
+			openLink.href = href;
+			frame.src = href;
+			modal.hidden = false;
+			document.body.style.overflow = "hidden";
+			modal.querySelector("[data-close]:not(.pdf-modal-backdrop)").focus();
+		}
+
+		function close() {
+			modal.hidden = true;
+			frame.src = "about:blank";
+			document.body.style.overflow = "";
+			if (lastFocus) lastFocus.focus();
+		}
+
+		document.addEventListener("click", function (e) {
+			var link = e.target.closest("a[data-pdf-preview]");
+			if (link) {
+				e.preventDefault();
+				open(link.href, link.textContent.trim());
+				return;
+			}
+			if (!modal.hidden && e.target.closest("[data-close]")) close();
+		});
+
+		document.addEventListener("keydown", function (e) {
+			if (e.key === "Escape" && !modal.hidden) close();
+		});
+	})();
+</script>

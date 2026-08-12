@@ -1,0 +1,133 @@
+/* In-page PDF preview modal for certificate links. */
+@import "tokens";
+
+.pdf-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  &[hidden] {
+    display: none;
+  }
+
+  .pdf-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(29, 32, 33, 0.6);
+    backdrop-filter: blur(2px);
+  }
+
+  .pdf-modal-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    width: #{"min(860px, 94vw)"};
+    height: #{"min(88vh, 1100px)"};
+    background: $bg;
+    border: 1px solid $line;
+    border-radius: 8px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+  }
+
+  .pdf-modal-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 14px;
+    border-bottom: 1px solid $line;
+    font-family: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 13px;
+
+    .pdf-modal-title {
+      font-weight: 600;
+      color: $ink;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .pdf-modal-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    a {
+      color: $accent;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    button {
+      border: 0;
+      padding: 0 6px;
+      background: transparent;
+      font-size: 22px;
+      line-height: 1;
+      color: $muted;
+      cursor: pointer;
+
+      &:hover {
+        color: $ink;
+      }
+    }
+  }
+
+  .pdf-modal-frame {
+    flex: 1;
+    width: 100%;
+    border: 0;
+    background: #525659;
+  }
+}
+
+@media (max-width: 40rem) {
+  .pdf-modal .pdf-modal-panel {
+    width: calc(100vw - 16px);
+    height: calc(100dvh - 16px);
+  }
+}
+
+@media print {
+  .pdf-modal {
+    display: none !important;
+  }
+}
+
+@include dark-scheme {
+  .pdf-modal {
+    .pdf-modal-panel {
+      background: $dark-surface;
+      border-color: $dark-line;
+    }
+
+    .pdf-modal-bar {
+      border-bottom-color: $dark-line;
+
+      .pdf-modal-title {
+        color: $dark-heading;
+      }
+
+      a {
+        color: $dark-accent;
+      }
+
+      button {
+        color: $dark-muted;
+
+        &:hover {
+          color: $dark-heading;
+        }
+      }
+    }
+  }
+}

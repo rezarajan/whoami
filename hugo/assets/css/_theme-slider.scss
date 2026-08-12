@@ -11,8 +11,8 @@
   align-items: center;
   padding: 3px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid #d9d9d9;
+  background: rgba(250, 250, 249, 0.92);
+  border: 1px solid $line;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.14);
   backdrop-filter: blur(5px);
 
@@ -28,7 +28,7 @@
     padding: 0;
     background: transparent;
     border-radius: 50%;
-    color: #8a8a8a;
+    color: $soft;
     font-size: 13px;
     cursor: pointer;
     transition: color 0.25s ease;
@@ -40,11 +40,11 @@
     }
 
     &.active {
-      color: $crimson;
+      color: $accent;
     }
 
     &:focus-visible {
-      outline: 2px solid $crimson;
+      outline: 2px solid $accent;
       outline-offset: 2px;
     }
   }
@@ -57,7 +57,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: rgba(165, 28, 48, 0.12);
+    background: $accent-tint;
     transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -86,20 +86,20 @@
 
 @include dark-scheme {
   .theme-slider {
-    background: rgba(29, 32, 38, 0.88);
-    border-color: #3a3f47;
+    background: rgba(40, 40, 40, 0.92);
+    border-color: $dark-line;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 
     button {
-      color: #7d848d;
+      color: $dark-muted;
 
       &.active {
-        color: $dark-crimson;
+        color: $dark-accent;
       }
     }
 
     .thumb {
-      background: rgba(224, 133, 144, 0.16);
+      background: $dark-accent-tint;
     }
   }
 }
