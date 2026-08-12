@@ -4,10 +4,6 @@
   > *:last-child {
     margin-bottom: 0;
   }
-
-  .right-column & {
-    margin-bottom: 1rem;
-  }
 }
 
 .section-title {
@@ -64,11 +60,6 @@
   margin-bottom: 0px;
 }
 
-.item-info {
-  font-weight: 400;
-  font-size: 14px;
-}
-
 .job-title {
   font-size: 16px;
   font-weight: 600;
@@ -76,26 +67,4 @@
 
 .soft-color {
  color: scale-color($text-color, $lightness: 30%);
-}
-
-main.paper .single-column,
-main.paper .right-column,
-main.paper .left-column,
-.paper {
-  .section-languages {
-    .item {
-      margin-bottom: 0.4rem;
-    }
-
-    h2 {
-      margin-bottom: 0.1rem;
-      font-size: 0.9rem;
-      line-height: 1.1;
-
-      span {
-        font-weight: 400;
-        font-size: 0.8rem;
-      }
-    }
-  }
 }

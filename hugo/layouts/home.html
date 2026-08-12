@@ -1,49 +1,139 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}"><!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
 
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	{{ $style := resources.Get "css/main.scss" | toCSS | minify | fingerprint }}
-	<link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-	{{ if .Site.Params.useFontAwesome }}
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ .Title }}</title>
+	<meta name="description" content="Curriculum vitae of {{ .Site.Data.features.about.name }}, {{ .Site.Data.features.about.tagline }}.">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-	{{ end }}
-	{{ range .Site.Params.css }}
-	{{ $style := resources.Get (printf "css/%s" .) }}
-		{{ if $style }}
-		<link rel="stylesheet" href="{{ ($style | toCSS | minify | fingerprint).RelPermalink }}" />
-		{{ end }}
-	{{ end }}
-	<title itemprop="name">{{ .Site.Title }}</title>
+	{{ $style := resources.Get "css/cv.scss" | toCSS | minify | fingerprint }}
+	<link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 </head>
 
-<body>
-	{{ $.Scratch.Set "index" 0 }}
-	{{ range .Site.Params.pages }}
-	{{ $.Scratch.Set "index" (add ($.Scratch.Get "index") 1) }}
-	<main class="paper">
-		<div class="grid">
-			<header class="flex-row">
-				{{ partial "header" (dict "Header" $.Site.Params.header "Data" $.Site.Data "useFontAwesome" $.Site.Params.useFontAwesome) }}
-			</header>
+<body class="cv">
+	{{ partial "theme-slider" . }}
+	<nav class="cv-nav no-print" aria-label="Sections">
+		<span class="cv-nav-indicator" aria-hidden="true"></span>
+		<a href="#summary">Summary</a>
+		<a href="#competencies">Competencies</a>
+		<a href="#experience">Experience</a>
+		<a href="#education">Education</a>
+		<a href="#certifications">Certifications</a>
+		<a href="#courses">Courses</a>
+	</nav>
+	{{ $about := .Site.Data.features.about }}
+	<header class="cv-header">
+		<h1>{{ $about.name }}</h1>
+		<p class="tagline">{{ $about.tagline }}</p>
+		<ul class="contact">
+			<li><a href="mailto:{{ $about.email }}"><i class="fas fa-envelope"></i>{{ $about.email }}</a></li>
+			<li><i class="fas fa-phone-alt"></i>{{ $about.phone }}</li>
+			{{ range $about.links }}
+			<li><a href="{{ .url }}"><i class="{{ .icon }}"></i>{{ .title }}</a></li>
+			{{ end }}
+		</ul>
+		<nav class="doc-links no-print">
+			<a href="{{ "cv.pdf" | relURL }}" download="reza-rajan-cv.pdf"><i class="fas fa-file-pdf"></i>Download PDF</a>
+			<span aria-hidden="true">·</span>
+			<a href="{{ "resume/" | relURL }}"><i class="fas fa-file-alt"></i>Resume</a>
+		</nav>
+	</header>
 
-			<div class="single-column">
-				{{- range .features -}}
-					{{ partial "section" (dict "Feature" . "Data" $.Site.Data "Params" $.Site.Params "Page" ($.Scratch.Get "index")) }}
-				{{- end -}}
-			</div>
-		</div>
+	<main>
+		<section id="summary">
+			<h2>Summary</h2>
+			{{ .Site.Data.features.about.details | markdownify }}
+		</section>
+
+		<section id="competencies">
+			<h2>Core Competencies</h2>
+			<dl class="skills">
+				{{ range .Site.Data.features.skills }}
+				<div class="skill-row">
+					<dt>{{ .groupName }}</dt>
+					<dd>{{ delimit .list ", " }}</dd>
+				</div>
+				{{ end }}
+			</dl>
+		</section>
+
+		<section id="experience">
+			<h2>Experience</h2>
+			{{ range .Site.Data.experience }}
+			{{ $company := .company }}
+			{{ range .roles }}
+			<article class="entry">
+				<div class="entry-head">
+					<h3>{{ $company }}</h3>
+					<span class="date">{{ .date }}</span>
+				</div>
+				<p class="entry-role">{{ .role }}</p>
+				{{ with .context }}<p class="context">{{ . }}</p>{{ end }}
+				{{ with (.cv_details | default .details) }}{{ . | markdownify }}{{ end }}
+			</article>
+			{{ end }}
+			{{ end }}
+		</section>
+
+		<section id="education">
+			<h2>Education</h2>
+			{{ range .Site.Data.education }}
+			<article class="entry">
+				<div class="entry-head">
+					<h3>{{ .university }}</h3>
+					<span class="date">{{ .date }}</span>
+				</div>
+				<p class="entry-role">{{ .name }}</p>
+				{{ with .honors }}<p class="context">{{ . }}</p>{{ end }}
+			</article>
+			{{ end }}
+		</section>
+
+		<section id="certifications">
+			<h2>Certifications</h2>
+			{{ range .Site.Data.features.certificates }}
+			<article class="entry entry-compact">
+				<div class="entry-head">
+					<h3>
+						{{- if .link -}}
+						<a href="{{ .link | absURL }}">{{ .title }}</a>
+						{{- else -}}
+						{{ .title }}
+						{{- end }}<span class="issuer">, {{ .subtitle }}</span>
+					</h3>
+					<span class="date">{{ .date }}</span>
+				</div>
+			</article>
+			{{ end }}
+		</section>
+
+		<section id="courses">
+			<h2>Courses</h2>
+			{{ range .Site.Data.courses }}
+			<article class="entry">
+				<div class="entry-head">
+					<h3>
+						{{- if .link -}}
+						<a href="{{ .link }}">{{ .name }}</a>
+						{{- else -}}
+						{{ .name }}
+						{{- end }}<span class="issuer">, {{ .provider }}</span>
+					</h3>
+					<span class="date">{{ .year }}</span>
+				</div>
+				<p class="context">Projects: {{ delimit .projects ", " }}</p>
+				<p class="course-skills">{{ .skills }}</p>
+			</article>
+			{{ end }}
+		</section>
 	</main>
-	{{ end }}
 
-	{{ if .Site.Params.footer.show }}
-	<footer>
-		{{ partial "footer" (dict "Footer" .Site.Params.footer "useFontAwesome" .Site.Params.useFontAwesome) }}
+	<footer class="cv-footer no-print">
+		<p>Generated from <a href="https://github.com/rezarajan/whoami">rezarajan/whoami</a>.</p>
 	</footer>
-	{{ end }}
+	{{ partial "theme-script" . }}
+	{{ partial "nav-script" . }}
 </body>
+
 </html>

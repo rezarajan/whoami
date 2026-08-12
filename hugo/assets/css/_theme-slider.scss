@@ -1,0 +1,105 @@
+/* Floating Auto/Light/Dark segmented slider, shared by the resume and CV
+   pages. Sized in px so it renders identically regardless of root font size. */
+@import "tokens";
+
+.theme-slider {
+  position: fixed;
+  top: 18px;
+  right: #{"max(18px, env(safe-area-inset-right, 0px))"};
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid #d9d9d9;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(5px);
+
+  button {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    border-radius: 50%;
+    color: #8a8a8a;
+    font-size: 13px;
+    cursor: pointer;
+    transition: color 0.25s ease;
+
+    i {
+      margin: 0;
+      color: inherit;
+      font-size: inherit;
+    }
+
+    &.active {
+      color: $crimson;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $crimson;
+      outline-offset: 2px;
+    }
+  }
+
+  .thumb {
+    position: absolute;
+    z-index: 1;
+    top: 3px;
+    left: 3px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(165, 28, 48, 0.12);
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &[data-active="light"] .thumb {
+    transform: translateX(30px);
+  }
+
+  &[data-active="dark"] .thumb {
+    transform: translateX(60px);
+  }
+}
+
+@media (max-width: 40rem) {
+  .theme-slider {
+    top: auto;
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    right: calc(18px + env(safe-area-inset-right, 0px));
+  }
+}
+
+@media print {
+  .theme-slider {
+    display: none !important;
+  }
+}
+
+@include dark-scheme {
+  .theme-slider {
+    background: rgba(29, 32, 38, 0.88);
+    border-color: #3a3f47;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+
+    button {
+      color: #7d848d;
+
+      &.active {
+        color: $dark-crimson;
+      }
+    }
+
+    .thumb {
+      background: rgba(224, 133, 144, 0.16);
+    }
+  }
+}

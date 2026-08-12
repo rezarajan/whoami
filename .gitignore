@@ -1,1 +1,5 @@
 !**/.gitkeep
+
+# Locally generated pdf renders (CI publishes its own)
+hugo/static/resume.pdf
+hugo/static/cv.pdf

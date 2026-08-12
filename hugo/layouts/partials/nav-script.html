@@ -1,0 +1,83 @@
+<script>
+	// Section nav scroll-spy. The active section is chosen with a "reading
+	// line": a threshold at the top of the viewport when the page is at the
+	// top that slides to the bottom of the viewport at full scroll, so the
+	// last sections activate even when their anchors can never reach the
+	// viewport top. Nav clicks pin the clicked section until scroll settles.
+	(function () {
+		var nav = document.querySelector(".cv-nav");
+		if (!nav) return;
+		var links = Array.prototype.slice.call(nav.querySelectorAll("a"));
+		var indicator = nav.querySelector(".cv-nav-indicator");
+		var sections = links
+			.map(function (a) { return document.querySelector(a.getAttribute("href")); })
+			.filter(Boolean);
+
+		function setActive(id) {
+			var active = null;
+			links.forEach(function (l) {
+				var match = l.getAttribute("href") === "#" + id;
+				l.classList.toggle("active", match);
+				if (match) {
+					l.setAttribute("aria-current", "true");
+					active = l;
+				} else {
+					l.removeAttribute("aria-current");
+				}
+			});
+			if (!active) return;
+			if (indicator) {
+				indicator.style.transform = "translateY(" + active.offsetTop + "px)";
+				indicator.style.height = active.offsetHeight + "px";
+			}
+			// In the horizontal (narrow-viewport) layout, keep the active pill in view.
+			if (nav.scrollWidth > nav.clientWidth) {
+				nav.scrollTo({
+					left: active.offsetLeft - nav.clientWidth / 2 + active.offsetWidth / 2,
+					behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+				});
+			}
+		}
+
+		function update() {
+			var doc = document.documentElement;
+			var scrollTop = window.scrollY || doc.scrollTop;
+			var maxScroll = doc.scrollHeight - window.innerHeight;
+			var progress = maxScroll > 0 ? Math.min(1, Math.max(0, scrollTop / maxScroll)) : 1;
+			var line = scrollTop + window.innerHeight * progress;
+			var id = sections.length ? sections[0].id : null;
+			sections.forEach(function (s) {
+				if (s.offsetTop <= line) id = s.id;
+			});
+			if (id) setActive(id);
+		}
+
+		var suppressUntil = 0;
+		var ticking = false;
+		function onScroll() {
+			if (ticking) return;
+			ticking = true;
+			requestAnimationFrame(function () {
+				ticking = false;
+				if (performance.now() < suppressUntil) return;
+				update();
+			});
+		}
+		window.addEventListener("scroll", onScroll, { passive: true });
+		window.addEventListener("resize", onScroll, { passive: true });
+
+		links.forEach(function (l) {
+			l.addEventListener("click", function (e) {
+				e.preventDefault();
+				var target = document.querySelector(l.getAttribute("href"));
+				var motion = matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+				suppressUntil = performance.now() + 1000;
+				setActive(l.getAttribute("href").slice(1));
+				if (target) target.scrollIntoView({ behavior: motion, block: "start" });
+				history.replaceState(null, "", l.getAttribute("href"));
+			});
+		});
+
+		update();
+	})();
+</script>

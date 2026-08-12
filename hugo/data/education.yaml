@@ -6,3 +6,9 @@
   university: University of Waterloo
   location: Waterloo, ON
   date: 2015 - 2020
+- name: Secondary Education
+  university: Naparima College
+  location: San Fernando, Trinidad and Tobago
+  date: 2008 - 2015
+  honors: "Additional Scholarship (National) · Mathematics Award"
+  cv_only: true

@@ -1,0 +1,31 @@
+# Courses with substantial project work, shown on the CV (not the one-page resume).
+- name: Data Engineering Nanodegree
+  provider: Udacity
+  year: "2024"
+  link: https://github.com/rezarajan/udacity-aws-data-engineering
+  projects:
+    - Data Modelling with Apache Cassandra
+    - Data Warehouse
+    - Data Lakehouse
+    - Data Pipelines
+  skills: SQL, NoSQL, Python, AWS Redshift, AWS Glue, PySpark, Data Lakehouse, Apache Airflow, ETL/ELT
+
+- name: Self-Driving Car Engineer Nanodegree
+  provider: Udacity
+  year: "2021"
+  link: https://github.com/rezarajan/sdc-capstone
+  projects:
+    - Simulation of an Autonomous Vehicle
+    - Traffic Sign Classifier
+    - Extended Kalman Filters
+    - Path Planning
+    - Lane Line Detection
+  skills: Python, C++, TensorFlow, ROS, OpenCV
+
+- name: Data Analyst Nanodegree
+  provider: Udacity
+  year: "2020"
+  projects:
+    - Exploratory Data Analysis
+    - A/B Testing
+  skills: Python, scikit-learn, Pandas, NumPy

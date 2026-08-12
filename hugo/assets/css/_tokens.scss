@@ -1,0 +1,42 @@
+/* Shared design tokens and scheme helpers for the resume and CV pages. */
+
+// Light palette
+$crimson: #a51c30;
+$ink: #111111;
+$muted: #555555;
+$soft: #6e6e6e;
+
+// Dark palette
+$dark-bg: #14161a;
+$dark-surface: #1d2026;
+$dark-text: #d6d9de;
+$dark-heading: #e8eaed;
+$dark-muted: #9aa0a8;
+$dark-crimson: #e08590;
+$dark-rule: #565c66;
+
+/* Applies @content when dark mode is active: the OS prefers dark and the
+   user has not forced light, or the user forced dark via the toggle. */
+@mixin dark-scheme {
+  @media screen and (prefers-color-scheme: dark) {
+    html:not([data-theme="light"]) {
+      @content;
+    }
+  }
+
+  @media screen {
+    html[data-theme="dark"] {
+      @content;
+    }
+  }
+}
+
+/* Keyboard focus affordance shared by both pages. */
+@mixin focus-ring {
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid $crimson;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}

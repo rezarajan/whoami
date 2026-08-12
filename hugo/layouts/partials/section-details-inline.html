@@ -4,7 +4,7 @@
 	<div class="flex-row">
 		<span>
 			{{- if .link -}}
-			<a class="no-external-icon" href="{{ .link }}"><strong>{{ .title }}</strong></a>
+			<a class="no-external-icon" href="{{ .link | absURL }}"><strong>{{ .title }}</strong></a>
 			{{- else -}}
 			<strong>{{ .title }}</strong>
 			{{- end -}}

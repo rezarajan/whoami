@@ -2,9 +2,13 @@
 
 This repository serves as a portfolio of my professional, academic and project experiences. It uses Git to track changes over time, as well as to auto-update my resume through CI/CD workflows.
 
-📄 [Resume](./resume.pdf)
+📄 [Resume](https://rezarajan.github.io/whoami/resume.pdf)
 
-👉 [Website](https://rezarajan.github.io/whoami)
+📘 [CV](https://rezarajan.github.io/whoami/cv.pdf)
+
+👉 [Website (CV)](https://rezarajan.github.io/whoami) · [Resume page](https://rezarajan.github.io/whoami/resume/)
+
+PDFs are generated and published by the CI/CD pipeline on every deploy; they are not tracked in the repository. For local development, `scripts/generate-pdfs.sh` pre-renders them into `hugo/static/` (gitignored) so the site's download links work locally too.
 
 # Courses
 

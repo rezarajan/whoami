@@ -3,10 +3,15 @@
     - role: Data Specialist
       date: 2026 - Present
       tools: Azure, Databricks, Lakebase, Unity Catalog, Trino, dbt
-      # details: Founding the Ministry's first data capability from the ground up.
+      context: Founding the Ministry's first data capability, building its data platform from the ground up.
 
       details: |
         - Founded the Ministry's first data capability, winning executive approval to automate reporting across all 31 ministry services by delivering a serverless Azure Databricks lakehouse proof of concept.
+        - Established data governance with full lineage and provenance coverage of ingested sources via Unity Catalog.
+
+      cv_details: |
+        - Founded the Ministry's first data capability, winning executive approval to automate reporting across all 31 ministry services by delivering a serverless Azure Databricks lakehouse proof of concept.
+        - Architected a serverless Azure lakehouse with Databricks, Lakebase Postgres, Trino, and dbt as the foundation for automating previously manual ministry reporting.
         - Established data governance with full lineage and provenance coverage of ingested sources via Unity Catalog.
 
 - company: Mochi
@@ -14,7 +19,7 @@
     - role: Co-Founder / Infrastructure Engineer
       date: Dec 2022 - Present
       tools: Bash, Nix, SQLite, InfluxDB, Ansible, Terraform, Kubernetes, Cloud-Init
-      # details: Self-hosted, independent network and infrastructure service provider for the Cardano blockchain network and associated ecosystem projects.
+      context: Self-hosted, independent infrastructure service provider for the Cardano blockchain network and associated ecosystem projects.
 
       details: |
         - Sustained 98% Cardano block-production uptime with a Python Kubernetes sidecar for replica failover.
@@ -22,13 +27,20 @@
         - Cut rollouts from 3+ hours to <15 minutes with declarative Talos Linux IaC and GitHub Actions CI/CD.
         - Reduced incident response time by ~60% with Prometheus and Grafana monitoring and alerting.
 
+      cv_details: |
+        - Sustained 98% Cardano block-production uptime with a Python Kubernetes sidecar for replica failover.
+        - Cut infrastructure costs ~70% vs. cloud by deploying on-prem after a cost/reliability trade-off analysis.
+        - Cut rollouts from 3+ hours to <15 minutes with declarative Talos Linux IaC and GitHub Actions CI/CD.
+        - Reduced incident response time by ~60% with Prometheus and Grafana monitoring and alerting.
+        - Authored end-to-end system documentation and operational runbooks, ensuring knowledge continuity across the project.
+
 - company: myKaarma
   page: 1
   roles:
     - role: Data Engineer
       tools: Python, SQL, Power BI, PySpark, Airflow, Kafka, Flink, Redshift, Lambda, Iceberg, S3
       date: Feb 2022 - Jan 2024
-      # details: Data Engineer at an automotive PaaS company, owning client reporting and driving the transition of the company's data warehouse architecture to a modern lakehouse.
+      context: Automotive PaaS company; owned enterprise client reporting and drove the transition of the reporting warehouse to a modern lakehouse.
 
       details: |
         - Delivered automated reporting to 5,000+ dealerships for 3 enterprise clients through AWS Step Functions orchestration.
@@ -36,15 +48,39 @@
         - Initiated the lakehouse modernization after hitting MariaDB scalability limits, winning buildout approval with a PySpark/Redshift proof of concept that cut terabyte-scale data processing time by ~70%.
         - Stood up the approved buildout with the Principal Engineer, delivering its architecture, roadmap, and first ingestion pipelines.
 
-# - company: Urban Shelter Technologies
-#   roles:
-#     - role: Software Engineer
-#       date: Jun 2018 - Jul 2019
-#       tools: JavaScript, React, Firebase
-#
-#       details: |
-#         - Developed the React front-end for the house listing platform, implementing Firebase authentication and SSO.
-#         - Optimized the Firebase event data model, reducing redundancy and improving query latency.
+      cv_details: |
+        - Delivered automated reporting to 5,000+ dealerships for 3 enterprise clients through AWS Step Functions orchestration.
+        - Cut daily report generation query times by up to 50% through MariaDB stored procedure indexing.
+        - Initiated the lakehouse modernization after hitting MariaDB scalability limits, winning buildout approval with a PySpark/Redshift proof of concept that cut terabyte-scale data processing time by ~70%.
+        - Stood up the approved buildout with the Principal Engineer, delivering its architecture, roadmap, and first ingestion pipelines.
+        - Translated external stakeholders' reporting requirements into technical specifications for the analytics team.
+        - Standardized Power BI dashboards by integrating operational and external data sources, reducing manual reporting workload.
+        - Collaborated with software engineers to improve data quality checks and streamline ETL processes feeding the warehouse.
+
+# Historical roles shown on the CV only; the one-page resume filters on cv_only.
+- company: Urban Shelter Technologies
+  cv_only: true
+  roles:
+    - role: Software Engineer
+      date: Jun 2018 - Jul 2019
+      tools: JavaScript, React, Firebase
+      context: Startup building a house listing platform.
+
+      details: |
+        - Delivered the React front-end for the company's house listing platform, implementing user authentication and SSO with Firebase.
+        - Improved query latency by optimizing the Firebase event data model to reduce redundancy.
+
+- company: BlueFire Technologies Inc.
+  cv_only: true
+  roles:
+    - role: Software Engineer
+      date: Sep 2016 - Aug 2017
+      tools: JavaScript, React, Firebase
+      context: Canadian food-delivery platform startup.
+
+      details: |
+        - Launched the platform front-end on both web and Android by developing and deploying its React infrastructure.
+        - Reduced data redundancy and improved query latency by optimizing the Firebase document store data model.
 
 # - company: BlueFire Technologies Inc.
 #   roles:

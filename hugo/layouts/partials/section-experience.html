@@ -1,17 +1,17 @@
 
 {{ range .Data.experience }}
 {{ $page := .page | default 1 }}
-{{- if eq $.Page $page -}}
+{{- if and (eq $.Page $page) (not .cv_only) -}}
 <div class="item group">
-	{{ $company := .company }} <!-- Store the company name in a variable -->
-	<!-- <h2 class="item-title">{{ .company }}</h2> -->
+	{{ $company := .company }}
 	{{ range .roles }}
 	<div class="item">
 		<div class="flex-row">
-			<span class="job-title">{{ $company }} - {{ .role }}</span>
+			<span class="job-title">{{ $company }}</span>
 			<span class="soft-color">{{ .date }}</span>
 		</div>
-		
+		<div class="job-role">{{ .role }}</div>
+
 		{{- if and $.Params.experience.tools.show .tools -}}
 		<div class="flex-row">
 		<span></span>

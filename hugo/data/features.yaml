@@ -30,11 +30,7 @@ skills:
     list:
       - Power BI, Grafana, Looker Studio
 
-# languages:
-#   - name: English
-#     level: Native
-
-# This will use the default widget: "details-list"
+# Shown nowhere currently; kept for future use.
 awards:
   - title: "University of Waterloo President's Scholarship of Distinction"
     date: "2015"
@@ -68,11 +64,3 @@ certificates:
     subtitle: Udacity
     date: "2020"
     link: certificates/udacity-data-analyst-certificate.pdf
-
-# projects:
-#   - title: "Data Pipeline in AWS using Apache Airflow"
-#     link: https://github.com/rezarajan/udacity-aws-data-engineering/tree/main/projects/4%20-%20Data%20Pipelines
-#   - title: "Data Warehouse using AWS Redshift"
-#     link: https://github.com/rezarajan/udacity-aws-data-engineering/tree/main/projects/2%20-%20Data%20Warehouse
-#   - title: "Data Modeling with Apache Cassandra"
-#     link: https://github.com/rezarajan/udacity-aws-data-engineering/tree/main/projects/1%20-%20Data%20Modelling%20with%20Apache%20Cassandra

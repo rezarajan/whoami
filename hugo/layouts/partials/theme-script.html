@@ -1,0 +1,35 @@
+<script>
+	// Auto/Light/Dark theme slider: applies the chosen scheme via a data-theme
+	// attribute on <html> and persists it in localStorage. "Auto" defers to
+	// the prefers-color-scheme media query.
+	(function () {
+		var order = ["auto", "light", "dark"];
+		var slider = document.querySelector(".theme-slider");
+		function current() {
+			var t = localStorage.getItem("theme");
+			return order.indexOf(t) >= 0 ? t : "auto";
+		}
+		function apply(t) {
+			if (t === "auto") {
+				delete document.documentElement.dataset.theme;
+			} else {
+				document.documentElement.dataset.theme = t;
+			}
+			if (slider) {
+				slider.dataset.active = t;
+				slider.querySelectorAll("[data-theme-value]").forEach(function (b) {
+					b.classList.toggle("active", b.dataset.themeValue === t);
+				});
+			}
+		}
+		if (slider) {
+			slider.querySelectorAll("[data-theme-value]").forEach(function (b) {
+				b.addEventListener("click", function () {
+					localStorage.setItem("theme", b.dataset.themeValue);
+					apply(b.dataset.themeValue);
+				});
+			});
+		}
+		apply(current());
+	})();
+</script>

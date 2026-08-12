@@ -1,0 +1,21 @@
+{{ $about := .Data.features.about }}
+<div class="harvard-header">
+	<h1 class="name">{{ $about.name }}</h1>
+	{{ if .Header.tagline }}<p class="tagline">{{ $about.tagline }}</p>{{ end }}
+	{{ if .Header.contact }}
+	<ul class="contact">
+		<li><a class="no-external-icon" href="mailto:{{ $about.email }}"><i class="fas fa-envelope"></i>{{ $about.email }}</a></li>
+		<li><i class="fas fa-phone-alt"></i>{{ $about.phone }}</li>
+		{{ if .Header.links }}
+		{{ range $about.links }}
+		<li><a class="no-external-icon" href="{{ .url }}"><i class="{{ .icon }}"></i>{{ .title }}</a></li>
+		{{ end }}
+		{{ end }}
+	</ul>
+	{{ end }}
+	<nav class="doc-links no-print">
+		<a class="no-external-icon" href="{{ "resume.pdf" | relURL }}" download="reza-rajan-resume.pdf"><i class="fas fa-file-pdf"></i>Download PDF</a>
+		<span aria-hidden="true">·</span>
+		<a class="no-external-icon" href="{{ "" | relURL }}"><i class="fas fa-file-alt"></i>CV</a>
+	</nav>
+</div>
