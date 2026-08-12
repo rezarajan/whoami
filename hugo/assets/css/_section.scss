@@ -6,7 +6,11 @@
   }
 
   .right-column & {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+
+    .section-title {
+      margin-bottom: 0.5rem;
+    }
   }
 }
 
@@ -16,6 +20,10 @@
 
 .item {
   margin-bottom: 0.6rem;
+
+  .right-column & {
+    margin-bottom: 0.4rem;
+  }
 
   dl {
     dt {
@@ -33,7 +41,7 @@
       &:not(:last-child)::after {
         content: "";
         display: block;
-        margin-bottom: 0.4em;
+        margin-bottom: 0.3em;
       }
 
       *:not(:last-child)::after {

@@ -15,12 +15,12 @@ about:
 
     Academic background in Mechanical Engineering with further studies in Autonomous Robotics. Along this learning path, I have had the opportunity to train ML models for real-time object detection; ultimately this sparked my passion for working with data.
 
-    My focus is on building pragmatic solutions to real-world problems, aiming for simplicity and felxibility at each step.
+    My focus is on building pragmatic solutions to real-world problems, aiming for simplicity and flexibility at each step.
 
 skills:
   - groupName: Core Competencies
     list:
-      - ETL/ELT, Real-Time Analyics, Data Lakehouse, Data Modeling, Apache Airflow, Kafka, Flink, AWS S3, Glue, Redshift
+      - ETL/ELT, Real-Time Analytics, Data Lakehouse, Data Modeling, Apache Airflow, Kafka, Flink, AWS S3, Glue, Redshift
 
   - groupName: Programming Languages
     list:
@@ -28,7 +28,7 @@ skills:
 
   - groupName: Data
     list:
-      - PostgreSQL, MariaDB, SQLite, Redshift, InfluxDB, Cassandra, MongoDB, S3, Flink, Lambda, dbt, Airflow, Kafka, Spark, ElasticSearch, ETL/ELT
+      - PostgreSQL, MariaDB, SQLite, InfluxDB, Cassandra, MongoDB, Lambda, dbt, Spark, ElasticSearch
 
   - groupName: Visualization
     list:
@@ -40,7 +40,7 @@ skills:
 
   - groupName: Infrastructure
     list:
-      - Linux, Docker, Kubernetes, AWS, Proxmox, Ansible, Terraform, OpenTofu, dbt
+      - Linux, Docker, Kubernetes, AWS, Proxmox, Ansible, Terraform, OpenTofu
 
   - groupName: GitOps
     list:
@@ -59,6 +59,16 @@ certificates:
   - title: "AWS Certified Data Engineer"
     subtitle: Amazon
     date: "In-Progress"
+
+  - title: "Project Initiation"
+    subtitle: Google
+    date: "2026"
+    link: certificates/coursera-google-project-management-initiation.pdf
+
+  - title: "Foundations of Project Management"
+    subtitle: Google
+    date: "2026"
+    link: certificates/coursera-google-project-management-foundations.pdf
 
   - title: "Data Engineer"
     subtitle: Udacity
