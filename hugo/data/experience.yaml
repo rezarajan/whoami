@@ -1,52 +1,50 @@
+- company: Ministry of Education Trinidad and Tobago
+  roles:
+    - role: Data Specialist
+      date: 2026 - Present
+      tools: Azure, Databricks, Lakebase, Unity Catalog, Trino, dbt
+      # details: Founding the Ministry's first data capability from the ground up.
+
+      details: |
+        - Founded the Ministry's first data capability, winning executive approval to automate reporting across all 31 ministry services by delivering a serverless Azure Databricks lakehouse proof of concept.
+        - Established data governance with full lineage and provenance coverage of ingested sources via Unity Catalog.
+
 - company: Mochi
   roles:
-    - role: Co-Founder / Platform Engineer
+    - role: Co-Founder / Infrastructure Engineer
       date: Dec 2022 - Present
       tools: Bash, Nix, SQLite, InfluxDB, Ansible, Terraform, Kubernetes, Cloud-Init
       # details: Self-hosted, independent network and infrastructure service provider for the Cardano blockchain network and associated ecosystem projects.
 
       details: |
-        - Designed and implemented a Python-based Kubernetes sidecar that enabled replica coordination in a highly available Cardano Node deployment.
-        - Authored comprehensive system documentation, providing end-to-end operational guidance, and supporting knowledge continuity.
-        - Migrated infrastructure to Talos Linux, creating a fully declarative provisioning system that supports infrastructure-as-code.  
-        - Built Github Actions CI/CD pipelines for feature repositories, with code validation and testing, reducing rollout times from 3+ hours to <15 minutes.
-        - Implemented real-time infrastructure monitoring and alerting with Prometheus and Grafana, cutting incident response time by ~60%.
+        - Sustained 98% Cardano block-production uptime with a Python Kubernetes sidecar for replica failover.
+        - Cut infrastructure costs ~70% vs. cloud by deploying on-prem after a cost/reliability trade-off analysis.
+        - Cut rollouts from 3+ hours to <15 minutes with declarative Talos Linux IaC and GitHub Actions CI/CD.
+        - Reduced incident response time by ~60% with Prometheus and Grafana monitoring and alerting.
 
 - company: myKaarma
   page: 1
   roles:
-    - role: Data Engineer (Cloud)
-      tools: Python, SQL, Flink, Kafka, PySpark, AirFlow, Redshift, Lambda, Iceberg
-      date: Jul 2023 - Jan 2024
-      # details: Data Engineer at an automotive PaaS company, transitioning the company's data warehouse architecture to a modern lakehouse aimed at scalability, reliability and real-time, self-service analytics.
+    - role: Data Engineer
+      tools: Python, SQL, Power BI, PySpark, Airflow, Kafka, Flink, Redshift, Lambda, Iceberg, S3
+      date: Feb 2022 - Jan 2024
+      # details: Data Engineer at an automotive PaaS company, owning client reporting and driving the transition of the company's data warehouse architecture to a modern lakehouse.
 
       details: |
-        - Automated enterprise report generation and delivery with SLA adherence, using AWS Step Functions and Lambda.
-        - Identified scalability bottlenecks in production data pipelines; presented findings to engineering leadership and initiated efforts to evaluate modernized solutions.
-        - Delivered a proof-of-concept data processing pipeline on AWS using PySpark and Redshift, reducing data processing time by ~70% compared to the production data warehouse.
-        - Designed and contributed to a cloud data lakehouse architecture on AWS to scale analytics and reporting.
+        - Delivered automated reporting to 5,000+ dealerships for 3 enterprise clients through AWS Step Functions orchestration.
+        - Cut daily report generation query times by up to 50% through MariaDB stored procedure indexing.
+        - Initiated the lakehouse modernization after hitting MariaDB scalability limits, winning buildout approval with a PySpark/Redshift proof of concept that cut terabyte-scale data processing time by ~70%.
+        - Stood up the approved buildout with the Principal Engineer, delivering its architecture, roadmap, and first ingestion pipelines.
 
-    - role: Data Engineer (Analytics)
-      date: Feb 2022 - Jul 2023
-      tools: Python, SQL, Power BI, Looker Studio, Airflow, PySpark, S3, Iceberg
-      # details: Data Analyst tasked with requirements gathering, report generation and automation for business clients and internal stakeholders.
-
-      details: |
-        - Interfaced with external stakeholders to capture and translate reporting requirements into technical specifications.
-        - Developed SQL stored procedures for the MariaDB reporting warehouse, optimizing several with indexing strategies to achieve up to 50% reduction in query execution time.
-        - Integrated multiple operational and external data sources into Power BI, enabling standardized dashboards for internal teams and reducing manual reporting workload for the analytics team.
-        - Collaborated with software engineers to improve data quality checks and streamline ETL processes feeding the reporting warehouse.
-
-
-- company: Urban Shelter Technologies
-  roles:
-    - role: Software Engineer
-      date: Jun 2018 - Jul 2019
-      tools: JavaScript, React, Firebase
-
-      details: |
-        - Developed the front-end web interface in React for the company's house listing platform; implemented user authentication and SSO using Firebase.
-        - Optimized event data model in the Firebase document store backend to reduce redundancy and improve query latency.
+# - company: Urban Shelter Technologies
+#   roles:
+#     - role: Software Engineer
+#       date: Jun 2018 - Jul 2019
+#       tools: JavaScript, React, Firebase
+#
+#       details: |
+#         - Developed the React front-end for the house listing platform, implementing Firebase authentication and SSO.
+#         - Optimized the Firebase event data model, reducing redundancy and improving query latency.
 
 # - company: BlueFire Technologies Inc.
 #   roles:

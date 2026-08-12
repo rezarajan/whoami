@@ -1,0 +1,16 @@
+{{- $collection := index .Data (.Feature.collection | default "features" ) -}}
+{{ range (index $collection .Feature.feature) }}
+<div class="item inline-item">
+	<div class="flex-row">
+		<span>
+			{{- if .link -}}
+			<a class="no-external-icon" href="{{ .link }}"><strong>{{ .title }}</strong></a>
+			{{- else -}}
+			<strong>{{ .title }}</strong>
+			{{- end -}}
+			{{- if .subtitle }}, {{ .subtitle | markdownify }}{{ end -}}
+		</span>
+		<span class="soft-color">{{ .date }}</span>
+	</div>
+</div>
+{{ end }}

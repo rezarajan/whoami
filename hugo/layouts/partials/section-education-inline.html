@@ -1,0 +1,8 @@
+{{ range .Data.education }}
+<div class="item inline-item">
+	<div class="flex-row">
+		<span><strong>{{ .name }}</strong>, {{ .university }}</span>
+		<span class="soft-color">{{ .date }}</span>
+	</div>
+</div>
+{{ end }}

@@ -11,40 +11,24 @@ about:
       url: https://github.com/rezarajan
       icon: fab fa-github
   details: |
-    Self-motivated software engineer with professional experience in building robust data systems.
-
-    Academic background in Mechanical Engineering with further studies in Autonomous Robotics. Along this learning path, I have had the opportunity to train ML models for real-time object detection; ultimately this sparked my passion for working with data.
-
-    My focus is on building pragmatic solutions to real-world problems, aiming for simplicity and flexibility at each step.
+    Software engineer specializing in data systems, having started in full-stack development and progressed into building end-to-end data platforms, from lakehouse architectures to their infrastructure-as-code foundations.
 
 skills:
-  - groupName: Core Competencies
+  - groupName: Data Engineering
     list:
-      - ETL/ELT, Real-Time Analytics, Data Lakehouse, Data Modeling, Apache Airflow, Kafka, Flink, AWS S3, Glue, Redshift
+      - ETL/ELT, CDC (CDF, Debezium, Airbyte), Data Lakehouse & Modeling, Databricks, Lakebase, Trino, Apache Airflow, dbt, Spark, PostgreSQL, AWS (Glue, Redshift, Step Functions, Lambda)
 
-  - groupName: Programming Languages
+  - groupName: Software Engineering
     list:
-      - Python, Golang, SQL, Bash, Nix
+      - Python, Golang, SQL, Bash, Git, CI/CD (GitHub Actions)
 
-  - groupName: Data
+  - groupName: Infrastructure as Code
     list:
-      - PostgreSQL, MariaDB, SQLite, InfluxDB, Cassandra, MongoDB, Lambda, dbt, Spark, ElasticSearch
+      - Kubernetes, Docker, Terraform/OpenTofu, Ansible, Nix, AWS, Azure
 
-  - groupName: Visualization
+  - groupName: Analytics & Visualization
     list:
-      - Grafana, Power BI, Looker Studio, Plotly
-
-  - groupName: Data Libraries
-    list:
-      - Pandas, SciPy, Numpy, TensorFlow, PySpark
-
-  - groupName: Infrastructure
-    list:
-      - Linux, Docker, Kubernetes, AWS, Proxmox, Ansible, Terraform, OpenTofu
-
-  - groupName: GitOps
-    list:
-      - Git, GitHub Actions, CI/CD
+      - Power BI, Grafana, Looker Studio
 
 # languages:
 #   - name: English

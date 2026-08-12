@@ -40,52 +40,36 @@ details.show = false
 namePrimary = true
 
 
-# Page 1
+# Page 1 (single column)
 [[params.pages]]
 
-# Side column
+[[params.pages.features]]
+feature = "about"
+title = "Summary"
 
-[[params.side]]
-feature = "certificates"
-title = "Certifications"
-#
-[[params.side]]
-feature = "education"
-#
-# [[params.side]]
-# feature = "awards"
-#
-[[params.side]]
+[[params.pages.features]]
 feature = "skills"
-title = "Technical Skills"
+title = "Core Competencies"
 widget = "word-list"
 style = "compact" # "list", "compact", "title-list"
-
-# [[params.side]]
-# feature = "projects"
-
-# [[params.side]]
-# feature = "languages"
-
-# Main Section
-
-# [[params.pages.features]]
-# feature = "skills"
-# title = "Technical Skills"
-# widget = "word-list"
-# style = "compact" # "list", "compact", "title-list"
 
 [[params.pages.features]]
 feature = "experience"
 title = "Experience"
 
+[[params.pages.features]]
+feature = "education"
+title = "Education"
+widget = "education-inline"
+
+[[params.pages.features]]
+feature = "certificates"
+title = "Certifications"
+widget = "details-inline"
+
 # [[params.pages.features]]
 # feature = "projects"
 # title = "Project Experience"
-
-# [[params.pages.features]]
-# feature = "education"
-# title = "Education"
 
 
 # Page 2
