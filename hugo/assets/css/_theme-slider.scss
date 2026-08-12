@@ -71,7 +71,9 @@
   }
 }
 
-@media (max-width: 40rem) {
+/* Below the wide-rail breakpoint the CV nav becomes a sticky top bar, so the
+   floating controls move to the bottom corner to stay clear of it. */
+@media (max-width: 88rem) {
   .theme-slider {
     top: auto;
     bottom: calc(18px + env(safe-area-inset-bottom, 0px));
