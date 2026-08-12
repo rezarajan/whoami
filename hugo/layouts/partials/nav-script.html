@@ -18,7 +18,7 @@
 			return matchMedia("(prefers-reduced-motion: reduce)").matches;
 		}
 
-		function setActive(id, smoothNav) {
+		function setActive(id) {
 			if (id === currentId) return;
 			currentId = id;
 			var active = null;
@@ -38,12 +38,12 @@
 				indicator.style.height = active.offsetHeight + "px";
 			}
 			// In the horizontal (narrow-viewport) layout, keep the active pill
-			// in view. Only animates on explicit clicks; spy updates are instant
-			// so scrolling the page never queues competing animations.
+			// in view. setActive is deduped to one call per section change, so
+			// a smooth animation here never queues competing scrolls.
 			if (nav.scrollWidth > nav.clientWidth) {
 				nav.scrollTo({
 					left: active.offsetLeft - nav.clientWidth / 2 + active.offsetWidth / 2,
-					behavior: smoothNav && !reducedMotion() ? "smooth" : "auto"
+					behavior: reducedMotion() ? "auto" : "smooth"
 				});
 			}
 		}
@@ -93,7 +93,7 @@
 				e.preventDefault();
 				var target = document.querySelector(l.getAttribute("href"));
 				suppressUntil = performance.now() + 1600;
-				setActive(l.getAttribute("href").slice(1), true);
+				setActive(l.getAttribute("href").slice(1));
 				if (target) target.scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth", block: "start" });
 				history.replaceState(null, "", l.getAttribute("href"));
 			});

@@ -40,8 +40,12 @@ a {
   color: $accent;
   text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
+  /* Hover-only affordance; on touch devices a tap would leave the underline
+     stuck until the next tap elsewhere. */
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -225,6 +229,7 @@ main section {
     padding: 0.3rem 0 0.3rem 0.8rem;
     font-size: 0.78rem;
     color: $soft;
+    text-decoration: none;
     transition: color 0.25s ease;
 
     /* Hover color only on devices with real hover; on touch, tapping would
