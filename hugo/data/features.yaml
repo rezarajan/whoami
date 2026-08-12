@@ -50,7 +50,7 @@ certificates:
     date: "2026"
     link: certificates/coursera-google-project-management-foundations.pdf
 
-  - title: "Data Engineer"
+  - title: "Data Engineering with AWS"
     subtitle: Udacity
     date: "2024"
     link: certificates/udacity-data-engineer-certificate.pdf
