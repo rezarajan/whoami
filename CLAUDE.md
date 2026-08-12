@@ -37,6 +37,7 @@ hugo/
   static/certificates/       certificate PDFs (tracked); favicon.svg
   themes/resume-a4/          git submodule; never edit, shadow files instead
 scripts/generate-pdfs.sh     local PDF pre-render into hugo/static/ (gitignored)
+scripts/qa/browser_qa.py     behavioral QA suite (CDP, stdlib-only); run it
 .github/workflows/hugo.yaml  build, PDF generation, artifact upload, Pages deploy
 ```
 
@@ -50,8 +51,6 @@ cd hugo && hugo --gc --minify        # production build check (zero ERRORs expec
 ```
 
 Versioning uses **jj** (colocated with git): `jj new -m "..."` to start work, `jj describe` to (re)word, `jj bookmark set main -r @ && jj git push --bookmark main` to publish. Never rewrite pushed commits; start a new change instead. Commit messages follow conventional style (`feat(site): ...`, `update(experience): ...`).
-
-Gotcha: `pkill -f "hugo server"` kills your own shell (pattern matches its own command line). Use `pkill -f "hugo serve[r]"` in a standalone command.
 
 ## Content rules
 
@@ -74,16 +73,33 @@ Gotcha: `pkill -f "hugo server"` kills your own shell (pattern matches its own c
 
 ## Quality assurance
 
-Before finishing any change that touches content, layout, or styles:
+Before finishing any change that touches content, layout, styles, or scripts:
 
 1. `cd hugo && hugo --gc --minify -d /tmp/whoami-check` completes with zero `ERROR` lines.
-2. Print both pages with headless Chrome (`--virtual-time-budget=8000 --no-pdf-header-footer`):
+2. **Run the behavioral suite**: start `hugo server`, then `python3 scripts/qa/browser_qa.py <port>`. It asserts the interaction invariants below across desktop, portrait-mobile, and landscape-mobile viewports and exits non-zero on failure. Extend it when adding interactive behavior; a bug fixed without a new check tends to come back.
+3. Print both pages with headless Chrome (`--virtual-time-budget=8000 --no-pdf-header-footer`):
    - resume prints to **exactly 1 page**; CV prints to its expected count (currently 2);
    - output is monotone; no localhost URLs in PDF link annotations.
    - A one-page check that works: render the printed PDF at 100dpi; the content bottom must stay above ~1125px of the 1170px page.
-3. Screenshot sanity at desktop (1600px) and mobile (390px) widths, in light and dark (headless scheme can be forced via CDP `Emulation.setEmulatedMedia`).
-4. If data or styles changed, run `./scripts/generate-pdfs.sh` so local downloads match.
-5. SCSS gotchas: CSS `min()`/`max()` with mixed units must be escaped from SCSS builtins (`#{"min(860px, 94vw)"}`); `env()` inside `max()` likewise.
+4. Screenshot sanity at desktop (1600px), portrait mobile (390px), **and landscape mobile (844x390)** — landscape sits between the mobile and desktop breakpoints and catches overlap bugs neither of the others shows. Check light and dark (force the scheme via CDP `Emulation.setEmulatedMedia`; headless defaults are environment-dependent).
+5. If data or styles changed, run `./scripts/generate-pdfs.sh` so local downloads match.
+
+## Interaction invariants (hard-won; keep them true)
+
+- **Scroll-spy**: the active nav section is the last one whose anchor sits above a fixed line 25% down the viewport; only at true page bottom (within 2px of max scroll) does the last section take over. Do NOT reintroduce an interpolated/progress-based reading line: it activates sections that are merely visible lower in the viewport and fights nav clicks near the page bottom.
+- **Nav clicks pin**: a click activates its section immediately and suppresses the spy until the scroll settles (`scrollend` where supported, timeout fallback), so bottom-clustered sections don't steal the highlight mid-flight.
+- **One animator per gesture**: JS `scrollIntoView`/`scrollTo` do the smooth scrolling; CSS `scroll-behavior: smooth` must stay unset or the two animations compound into jank. Dedupe state changes before animating (the pill bar centers only when the active id actually changes; per-frame smooth scrolls queue and stutter).
+- **Touch hover**: every `:hover` affordance (color, underline, background) must live inside `@media (hover: hover)`. On touch devices, a tap otherwise applies hover styles that stick until the next tap — the "still highlighted after scrolling away" bug class.
+- **Breakpoints are coupled**: the CV nav becomes a sticky top bar below 88rem, and the floating controls move to the bottom corner at the same 88rem. If these ever diverge, landscape phones (between ~40rem and 88rem) get overlapping chrome.
+- **Reduced motion**: every animation and smooth scroll checks `prefers-reduced-motion`.
+
+## Testing gotchas
+
+- Headless screenshots taken after fragment/anchor navigation can silently drop fixed-position layers or paint blank; drive real scrolls and reads over CDP instead (see `scripts/qa/browser_qa.py` for the stdlib WebSocket client pattern).
+- CDP checks must **act, wait (~400ms), then read**: spy and hide/show handlers are rAF-throttled, so reading state in the same evaluate call as the action returns stale values.
+- Launch test Chrome with `--force-prefers-reduced-motion` so scrolls are instant and deterministic.
+- SCSS: CSS `min()`/`max()` with mixed units must be escaped from SCSS builtins (`#{"min(860px, 94vw)"}`); `env()` inside `max()` likewise.
+- `pkill -f "hugo server"` kills the invoking shell (pattern matches its own command line); use `pkill -f "hugo serve[r]"` standalone.
 
 ## CI notes
 
