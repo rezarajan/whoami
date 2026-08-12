@@ -1,9 +1,10 @@
 <script>
-	// Section nav scroll-spy. The active section is chosen with a "reading
-	// line": a threshold at the top of the viewport when the page is at the
-	// top that slides to the bottom of the viewport at full scroll, so the
-	// last sections activate even when their anchors can never reach the
-	// viewport top. Nav clicks pin the clicked section until scroll settles.
+	// Section nav scroll-spy. The active section is the last one whose anchor
+	// sits above a fixed line 25% down the viewport, so activation always
+	// matches what the reader sees at the top of the screen. Only at the very
+	// bottom of the page does the final section take over, covering anchors
+	// that can never reach the viewport top. Nav clicks pin the clicked
+	// section until scroll settles.
 	(function () {
 		var nav = document.querySelector(".cv-nav");
 		if (!nav) return;
@@ -49,16 +50,21 @@
 		}
 
 		function update() {
+			if (!sections.length) return;
 			var doc = document.documentElement;
 			var scrollTop = window.scrollY || doc.scrollTop;
 			var maxScroll = doc.scrollHeight - window.innerHeight;
-			var progress = maxScroll > 0 ? Math.min(1, Math.max(0, scrollTop / maxScroll)) : 1;
-			var line = scrollTop + window.innerHeight * progress;
-			var id = sections.length ? sections[0].id : null;
-			sections.forEach(function (s) {
-				if (s.offsetTop <= line) id = s.id;
-			});
-			if (id) setActive(id, false);
+			var id;
+			if (maxScroll - scrollTop <= 2) {
+				id = sections[sections.length - 1].id;
+			} else {
+				var line = scrollTop + window.innerHeight * 0.25;
+				id = sections[0].id;
+				sections.forEach(function (s) {
+					if (s.offsetTop <= line) id = s.id;
+				});
+			}
+			setActive(id);
 		}
 
 		// After a nav click the spy pauses until the scroll animation settles
